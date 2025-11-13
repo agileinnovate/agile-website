@@ -131,7 +131,7 @@ export default function Navbar() {
 
               {webMobileOpen && (
                 <div
-                  className="absolute left-1/2 -translate-x-1/2 top-full mt-4 bg-white shadow-xl rounded-xl border p-6 w-[650px] animate-fadeSlide z-[999]"
+                  className="absolute left-1/2 -translate-x-1/2 top-full mt-4 bg-white shadow-xl rounded-xl border p-6 w-[650px] animate-fadeSlide z-999"
                 >
                   <div className="grid grid-cols-3 gap-6">
 
@@ -169,7 +169,7 @@ export default function Navbar() {
               </span>
 
               {industriesOpen && (
-                <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 z-[999]">
+                <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 z-999">
                   <IndustriesModal />
                 </div>
               )}
@@ -191,15 +191,81 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Menu */}
-        {menuOpen && (
-          <div className="md:hidden bg-white border-t py-4 space-y-4 text-center">
-            <Link href="/" className="block hover:text-blue-600">Home</Link>
-            <Link href="/about" className="block hover:text-blue-600">About</Link>
-            <Link href="/services" className="block hover:text-blue-600">Services</Link>
-            <Link href="/career" className="block hover:text-blue-600">Career</Link>
-            <Link href="/contact" className="block hover:text-blue-600">Contact</Link>
-          </div>
-        )}
+       {/* Mobile Menu */}
+{menuOpen && (
+  <div className="md:hidden bg-white border-t py-4 text-left px-5 space-y-4">
+
+    {/* Home */}
+    <Link href="/" className="block font-semibold text-gray-700 text-lg">
+      Home
+    </Link>
+
+    {/* ABOUT DROPDOWN (Mobile) */}
+    <div>
+      <button
+        onClick={() => setAboutOpen(!aboutOpen)}
+        className="w-full flex justify-between items-center font-semibold text-gray-700 text-lg"
+      >
+        About <FaAngleDown className={`${aboutOpen ? "rotate-180" : ""} transition`} />
+      </button>
+
+      {aboutOpen && (
+        <div className="ml-4 mt-2 space-y-2 text-gray-600">
+          <Link href="/about" className="block hover:text-blue-600">About Us</Link>
+          <Link href="/career" className="block hover:text-blue-600">Career</Link>
+        </div>
+      )}
+    </div>
+
+    {/* WEB & MOBILE DROPDOWN (Mobile) */}
+    <div>
+      <button
+        onClick={() => setWebMobileOpen(!webMobileOpen)}
+        className="w-full flex justify-between items-center font-semibold text-gray-700 text-lg"
+      >
+        Web & Mobile <FaAngleDown className={`${webMobileOpen ? "rotate-180" : ""} transition`} />
+      </button>
+
+      {webMobileOpen && (
+        <div className="ml-4 mt-2 space-y-2 text-gray-600">
+          <Link href="/service/web-development" className="block hover:text-blue-600">Web Development</Link>
+          <Link href="/service/mobile-app" className="block hover:text-blue-600">Mobile App Development</Link>
+          <Link href="/service/python" className="block hover:text-blue-600">Python Development</Link>
+          <Link href="/service/lightspeed" className="block hover:text-blue-600">LightSpeed Dev</Link>
+          <Link href="/service/technologies" className="block hover:text-blue-600">Technologies</Link>
+          <Link href="/service/frameworks" className="block hover:text-blue-600">Frameworks</Link>
+        </div>
+      )}
+    </div>
+
+    {/* INDUSTRIES DROPDOWN (Mobile) */}
+    <div>
+      <button
+        onClick={() => setIndustriesOpen(!industriesOpen)}
+        className="w-full flex justify-between items-center font-semibold text-gray-700 text-lg"
+      >
+        Industries <FaAngleDown className={`${industriesOpen ? "rotate-180" : ""} transition`} />
+      </button>
+
+      {industriesOpen && (
+        <div className="ml-4 mt-2 space-y-2 text-gray-600">
+          {/* Replace below with your industries list */}
+          <Link href="/industries/healthcare" className="block hover:text-blue-600">Healthcare</Link>
+          <Link href="/industries/finance" className="block hover:text-blue-600">Finance</Link>
+          <Link href="/industries/education" className="block hover:text-blue-600">Education</Link>
+          <Link href="/industries/ecommerce" className="block hover:text-blue-600">E-Commerce</Link>
+          <Link href="/industries/real-estate" className="block hover:text-blue-600">Real Estate</Link>
+        </div>
+      )}
+    </div>
+
+    {/* Contact */}
+    <Link href="/contact" className="block font-semibold text-gray-700 text-lg">
+      Contact
+    </Link>
+  </div>
+)}
+
       </nav>
 
       {/* Animation */}
