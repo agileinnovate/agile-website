@@ -9,9 +9,7 @@ import { FaAngleDown } from "react-icons/fa";
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  /* ---------------------------------------------
-      INDUSTRIES DROPDOWN
-  --------------------------------------------- */
+  /*  INDUSTRIES DROPDOWN */
   const [industriesOpen, setIndustriesOpen] = useState(false);
   const industriesTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -25,9 +23,7 @@ export default function Navbar() {
     industriesTimer.current = setTimeout(() => setIndustriesOpen(false), 150);
   };
 
-  /* ---------------------------------------------
-      ABOUT DROPDOWN
-  --------------------------------------------- */
+  /* ABOUT DROPDOWN */
   const [aboutOpen, setAboutOpen] = useState(false);
   const aboutTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -41,9 +37,7 @@ export default function Navbar() {
     aboutTimer.current = setTimeout(() => setAboutOpen(false), 150);
   };
 
-  /* ---------------------------------------------
-      WEB & MOBILE DROPDOWN 
-  --------------------------------------------- */
+  /* WEB & MOBILE DROPDOWN*/
   const [webMobileOpen, setWebMobileOpen] = useState(false);
   const webMobileTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -72,7 +66,7 @@ export default function Navbar() {
 
             {/* Home */}
             <Link href="/" className="hover:text-blue-300 flex items-center gap-1">
-              Home <FaAngleDown className="text-sm" />
+              Home 
             </Link>
 
             {/* ABOUT DROPDOWN */}
@@ -87,7 +81,7 @@ export default function Navbar() {
 
               {aboutOpen && (
                 <div
-                  className="absolute left-1/2 -translate-x-1/2 top-full mt-3 bg-white shadow-xl rounded-xl border p-8 w-[480px] animate-fadeSlide z-[999]"
+                  className="absolute left-1/2 -translate-x-1/2 top-full mt-3 bg-white shadow-xl rounded-xl border p-8 w-[480px] animate-fadeSlide z-999"
                 >
                   <div className="grid grid-cols-2 gap-6">
                     {/* Card 1 */}
@@ -146,9 +140,9 @@ export default function Navbar() {
                       { title: "Web Development", desc: "Powerful responsive websites.", link: "/service/web-development" },
                       { title: "Mobile App Development", desc: "iOS & Android apps.", link: "/service/mobile-app" },
                       { title: "Python Development", desc: "Automation & backend systems.", link: "/service/python" },
-                      { title: "LightSpeed Dev", desc: "Fast modern development.", link: "/services/lightspeed" },
-                      { title: "Technologies", desc: "MERN, MEAN, Django, Next.js", link: "/services/technologies" },
-                      { title: "Frameworks", desc: "Reliable modern frameworks.", link: "/services/frameworks" },
+                      { title: "LightSpeed Dev", desc: "Fast modern development.", link: "/service/lightspeed" },
+                      { title: "Technologies", desc: "MERN, MEAN, Django, Next.js", link: "/service/technologies" },
+                      { title: "Frameworks", desc: "Reliable modern frameworks.", link: "/service/frameworks" },
                     ].map((card, i) => (
                       <Link key={i} href={card.link}
                         className="p-4 rounded-xl hover:shadow-2xl border border-gray-300 transition"

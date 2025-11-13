@@ -2,20 +2,28 @@
 
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
-import { JSXElementConstructor, Key, ReactElement, ReactNode, ReactPortal, useState } from "react";
+import { useState } from "react";
+
+type TabKey = "frameworks" | "databases" | "deployment";
+
+interface StackItem {
+  title: string;
+  desc: string;
+  icon: string | StaticImport;
+}
 
 export default function PythonDev() {
-  const [activeTab, setActiveTab] = useState("frameworks");
+  const [activeTab, setActiveTab] = useState<TabKey>("frameworks");
 
   // Tabs
-  const tabs = [
+  const tabs: { key: TabKey; label: string }[] = [
     { key: "frameworks", label: "Frameworks" },
     { key: "databases", label: "Databases" },
     { key: "deployment", label: "Deployment" },
   ];
 
   // Framework Data
-  const frameworkData = [
+  const frameworkData: StackItem[] = [
     {
       title: "Django REST Framework",
       desc: "Perfect for complex, database-driven APIs with built-in admin and ORM.",
@@ -70,6 +78,36 @@ export default function PythonDev() {
       icon: "/aws.svg",
     },
   ];
+
+
+   const steps = [
+    {
+      no: "1",
+      title: "Requirement Analysis",
+      desc: "We conduct in-depth discussions to understand your business needs and technical requirements.",
+    },
+    {
+      no: "2",
+      title: "Architecture Design",
+      desc: "Our experts design scalable API architecture with proper documentation and versioning strategy.",
+    },
+    {
+      no: "3",
+      title: "Development & Testing",
+      desc: "Agile development with continuous integration and comprehensive test coverage.",
+    },
+    {
+      no: "4",
+      title: "Deployment & Monitoring",
+      desc: "CI/CD pipeline setup with performance monitoring and analytics integration.",
+    },
+    {
+      no: "5",
+      title: "Maintenance & Support",
+      desc: "Ongoing support, updates, and enhancements to keep your API performing at its best.",
+    },
+  ];
+
 
   // Active tab mapping
   const tabData = {
@@ -153,15 +191,15 @@ export default function PythonDev() {
 
           {/* CARDS */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-12">
-            {tabData[activeTab].map((item: { icon: string | StaticImport; title: string | number | bigint | boolean | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | Promise<string | number | bigint | boolean | ReactPortal | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | null | undefined> | null | undefined; desc: string | number | bigint | boolean | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<string | number | bigint | boolean | ReactPortal | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | null | undefined> | null | undefined; }, idx: Key | null | undefined) => (
+            {tabData[activeTab].map((item, idx) => (
               <div
                 key={idx}
-                className="bg-white rounded-2xl shadow-xl px-10  p-8 text-center hover:scale-105 transition-transform duration-300 ease-in-out"
+                className="bg-white rounded-2xl shadow-xl px-10 p-8 text-center hover:scale-105 transition-transform duration-300 ease-in-out"
               >
                 <div className="flex justify-center mb-4 mt-2">
                   <Image
                     src={item.icon}
-                    alt={item.title}
+                    alt={String(item.title)}
                     width={70}
                     height={70}
                     className="object-contain"
@@ -178,6 +216,44 @@ export default function PythonDev() {
           </div>
         </div>
       </section>
+
+      <section className="relative bg-gray-100 text-black py-24 overflow-hidden">
+      {/* Container */}
+      <div className="max-w-6xl mx-auto px-6 md:px-12">
+        {/* Title */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-4xl font-bold mb-4">
+            Our Python API Development Process
+          </h2>
+          <p className="text-gray-900 text-lg">
+            A proven methodology for delivering exceptional results
+          </p>
+        </div>
+
+        {/* Timeline */}
+        <div className="relative border-l border-blue-500 pl-10 space-y-12">
+          {steps.map((step, idx) => (
+            <div key={idx} className="relative flex gap-10 items-start">
+              {/* Step Circle */}
+              <div className="absolute -left-[1.9rem] w-10 h-10 flex items-center justify-center 
+                border-2 border-black rounded-full bg-transparent font-bold text-lg">
+                {step.no}
+              </div>
+
+              {/* Step Content */}
+              <div className="px-12">
+                <h3 className="text-xl font-semibold mb-2 text-black">
+                  {step.title}
+                </h3>
+                <p className="text-gray-900  text-md">
+                  {step.desc}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
     </>
   );
 }

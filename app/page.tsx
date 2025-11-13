@@ -5,6 +5,7 @@ import ContactForm from "@/components/ContactForm";
 import Testimonial from "@/components/Testimonial";
 import ReviewSection from "@/components/ReviewSection";
 import Career from "@/components/Career";
+import ContactPage from "@/components/ContactPage";
 
 export default function Home() {
   return (
@@ -14,7 +15,7 @@ export default function Home() {
         <Hero />
 
         {/* ✅ Gradient transition (optional for smoother merge) */}
-        <div className="absolute bottom-0 left-0 w-full h-[150px] bg-gradient-to-b from-transparent to-white pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 w-full h-[150px] bg-linear-to-b from-transparent to-white pointer-events-none"></div>
       </div>
 
       {/* ✅ About Section (with top padding for card overlap) */}
@@ -24,6 +25,7 @@ export default function Home() {
       <ServicesSection />
       <ReviewSection />
       <Testimonial/>
+      <ContactPage/>
       
     </main>
       
