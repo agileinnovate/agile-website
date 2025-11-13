@@ -56,7 +56,7 @@ export default function DevelopmentProcess() {
             <div key={i} className="relative mb-10">
 
               {/* Circle */}
-              <div className="absolute -left-[1px] top-4 transform -translate-x-1/2 w-12 h-12 
+              <div className="absolute -left-px top-4 transform -translate-x-1/2 w-12 h-12 
                 rounded-full bg-white border-[3px] border-blue-500 
                 flex items-center justify-center text-blue-600 font-bold shadow-md">
                 {step.no}

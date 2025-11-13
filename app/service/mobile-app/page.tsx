@@ -1,4 +1,4 @@
-import MobileApp from "@/components/Web&Mobile/MobileApp";
+import MobileApp from "@/components/Web&Mobile/MobileAppProcess";
 
 
 export default function WebPage(){
