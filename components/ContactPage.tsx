@@ -29,14 +29,14 @@ export default function ContactPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 1 }}
-            className="text-gray-100 max-w-2xl text-lg"
+            className="text-gray-50 max-w-2xl text-lg"
           >
             Share a few details about your project, and we’ll get back to you soon.
           </motion.p>
         </div>
       </section>
 
-      {/* 🟩 Section 2: Contact Form Overlapping */}
+      {/* 🟩 Section 2 */}
       <section className="relative -mt-28 md:-mt-36 z-20">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 bg-white shadow-2xl rounded-2xl p-8 md:p-10 border border-blue-100">
           {/* Left Info Card */}
@@ -96,7 +96,7 @@ export default function ContactPage() {
               type="submit"
               className="w-full bg-linear-to-r from-blue-600 to-blue-800 text-white py-3 rounded-lg font-medium hover:opacity-90 transition-all"
             >
-              Submit
+              Submit 
             </button>
           </form>
         </div>

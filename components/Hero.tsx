@@ -59,10 +59,10 @@ export default function Hero() {
             initial={{ x: -250 }}
             whileInView={{ x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.9, ease: "easeOut" }}
+            transition={{ duration: 1.5, ease: "easeOut" }}
             className="group bg-white text-black rounded-2xl shadow-xl p-8 flex flex-col items-center justify-center hover:-translate-y-3 transition-all duration-500 w-full h-60 hover:bg-blue-500"
           >
-            {/* Icon inside white circle */}
+          
             <div className="flex items-center justify-center w-20 h-20 bg-white mb-4 transition-all duration-500 ">
               <Image
                 src="/secure.png"
@@ -84,10 +84,10 @@ export default function Hero() {
 
           {/* Card 2 */}
           <motion.div
-            initial={{ y: 170 }}
+            initial={{ y: 250 }}
             whileInView={{ y: 0 }}
             viewport={{ once: true }}
-            transition={{ ease: "easeOut" }}
+            transition={{  ease: "easeOut" }}
             className="group bg-white text-black rounded-2xl shadow-xl p-8 flex flex-col items-center justify-center hover:-translate-y-3 transition-all duration-500 w-full h-60 hover:bg-blue-500"
           >
             <div className="flex items-center justify-center w-20 h-20 bg-white
@@ -114,7 +114,7 @@ export default function Hero() {
             initial={{ x: 250 }}
             whileInView={{ x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.9, ease: "easeOut" }}
+            transition={{ duration:1.5, ease: "easeOut" }}
             className="group bg-white text-black rounded-2xl shadow-xl p-8 flex flex-col items-center justify-center hover:-translate-y-3 transition-all duration-500 w-full h-60 hover:bg-blue-500"
           >
             <div className="flex items-center justify-center w-20 h-20 bg-white  mb-4 transition-all duration-500 group-hover:bg-white">

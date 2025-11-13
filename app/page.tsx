@@ -1,7 +1,6 @@
 import Hero from "@/components/Hero";
 import AboutSection from "@/components/AboutSection";
 import ServicesSection from "@/components/ServiceCard";
-import ContactForm from "@/components/ContactForm";
 import Testimonial from "@/components/Testimonial";
 import ReviewSection from "@/components/ReviewSection";
 import Career from "@/components/Career";
@@ -10,15 +9,12 @@ import ContactPage from "@/components/ContactPage";
 export default function Home() {
   return (
     <main className="overflow-x-hidden">
-      {/* ✅ Hero Section */}
+  
       <div className="relative">
         <Hero />
-
-        {/* ✅ Gradient transition (optional for smoother merge) */}
         <div className="absolute bottom-0 left-0 w-full h-[150px] bg-linear-to-b from-transparent to-white pointer-events-none"></div>
       </div>
 
-      {/* ✅ About Section (with top padding for card overlap) */}
       <div className="relative z-10 bg-white pt-24 md:pt-28">
         <AboutSection />
       </div>
@@ -28,8 +24,5 @@ export default function Home() {
       <ContactPage/>
       
     </main>
-      
-      
-   
   );
 }
