@@ -11,7 +11,7 @@ export default function IndustriesModel() {
         <IndustryCard icon={<BsBank2 />} title="Finance & Banking" url="/industries/finance" />
         <IndustryCard icon={<FaTruck />} title="Supply Chain & Logistics" url="/industries/supply" />
         <IndustryCard icon={<FaClinicMedical />} title="Healthcare" url="/industries/healthcare" />
-        <IndustryCard icon={<FaStore />} title="Retail & E-Commerce" url="/industries/retail" />
+        <IndustryCard icon={<FaStore />} title="Retail & E-Commerce" url="/industries/ecommerce" />
         <IndustryCard icon={<FaBuilding />} title="Real Estate" url="/industries/realestate" />
         <IndustryCard icon={<FaGamepad />} title="Gaming & Metaverse" url="/industries/gaming" />
       </div>

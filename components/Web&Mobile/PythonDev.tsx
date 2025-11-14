@@ -150,7 +150,7 @@ export default function PythonDev() {
           <div className="w-full md:w-1/2 flex justify-center pt-20">
             <div className="relative w-full max-w-[600px] h-[380px] rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="/python.png"
+                src="/python.jpg"
                 alt="Python Development"
                 fill
                 className="object-cover"

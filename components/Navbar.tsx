@@ -190,81 +190,148 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile Menu */}
+        
        {/* Mobile Menu */}
-{menuOpen && (
-  <div className="md:hidden bg-white border-t py-4 text-left px-5 space-y-4">
+{/* MOBILE SLIDE-IN MENU  */}
+<div
+  className={`fixed inset-0 bg-black/40 backdrop-blur-sm z-999 md:hidden transition-opacity duration-300 ${
+    menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+  }`}
+  onClick={() => setMenuOpen(false)}
+>
+  {/* SIDE DRAWER */}
+  <div
+    className={`absolute right-0 top-0 h-full w-[75%] sm:w-[55%] bg-white shadow-xl p-6 overflow-y-auto transition-transform duration-300 ${
+      menuOpen ? "translate-x-0" : "translate-x-full"
+    }`}
+    onClick={(e) => e.stopPropagation()} 
+  >
 
-    {/* Home */}
-    <Link href="/" className="block font-semibold text-gray-700 text-lg">
-      Home
-    </Link>
+    {/* HEADER ROW (Logo + Close Button) */}
+<div className="flex items-center justify-between mb-2">
 
-    {/* ABOUT DROPDOWN (Mobile) */}
-    <div>
-      <button
-        onClick={() => setAboutOpen(!aboutOpen)}
-        className="w-full flex justify-between items-center font-semibold text-gray-700 text-lg"
-      >
-        About <FaAngleDown className={`${aboutOpen ? "rotate-180" : ""} transition`} />
-      </button>
-
-      {aboutOpen && (
-        <div className="ml-4 mt-2 space-y-2 text-gray-600">
-          <Link href="/about" className="block hover:text-blue-600">About Us</Link>
-          <Link href="/career" className="block hover:text-blue-600">Career</Link>
-        </div>
-      )}
-    </div>
-
-    {/* WEB & MOBILE DROPDOWN (Mobile) */}
-    <div>
-      <button
-        onClick={() => setWebMobileOpen(!webMobileOpen)}
-        className="w-full flex justify-between items-center font-semibold text-gray-700 text-lg"
-      >
-        Web & Mobile <FaAngleDown className={`${webMobileOpen ? "rotate-180" : ""} transition`} />
-      </button>
-
-      {webMobileOpen && (
-        <div className="ml-4 mt-2 space-y-2 text-gray-600">
-          <Link href="/service/web-development" className="block hover:text-blue-600">Web Development</Link>
-          <Link href="/service/mobile-app" className="block hover:text-blue-600">Mobile App Development</Link>
-          <Link href="/service/python" className="block hover:text-blue-600">Python Development</Link>
-          <Link href="/service/lightspeed" className="block hover:text-blue-600">LightSpeed Dev</Link>
-          <Link href="/service/technologies" className="block hover:text-blue-600">Technologies</Link>
-          <Link href="/service/frameworks" className="block hover:text-blue-600">Frameworks</Link>
-        </div>
-      )}
-    </div>
-
-    {/* INDUSTRIES DROPDOWN (Mobile) */}
-    <div>
-      <button
-        onClick={() => setIndustriesOpen(!industriesOpen)}
-        className="w-full flex justify-between items-center font-semibold text-gray-700 text-lg"
-      >
-        Industries <FaAngleDown className={`${industriesOpen ? "rotate-180" : ""} transition`} />
-      </button>
-
-      {industriesOpen && (
-        <div className="ml-4 mt-2 space-y-2 text-gray-600">
-          {/* Replace below with your industries list */}
-          <Link href="/industries/healthcare" className="block hover:text-blue-600">Healthcare</Link>
-          <Link href="/industries/finance" className="block hover:text-blue-600">Finance</Link>
-          <Link href="/industries/education" className="block hover:text-blue-600">Education</Link>
-          <Link href="/industries/ecommerce" className="block hover:text-blue-600">E-Commerce</Link>
-          <Link href="/industries/real-estate" className="block hover:text-blue-600">Real Estate</Link>
-        </div>
-      )}
-    </div>
-
-    {/* Contact */}
-    <Link href="/contact" className="block font-semibold text-gray-700 text-lg">
-      Contact
-    </Link>
+  {/* Logo */}
+  <div className="relative w-[190px] h-[100px]">
+    <Image src="/logo.png" alt="Logo" fill className="object-contain" />
   </div>
-)}
+
+  {/* Close Button */}
+  <button
+    className="text-4xl text-blue-600 font-bold"
+    onClick={() => setMenuOpen(false)}
+  >
+    ×
+  </button>
+
+</div>
+
+
+    {/* NAV ITEMS INSIDE DRAWER */}
+    <div className="space-y-6 text-gray-700 text-lg font-semibold">
+
+      <Link href="/" onClick={() => setMenuOpen(false)} className="block">
+        Home
+      </Link>
+
+      {/* ABOUT DROPDOWN MOBILE */}
+      <div>
+        <button
+          onClick={() => setAboutOpen(!aboutOpen)}
+          className="w-full flex justify-between"
+        >
+          About <FaAngleDown className={`${aboutOpen ? "rotate-180" : ""}`} />
+        </button>
+
+        {aboutOpen && (
+          <div className="ml-4 mt-2 space-y-2 text-gray-600 text-base">
+            <Link href="/about" onClick={() => setMenuOpen(false)}>About Us</Link><br/>
+            <Link href="/career" onClick={() => setMenuOpen(false)}>Career</Link>
+          </div>
+        )}
+      </div>
+
+      {/* WEB & MOBILE DROPDOWN */}
+      <div>
+        <button
+          onClick={() => setWebMobileOpen(!webMobileOpen)}
+          className="w-full flex justify-between"
+        >
+          Web & Mobile <FaAngleDown className={`${webMobileOpen ? "rotate-180" : ""}`} />
+        </button>
+
+        {webMobileOpen && (
+          <div className="ml-4 mt-2 space-y-2 text-gray-600 text-base">
+            <Link href="/service/web-development" onClick={() => setMenuOpen(false)}>Web Development</Link><br/>
+            <Link href="/service/mobile-app" onClick={() => setMenuOpen(false)}>Mobile Apps</Link><br/>
+            <Link href="/service/python" onClick={() => setMenuOpen(false)}>Python</Link><br/>
+            <Link href="/service/lightspeed" onClick={() => setMenuOpen(false)}>LightSpeed</Link><br/>
+            <Link href="/service/technologies" onClick={() => setMenuOpen(false)}>Technologies</Link><br/>
+            <Link href="/service/frameworks" onClick={() => setMenuOpen(false)}>Frameworks</Link><br/>
+          </div>
+        )}
+      </div>
+
+      {/* INDUSTRIES DROPDOWN */}
+      <div>
+        <button
+          onClick={() => setIndustriesOpen(!industriesOpen)}
+          className="w-full flex justify-between"
+        >
+          Industries <FaAngleDown className={`${industriesOpen ? "rotate-180" : ""}`} />
+        </button>
+
+        {industriesOpen && (
+          <div className="ml-4 mt-2 space-y-2 text-gray-600 text-base">
+            <Link href="/industries/healthcare" onClick={() => setMenuOpen(false)}>Healthcare</Link><br/>
+            <Link href="/industries/finance" onClick={() => setMenuOpen(false)}>Finance</Link><br/>
+            <Link href="/industries/supply" onClick={() => setMenuOpen(false)}>Supply Chain</Link><br/>
+            <Link href="/industries/ecommerce" onClick={() => setMenuOpen(false)}>E-Commerce</Link><br/>
+            <Link href="/industries/realestate" onClick={() => setMenuOpen(false)}>Real Estate</Link><br/>
+            <Link href="/industries/gaming" onClick={() => setMenuOpen(false)}>Gaming</Link><br/>
+          </div>
+        )}
+      </div>
+
+      {/* CONTACT INFO SECTION */}
+<div className="mt-10 pt-6 border-t border-gray-200">
+
+  <h3 className="text-xl font-bold text-gray-900 mb-5">
+    Contact Info
+  </h3>
+
+  {/* Address */}
+  <div className="flex items-start gap-3 text-gray-600 mb-4">
+    <span className="text-blue-600 text-xl">📍</span>
+    <p className="leading-snug">
+     Noida, Uttar Pradesh, India
+    </p>
+  </div>
+
+  {/* Email */}
+  <div className="flex items-center gap-3 text-gray-600 mb-4">
+    <span className="text-blue-600 text-xl">✉️</span>
+    <p>info@agileinnovate.com</p>
+  </div>
+
+  {/* Phone */}
+  <div className="flex items-center gap-3 text-gray-600 mb-6">
+    <span className="text-blue-600 text-xl">📞</span>
+    <p>+9178965321</p>
+  </div>
+
+  {/* Contact Us Button */}
+  <Link href="/contact">
+    <button className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+      Contact Us
+    </button>
+  </Link>
+
+</div>
+
+    </div>
+  </div>
+</div>
+
 
       </nav>
     </>

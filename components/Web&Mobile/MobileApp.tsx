@@ -93,11 +93,27 @@ export default function MobileApp() {
         </div>
       </section>
 
+      {/* ========================= MOBILE APP SERVICES ========================= */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto text-center px-6">
+          <h4 className="text-md font-semibold tracking-wide text-blue-600 uppercase">
+            OUR SERVICES
+          </h4>
 
-      <section className="py-20 bg-white">     
+          <h1 className="text-4xl font-bold text-gray-900 mt-5">
+            Mobile App Development Services
+          </h1>
+
+          <p className="text-gray-600 text-lg leading-relaxed mt-4">
+            From concept to deployment, we provide complete mobile development solutions
+            tailored to your business needs.
+          </p>
+        </div>
+
+        {/* TABS COMPONENT */}
         <MobileAppProcess/>
       </section>
-     
+
     </>
   );
 }
