@@ -55,8 +55,8 @@ export default function ReviewSection() {
               {/* Text */}
               <div>
                 <h2 className="text-3xl font-bold text-blue-600">
-  <CountUp end={parseInt(stat.value)} duration={6} />+
-</h2>
+                 <CountUp end={parseInt(stat.value)} duration={6} />+
+                  </h2>
 
                 <p className="text-gray-700 text-sm mt-1">{stat.label}</p>
               </div>

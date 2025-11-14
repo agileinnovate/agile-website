@@ -57,9 +57,10 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto flex items-center justify-between px-3 py-3 h-20">
 
           {/* Logo */}
-          <div className="relative w-[290px] h-[100px] scale-125 md:scale-150">
-            <Image src="/logo.png" alt="AgileInnovate Logo" fill className="object-contain" />
-          </div>
+          <div className="relative w-[160px] h-[70px]">
+  <Image src="/logo1.png" alt="AgileInnovate Logo" fill className="object-contain" />
+</div>
+
 
           {/* Desktop Links */}
           <div className="hidden md:flex items-center space-x-10 text-lg font-bold">
@@ -191,7 +192,7 @@ export default function Navbar() {
         </div>
 
         
-       {/* Mobile Menu */}
+      
 {/* MOBILE SLIDE-IN MENU  */}
 <div
   className={`fixed inset-0 bg-black/40 backdrop-blur-sm z-999 md:hidden transition-opacity duration-300 ${
@@ -201,23 +202,24 @@ export default function Navbar() {
 >
   {/* SIDE DRAWER */}
   <div
-    className={`absolute right-0 top-0 h-full w-[75%] sm:w-[55%] bg-white shadow-xl p-6 overflow-y-auto transition-transform duration-300 ${
+    className={`absolute right-0 top-0 h-full w-[75%] sm:w-[55%] bg-white shadow-xl p-2 px-4 overflow-y-auto transition-transform duration-300 ${
       menuOpen ? "translate-x-0" : "translate-x-full"
     }`}
     onClick={(e) => e.stopPropagation()} 
   >
+<div className="w-full flex justify-between items-start pt-0 px-2">
 
-    {/* HEADER ROW (Logo + Close Button) */}
-<div className="flex items-center justify-between mb-2">
-
-  {/* Logo */}
-  <div className="relative w-[190px] h-[100px]">
-    <Image src="/logo.png" alt="Logo" fill className="object-contain" />
+  {/* Logo - Left */}
+  <div className="relative w-[140px] h-[60px]">
+    <Image
+      src="/logo1.png"
+      alt="Logo"
+      fill
+      className="object-contain"
+    />
   </div>
-
-  {/* Close Button */}
   <button
-    className="text-4xl text-blue-600 font-bold"
+    className="text-3xl text-blue-600 font-semibold"
     onClick={() => setMenuOpen(false)}
   >
     ×
@@ -227,7 +229,7 @@ export default function Navbar() {
 
 
     {/* NAV ITEMS INSIDE DRAWER */}
-    <div className="space-y-6 text-gray-700 text-lg font-semibold">
+    <div className="space-y-6 text-gray-700 text-md font-semibold">
 
       <Link href="/" onClick={() => setMenuOpen(false)} className="block">
         Home

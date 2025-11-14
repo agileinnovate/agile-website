@@ -9,9 +9,7 @@ import DevelopmentProcess from "./DevelopmentProcess";
 export default function WebDev() {
   return (
     <>
-      {/* ============================
-          SECTION 1 — INTRO + IMAGE
-      =============================*/}
+      {/*SECTION 1 — INTRO + IMG*/}
       <section className="py-16 md:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
 
@@ -80,9 +78,7 @@ export default function WebDev() {
         </div>
       </section>
 
-      {/* ============================
-          SECTION 2 — WHY CHOOSE US
-      =============================*/}
+      {/*SECTION 2 — WHY CHOOSE US*/}
       <section className="py-16 md:py-20 bg-gray-100">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6">
 
@@ -102,9 +98,7 @@ export default function WebDev() {
         </div>
       </section>
 
-      {/* ============================
-          SECTION 3 — OUR SERVICES
-      =============================*/}
+      {/*SECTION 3 — OUR SERVICES*/}
       <section className="py-16 md:py-20 bg-white">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6">
 

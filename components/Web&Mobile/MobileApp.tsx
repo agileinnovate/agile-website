@@ -9,7 +9,7 @@ import MobileAppProcess from "./MobileAppProcess";
 export default function MobileApp() {
   return (
     <>
-      {/* ========================= HERO SECTION ========================= */}
+      {/* HERO SECTION */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 pt-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           
@@ -75,7 +75,7 @@ export default function MobileApp() {
         </div>
       </section>
 
-      {/* ========================= WHY CHOOSE US ========================= */}
+      {/* WHY CHOOSE US */}
       <section className="py-20 bg-gray-100">
         <div className="max-w-4xl mx-auto text-center px-6">
           <h4 className="text-md font-semibold tracking-wide text-blue-600 uppercase">
@@ -93,7 +93,7 @@ export default function MobileApp() {
         </div>
       </section>
 
-      {/* ========================= MOBILE APP SERVICES ========================= */}
+      {/* MOBILE APP SERVICES */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto text-center px-6">
           <h4 className="text-md font-semibold tracking-wide text-blue-600 uppercase">

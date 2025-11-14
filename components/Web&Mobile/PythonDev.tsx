@@ -118,7 +118,7 @@ export default function PythonDev() {
 
   return (
     <>
-      {/* ===== HERO SECTION ===== */}
+      {/* HERO SECTION */}
       <section className="bg-gray-100 py-24">
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center gap-16">
           {/* LEFT CONTENT */}
@@ -160,10 +160,9 @@ export default function PythonDev() {
         </div>
       </section>
 
-      {/* ===== TECHNOLOGY STACK SECTION ===== */}
+      {/*TECHNOLOGY STACK SECTION */}
       <section className="py-24 bg-gray-100 relative">
         <div className="max-w-7xl mx-auto px-6 relative">
-          {/* SECTION TITLE */}
           <h2 className="text-center text-4xl font-extrabold text-gray-900">
             Our Python API Technology Stack
           </h2>

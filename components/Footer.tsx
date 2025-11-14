@@ -6,22 +6,22 @@ import { FaLinkedin, FaGithub, FaTwitter, FaEnvelope } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-100 text-black pt-16 pb-10">
-      <div className="max-w-7xl mx-auto px-12 grid grid-cols-1 md:grid-cols-4 gap-10">
+    <footer className="bg-gray-100 text-black pt-12 pb-10">
+      <div className="max-w-7xl mx-auto px-12 pl-1 grid grid-cols-1 md:grid-cols-4 gap-10">
 
         {/* 1️⃣ Company Info */}
-        <div>
-          <div className="flex items-center mb-1">
+        
+          <div className=" ">
             <Image
-              src="/logo.png"
+              src="/logo1.png"
               alt="AgileInnovate Logo"
-              width={190}
+              width={160}
               height={70}
               className="object-contain"
             />
           </div>
          
-        </div>
+       
 
         {/* 2️⃣ Quick Links */}
         <div>
