@@ -104,12 +104,30 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Divider */}
-      <div className="max-w-7xl mx-auto border-t border-gray-700 mt-12 pt-6 text-center text-sm text-gray-500">
-        © {new Date().getFullYear()}{" "}
-        <span className="text-blue-400 font-semibold">AgileInnovate</span>. All
-        Rights Reserved.
-      </div>
+      {/* Bottom Footer Row */}
+<div className="bg-[#313cd5] py-4 mt-15">
+  <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-white">
+
+    {/* Left Text */}
+    <p className="text-sm">
+      © AgileInnovate. All Rights Reserved.
+    </p>
+
+    {/* Right Links */}
+    <div className="flex items-center space-x-4 mt-3 md:mt-0 text-sm">
+      <Link href="/privacy-policy" className="hover:text-blue-400 transition">
+        Privacy Policy
+      </Link>
+
+      <span>/</span>
+
+      <Link href="/terms-conditions" className="hover:text-blue-400 transition">
+        Terms & Condition
+      </Link>
+    </div>
+  </div>
+</div>
+
     </footer>
   );
 }
