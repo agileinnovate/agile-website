@@ -86,3 +86,11 @@ export default function RootLayout({
     </html>
   );
 }
+<script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify({
+  "@context":"https://schema.org",
+  "@type":"Organization",
+  "name":"Agile Innovate",
+  "url":"https://agile-website-tan.vercel.app/",
+  
+})}}/>
+

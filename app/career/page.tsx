@@ -16,7 +16,7 @@ export const metadata = {
     title: "Careers at Agile Innovate",
     description:
       "Join Agile Innovate and work with a team dedicated to building high-quality software solutions.",
-    url: "https://yourdomain.com/career",
+    url: "https://agile-website-tan.vercel.app/career",
     siteName: "Agile Innovate",
     type: "website",
   },

@@ -15,7 +15,7 @@ export const metadata = {
     title: "Supply Chain & Logistics Solutions | Agile Innovate",
     description:
       "We build scalable supply chain and logistics software including tracking systems, warehouse automation tools, and inventory management platforms.",
-    url: "https://yourdomain.com/industries/supply-chain",
+    url: "https://agile-website-tan.vercel.app/industries/supply",
     siteName: "Agile Innovate",
     type: "website",
   },

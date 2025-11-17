@@ -16,7 +16,7 @@ export const metadata = {
     title: "Web Development Services | Agile Innovate",
     description:
       "We build fast, secure, and scalable web applications tailored for businesses of all sizes using advanced frameworks and cloud technologies.",
-    url: "https://yourdomain.com/web-development",
+    url: "https://agile-website-tan.vercel.app/service/web-development",
     siteName: "Agile Innovate",
     type: "website",
   },

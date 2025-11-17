@@ -16,7 +16,7 @@ export const metadata = {
     title: "Python Development Services | Agile Innovate",
     description:
       "We build high-performance Python-based solutions including APIs, automation systems, AI applications, and scalable backend architectures.",
-    url: "https://yourdomain.com/python-development",
+    url: "https://agile-website-tan.vercel.app/service/python",
     siteName: "Agile Innovate",
     type: "website",
   },

@@ -15,7 +15,7 @@ export const metadata = {
     title: "Gaming & Game Development Solutions | Agile Innovate",
     description:
       "We develop immersive gaming experiences including multiplayer games, mobile games, AR/VR apps, and cloud-ready gaming platforms.",
-    url: "https://yourdomain.com/industries/gaming",
+    url: "https://agile-website-tan.vercel.app/industries/gaming",
     siteName: "Agile Innovate",
     type: "website",
   },

@@ -15,7 +15,7 @@ export const metadata = {
     title: "Mobile App Development Services | Agile Innovate",
     description:
       "We develop fast, scalable, and user-friendly mobile apps for startups and enterprises using next-gen technologies.",
-    url: "https://yourdomain.com/mobile-app-development",
+    url: "https://agile-website-tan.vercel.app/service/mobile-app",
     siteName: "Agile Innovate",
     type: "website",
   },

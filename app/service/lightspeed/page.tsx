@@ -14,7 +14,7 @@ export const metadata = {
     title: "Lightning-Fast Development | Agile Innovate",
     description:
       "Experience ultra-fast development and performance-optimized software solutions with Agile Innovate.",
-    url: "https://yourdomain.com/lightspeed",
+    url: "https://agile-website-tan.vercel.app/service/lightspeed",
     siteName: "Agile Innovate",
     type: "website",
   },

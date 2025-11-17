@@ -18,7 +18,7 @@ export const metadata = {
     title: "Technologies We Use | Agile Innovate",
     description:
       "Explore the complete technology stack used by Agile Innovate to build fast, scalable, and modern digital products.",
-    url: "https://yourdomain.com/technologies",
+    url: "https://agile-website-tan.vercel.app/service/technologies",
     siteName: "Agile Innovate",
     type: "website",
   },

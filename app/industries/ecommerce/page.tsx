@@ -14,7 +14,7 @@ export const metadata = {
     title: "Retail & Ecommerce Solutions | Agile Innovate",
     description:
       "We create powerful ecommerce platforms, digital storefronts, and modern retail systems for growing businesses.",
-    url: "https://yourdomain.com/industries/retail-ecommerce",
+    url: "https://agile-website-tan.vercel.app/industries/ecommerce",
     siteName: "Agile Innovate",
     type: "website",
   },

@@ -13,7 +13,7 @@ export const metadata = {
     title: "Contact Agile Innovate",
     description:
       "Reach out to Agile Innovate for custom software development, web apps, and digital solutions.",
-    url: "https://yourdomain.com/contact",
+    url: "https://agile-website-tan.vercel.app/contact",
     siteName: "Agile Innovate",
     type: "website",
   },

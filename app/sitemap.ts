@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const base = "https://yourdomain.com";
+  const base = "https://agile-website-tan.vercel.app/";
 
   return [
     { url: base, lastModified: new Date() },

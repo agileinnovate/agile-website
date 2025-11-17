@@ -15,7 +15,7 @@ export const metadata = {
     title: "Healthcare Software Solutions | Agile Innovate",
     description:
       "We develop advanced healthcare applications including telemedicine platforms, EMR/EHR systems, and medical workflow automation tools.",
-    url: "https://yourdomain.com/industries/healthcare",
+    url: "https://agile-website-tan.vercel.app/industries/healthcare",
     siteName: "Agile Innovate",
     type: "website",
   },

@@ -15,7 +15,7 @@ export const metadata = {
     title: "Real Estate Software Solutions | Agile Innovate",
     description:
       "We build digital real estate solutions including listing platforms, CRM systems, virtual tours, and automation tools to streamline property management.",
-    url: "https://yourdomain.com/industries/real-estate",
+    url: "https://agile-website-tan.vercel.app/industries/realestate",
     siteName: "Agile Innovate",
     type: "website",
   },

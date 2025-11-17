@@ -16,7 +16,7 @@ export const metadata = {
     title: "About Agile Innovate",
     description:
       "We build scalable, secure, and innovative software solutions that help businesses grow.",
-    url: "https://yourdomain.com/about",
+    url: "https://agile-website-tan.vercel.app/about",
     siteName: "Agile Innovate",
     type: "website",
   },

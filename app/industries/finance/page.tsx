@@ -15,7 +15,7 @@ export const metadata = {
     title: "Finance & FinTech Solutions | Agile Innovate",
     description:
       "We build enterprise-grade financial applications including payment systems, banking dashboards, risk management tools, and fintech solutions.",
-    url: "https://yourdomain.com/industries/finance",
+    url: "https://agile-website-tan.vercel.app/industries/finance",
     siteName: "Agile Innovate",
     type: "website",
   },

@@ -15,7 +15,7 @@ export const metadata = {
     title: "Web & Mobile Development Frameworks | Agile Innovate",
     description:
       "Learn about the cutting-edge frameworks used by Agile Innovate to build fast, scalable, and secure web and mobile applications.",
-    url: "https://yourdomain.com/frameworks",
+    url: "https://agile-website-tan.vercel.app/service/frameworks",
     siteName: "Agile Innovate",
     type: "website",
   },
