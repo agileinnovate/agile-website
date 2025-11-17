@@ -35,7 +35,7 @@ export default function AboutSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-white py-30 overflow-hidden">
+    <section ref={sectionRef} className="bg-white py-8 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         
        

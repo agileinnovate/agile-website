@@ -22,7 +22,7 @@ export default function ServiceCard() {
       <div className="max-w-7xl mx-auto px-6 text-center">
         {/* Heading */}
         <h2 className="text-4xl font-bold mb-4">Our Premium Services</h2>
-        <p className="text-md text-gray-200 max-w-3xl mx-auto mb-14">
+        <p className="text-md text-gray-100 max-w-3xl mx-auto mb-14">
           As a certified IT company, Agailinnovate helps organizations thrive digitally 
           by offering innovative solutions using cutting-edge tools and frameworks. 
           Contact us to learn more!

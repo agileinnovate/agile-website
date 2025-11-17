@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState, ChangeEvent } from "react";
+import { motion } from "framer-motion";
 
 export default function Career() {
   const [formData, setFormData] = useState({
@@ -14,7 +15,43 @@ export default function Career() {
     captcha: "",
   });
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  type Job = {
+id: string;
+title: string;
+level: string;
+location: string;
+short: string;
+tags?: string[];
+};
+
+  const JOBS: Job[] = [
+{
+id: "frontend-react",
+title: "Frontend Developer (React / Next.js)",
+level: "Mid - Senior",
+location: "Remote / Noida",
+short: "Build modern, high-performance web interfaces using React and Next.js.",
+tags: ["React", "Next.js", "TypeScript"],
+},
+{
+id: "backend-node",
+title: "Backend Developer (Node.js)",
+level: "Mid - Senior",
+location: "Remote / Noida",
+short: "Design and implement scalable APIs and services in Node.js.",
+tags: ["Node.js", "APIs", "Databases"],
+},
+{
+id: "uiux-designer",
+title: "UI/UX Designer",
+level: "Mid",
+location: "Remote / Noida",
+short: "Craft delightful user experiences and high-fidelity interfaces.",
+tags: ["Figma", "User Research", "Prototyping"],
+},
+];
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     
     if (e.target instanceof HTMLInputElement && e.target.type === 'file') {
@@ -35,6 +72,10 @@ export default function Career() {
     alert("Application submitted successfully!");
     console.log("Form Data:", formData);
   };
+
+  function setSelectedJob(job: { id: string; title: string; level: string; location: string; short: string; tags?: string[]; }): void {
+    throw new Error("Function not implemented.");
+  }
 
   return (
     <main className="overflow-hidden bg-white">
@@ -64,12 +105,10 @@ export default function Career() {
             <div className="hidden md:block w-1 bg-blue-600 rounded-full mt-2"></div>
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-blue-700 mb-4">
-                About Our Company
+               Build What Matters. Grow Beyond Limits.
               </h2>
               <p className="text-gray-800 text-md leading-relaxed mb-4">
-                We are pioneers in blockchain technology and innovative IT
-                solutions, committed to delivering excellence and empowering
-                businesses worldwide.
+               At Agile Innovate, we’re not just hiring talent — we’re building a community of thinkers, creators, and problem-solvers who want to shape the future of technology. If you love challenges, growth, and meaningful impact, you’ll feel at home here.
               </p>
               <p className="text-gray-800 text-md leading-relaxed">
                 Our culture thrives on collaboration, creativity, and continuous
@@ -80,6 +119,56 @@ export default function Career() {
           </div>
         </div>
       </section>
+
+
+      {/* Job opening */}
+
+      <section id="openings" className="max-w-7xl mx-auto px-6 py-8">
+<motion.h2
+initial={{ opacity: 0, y: 20 }}
+whileInView={{ opacity: 1, y: 0 }}
+className="text-3xl font-bold text-gray-900"
+>
+Current Openings
+</motion.h2>
+
+
+<div className="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+{JOBS.map((job, index) => (
+<motion.article
+key={job.id}
+initial={{ opacity: 0, y: 20 }}
+whileInView={{ opacity: 1, y: 0 }}
+transition={{ delay: index * 0.1 }}
+className="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl border border-gray-200 transition"
+>
+<h3 className="text-lg text-gray-900 font-semibold">{job.title}</h3>
+<p className="text-sm text-gray-500 mt-1">{job.level} • {job.location}</p>
+<p className="mt-3 text-gray-700 text-sm">{job.short}</p>
+
+
+<div className="mt-3 flex flex-wrap gap-2">
+{job.tags?.map((t) => (
+<span
+key={t}
+className="text-xs px-3 py-1 bg-gray-100 border rounded-full text-gray-700"
+>
+{t}
+</span>
+))}
+</div>
+
+
+<button
+onClick={() => setSelectedJob(job)}
+className="mt-5 w-full py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition"
+>
+Apply
+</button>
+</motion.article>
+))}
+</div>
+</section>
 
       {/* ================= FORM SECTION ================= */}
       <section className="max-w-5xl mx-auto bg-white rounded-3xl shadow-lg p-4 md:p-14 mb-20 border border-gray-100">
@@ -123,14 +212,22 @@ export default function Career() {
                   className="border border-gray-300 text-gray-700 rounded-lg p-3 w-full focus:outline-none focus:border-blue-500"
                   required
                 />
-                <input
-                  type="text"
-                  name="position"
-                  placeholder="Position"
-                  value={formData.position}
-                  onChange={handleChange}
-                  className="border border-gray-300 text-gray-700 rounded-lg p-3 w-full focus:outline-none focus:border-blue-500"
-                />
+               <select
+  name="position"
+  value={formData.position}
+  onChange={handleChange}
+  className="border border-gray-300 text-gray-700 rounded-lg p-3 w-full focus:outline-none focus:border-blue-500"
+  required
+>
+  <option value="">Select Position</option>
+
+  {JOBS.map((job) => (
+    <option key={job.id} value={job.title}>
+      {job.title}
+    </option>
+  ))}
+</select>
+
               </div>
 
               <div>

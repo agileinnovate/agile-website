@@ -10,7 +10,7 @@ export default function Hero() {
       <section className="relative h-screen flex flex-col justify-center items-start text-white overflow-hidden">
         {/* Background Image */}
         <Image
-          src="/BG2.webp"
+          src="/Hero1.jpg"
           alt="AgileInnovate Background"
           fill
           priority
@@ -18,24 +18,23 @@ export default function Hero() {
         />
 
         {/* Text Content */}
-        <div className="relative z-10 max-w-3xl px-6 md:px-20 text-left">
+        <div className="relative z-10 max-w-4xl px-6 md:px-35 text-left">
           <motion.h1
             initial={{ y: -60, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.9, ease: "easeOut" }}
             className="text-5xl md:text-6xl font-bold mb-4 leading-tight"
           >
-            Building Secure Blockchain Applications
+            Build Better Software. Faster. Smarter.
           </motion.h1>
 
           <motion.p
             initial={{ y: -40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.9, ease: "easeOut" }}
-            className="text-lg md:text-xl mb-6 text-gray-200"
+            className="text-md md:text-lg mb-6 text-gray-200"
           >
-            End-to-End Blockchain Development Solutions for Web3, Smart
-            Contracts, and Immersive Metaverse Platforms.
+           Empowering businesses with scalable, high-performance digital solutions. At Agile Innovate, we combine technology, creativity, and agile engineering to turn your ideas into powerful applications that grow with your vision.
           </motion.p>
 
           <motion.a
