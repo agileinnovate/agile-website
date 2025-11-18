@@ -34,7 +34,7 @@ export default function sitemap() {
       lastModified,
     },
     {
-      url: "https://agile-website-tan.vercel.app/terms-condition",
+      url: "https://agile-website-tan.vercel.app/terms-conditions",
       lastModified,
     },
 

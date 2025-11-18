@@ -59,12 +59,42 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className="bg-white text-gray-900 overflow-x-hidden">
         <Navbar />
-        {children}
+
+        <main className="min-h-screen">{children}</main>
+
         <Footer />
+
+        {/*ORGANIZATION SCHEMA (JSON-LD) */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Agile Innovate",
+              url: "https://yourdomain.com",
+              logo: "https://yourdomain.com/logo.png",
+              sameAs: [
+                "https://facebook.com",
+                "https://linkedin.com",
+                "https://instagram.com",
+              ],
+            }),
+          }}
+        />
+
       </body>
     </html>
   );
 }
+<script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify({
+  "@context":"https://schema.org",
+  "@type":"Organization",
+  "name":"Agile Innovate",
+  "url":"https://agile-website-tan.vercel.app/",
+  
+})}}/>
+

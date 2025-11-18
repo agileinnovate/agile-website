@@ -35,8 +35,8 @@ export default function AboutSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-white py-30 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 py-10 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+    <section ref={sectionRef} className="bg-white py-38 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         
         <div className="relative w-full h-[350px] md:h-[450px] rounded-2xl overflow-hidden shadow-lg">
           <Image

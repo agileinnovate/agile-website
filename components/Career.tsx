@@ -17,7 +17,43 @@ export default function Career() {
     captcha: "",
   });
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  type Job = {
+id: string;
+title: string;
+level: string;
+location: string;
+short: string;
+tags?: string[];
+};
+
+  const JOBS: Job[] = [
+{
+id: "frontend-react",
+title: "Frontend Developer (React / Next.js)",
+level: "Mid - Senior",
+location: "Remote / Noida",
+short: "Build modern, high-performance web interfaces using React and Next.js.",
+tags: ["React", "Next.js", "TypeScript"],
+},
+{
+id: "backend-node",
+title: "Backend Developer (Node.js)",
+level: "Mid - Senior",
+location: "Remote / Noida",
+short: "Design and implement scalable APIs and services in Node.js.",
+tags: ["Node.js", "APIs", "Databases"],
+},
+{
+id: "uiux-designer",
+title: "UI/UX Designer",
+level: "Mid",
+location: "Remote / Noida",
+short: "Craft delightful user experiences and high-fidelity interfaces.",
+tags: ["Figma", "User Research", "Prototyping"],
+},
+];
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
 
     if (e.target instanceof HTMLInputElement && e.target.type === "file") {
