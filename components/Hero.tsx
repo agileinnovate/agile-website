@@ -32,7 +32,7 @@ export default function Hero() {
             initial={{ y: -40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.9, ease: "easeOut" }}
-            className="text-md md:text-lg mb-6 text-gray-200"
+            className="text-md md:text-lg mb-6 text-gray-50"
           >
            Empowering businesses with scalable, high-performance digital solutions. At Agile Innovate, we combine technology, creativity, and agile engineering to turn your ideas into powerful applications that grow with your vision.
           </motion.p>
