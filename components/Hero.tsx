@@ -10,11 +10,11 @@ export default function Hero() {
       <section className="relative h-screen flex flex-col justify-center items-start text-white overflow-hidden">
         {/* Background Image */}
         <Image
-          src="/Hero1.jpg"
+          src="/Bg-hero.jpg"
           alt="AgileInnovate Background"
           fill
           priority
-          className="object-cover opacity-60"
+          className="object-cover opacity-90"
         />
 
         {/* Text Content */}

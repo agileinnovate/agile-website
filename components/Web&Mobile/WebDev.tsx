@@ -18,7 +18,7 @@ export default function WebDev() {
             initial={{ opacity: 0, x: -60 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.8, ease: "easeOut" }}
-            className="relative w-full h-[240px] sm:h-[300px] md:h-[450px] rounded-2xl overflow-hidden shadow-lg"
+            className="relative w-full h-60 sm:h-[300px] md:h-[450px] rounded-2xl overflow-hidden shadow-lg"
           >
             <Image
               src="/web-dev.webp"
