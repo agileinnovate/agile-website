@@ -1,28 +1,27 @@
-export const metadata = {
-  title: "Web Development Services | Agile Innovate",
+import type { Metadata } from "next";
+import WebDev from "@/components/Web&Mobile/WebDev";
+
+export const metadata: Metadata = {
+  title: "Web Development Services | Agailinnovate",
   description:
-    "Agile Innovate delivers high-quality web development services using modern technologies like React, Next.js, Node.js, Python, and scalable cloud solutions.",
-  keywords: [
-    "Web Development",
-    "React Developer",
-    "Next.js Developer",
-    "Full Stack Development",
-    "Frontend Development",
-    "Backend Development",
-    "Web Application Development",
-    "Agile Innovate Web Services"
-  ],
+    "Agailinnovate provides modern, scalable, and high-performance web development services using cutting-edge technologies like React, Next.js, Node.js, and cloud-optimized architectures.",
+  alternates: {
+    canonical: "https://agile-website-tan.vercel.app/service/web-development",
+  },
   openGraph: {
-    title: "Web Development Services | Agile Innovate",
+    title: "Web Development Services | Agailinnovate",
     description:
-      "We build fast, secure, and scalable web applications tailored for businesses of all sizes using advanced frameworks and cloud technologies.",
+      "Build fast, secure, and scalable web applications with Agailinnovate's expert development team. Powered by the latest web technologies.",
     url: "https://agile-website-tan.vercel.app/service/web-development",
-    siteName: "Agile Innovate",
-    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Web Development Services | Agailinnovate",
+    description:
+      "Professional web development services using React, Next.js, Node.js, and other modern technologies.",
+    
   },
 };
-
-import WebDev from "@/components/Web&Mobile/WebDev";
 
 export default function WebPage() {
   return <WebDev />;

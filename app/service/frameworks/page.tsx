@@ -1,27 +1,28 @@
-export const metadata = {
-  title: "Web & Mobile Development Frameworks | Agile Innovate",
+import type { Metadata } from "next";
+import Framework from "@/components/Web&Mobile/Framework";
+
+export const metadata: Metadata = {
+  title: "Web & Mobile Frameworks | Agailinnovate",
   description:
-    "Explore the modern web and mobile app development frameworks used by Agile Innovate, including React, Next.js, Node.js, Flutter, React Native, and more.",
-  keywords: [
-    "Web Development Frameworks",
-    "Mobile App Frameworks",
-    "React Development",
-    "Next.js Development",
-    "Node.js Development",
-    "Flutter App Development",
-    "Agile Innovate Technologies"
-  ],
+    "Explore the powerful web and mobile development frameworks used by Agailinnovate, including React, Next.js, Angular, Flutter, React Native, and more.",
+  alternates: {
+    canonical: "https://agile-website-tan.vercel.app/service/frameworks",
+  },
   openGraph: {
-    title: "Web & Mobile Development Frameworks | Agile Innovate",
+    title: "Web & Mobile Development Frameworks | Agailinnovate",
     description:
-      "Learn about the cutting-edge frameworks used by Agile Innovate to build fast, scalable, and secure web and mobile applications.",
+      "Discover the robust frameworks we use to build scalable, secure, and modern web & mobile applications.",
     url: "https://agile-website-tan.vercel.app/service/frameworks",
-    siteName: "Agile Innovate",
-    type: "website",
+   
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Web & Mobile Frameworks | Agailinnovate",
+    description:
+      "Explore the core frameworks behind Agailinnovate’s modern digital solutions.",
+   
   },
 };
-
-import Framework from "@/components/Web&Mobile/Framework";
 
 export default function FrameworksPage() {
   return <Framework />;

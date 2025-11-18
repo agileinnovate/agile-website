@@ -1,28 +1,27 @@
-export const metadata = {
-  title: "Python Development Services | Agile Innovate",
+import type { Metadata } from "next";
+import PythonDev from "@/components/Web&Mobile/PythonDev";
+
+export const metadata: Metadata = {
+  title: "Python Development Services | Agailinnovate",
   description:
-    "Agile Innovate provides expert Python development services including API development, automation, AI/ML solutions, backend engineering, and scalable web applications.",
-  keywords: [
-    "Python Development",
-    "Python Developers",
-    "Backend Development",
-    "Django Development",
-    "FastAPI Development",
-    "AI/ML Development",
-    "Python Automation",
-    "Agile Innovate Python Services"
-  ],
+    "Agailinnovate offers professional Python development services including backend APIs, automation, AI/ML solutions, data processing, and scalable web applications.",
+  alternates: {
+    canonical: "https://agile-website-tan.vercel.app/service/python",
+  },
   openGraph: {
-    title: "Python Development Services | Agile Innovate",
+    title: "Python Development Services | Agailinnovate",
     description:
-      "We build high-performance Python-based solutions including APIs, automation systems, AI applications, and scalable backend architectures.",
+      "Build powerful backend systems, automation tools, machine learning models, and scalable applications with Agailinnovate’s Python development expertise.",
     url: "https://agile-website-tan.vercel.app/service/python",
-    siteName: "Agile Innovate",
-    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Python Development Services | Agailinnovate",
+    description:
+      "High-performance Python development for APIs, automation, AI, ML, web apps, and backend solutions.",
+    
   },
 };
-
-import PythonDev from "@/components/Web&Mobile/PythonDev";
 
 export default function WebPage() {
   return <PythonDev />;

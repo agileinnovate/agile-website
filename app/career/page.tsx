@@ -1,28 +1,27 @@
-export const metadata = {
-  title: "Careers at Agile Innovate | Join Our Team",
+import type { Metadata } from "next";
+import Career from "@/components/Career";
+
+export const metadata: Metadata = {
+  title: "Career Opportunities | Agailinnovate",
   description:
-    "Explore career opportunities at Agile Innovate. Join our team of developers, designers, and innovators working on modern and scalable software solutions.",
-  keywords: [
-    "Careers",
-    "Jobs",
-    "Agile Innovate Careers",
-    "Software Developer Jobs",
-    "Frontend Jobs",
-    "Backend Jobs",
-    "UI/UX Jobs",
-    "Hiring IT Company"
-  ],
+    "Explore exciting career opportunities at Agailinnovate. Join our innovative team and help build secure, scalable, and future-ready solutions.",
+  alternates: {
+    canonical: "https://agile-website-tan.vercel.app/career",
+  },
   openGraph: {
-    title: "Careers at Agile Innovate",
+    title: "Career Opportunities | Agailinnovate",
     description:
-      "Join Agile Innovate and work with a team dedicated to building high-quality software solutions.",
+      "Join Agailinnovate and build the future of digital innovation. Explore open positions and grow your career.",
     url: "https://agile-website-tan.vercel.app/career",
-    siteName: "Agile Innovate",
-    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Career Opportunities | Agailinnovate",
+    description:
+      "Explore open roles and career growth opportunities at Agailinnovate.",
+    images: ["/og-career.png"],
   },
 };
-
-import Career from "@/components/Career";
 
 export default function CareerPage() {
   return <Career />;

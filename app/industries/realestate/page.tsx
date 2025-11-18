@@ -1,27 +1,26 @@
-export const metadata = {
-  title: "Real Estate Software Solutions | Agile Innovate",
+import type { Metadata } from "next";
+import RealEstate from "@/components/industries-pages/RealEstate";
+
+export const metadata: Metadata = {
+  title: "Real Estate & Property Tech Solutions | Agailinnovate",
   description:
-    "Agile Innovate develops modern real estate software including property listing platforms, CRM systems, virtual tour apps, and property management solutions.",
-  keywords: [
-    "Real Estate Software",
-    "Property Management System",
-    "Real Estate App Development",
-    "Property Listing Platform",
-    "Real Estate CRM",
-    "PropTech Solutions",
-    "Agile Innovate Real Estate"
-  ],
+    "Agailinnovate delivers advanced real estate and proptech solutions including property listing platforms, virtual tours, real estate CRM, automation tools, and smart property management systems.",
+  alternates: {
+    canonical: "https://agile-website-tan.vercel.app/industries/realestate",
+  },
   openGraph: {
-    title: "Real Estate Software Solutions | Agile Innovate",
+    title: "Real Estate & Property Tech Solutions | Agailinnovate",
     description:
-      "We build digital real estate solutions including listing platforms, CRM systems, virtual tours, and automation tools to streamline property management.",
+      "Transform your real estate business with innovative proptech solutions including listing portals, automation systems, VR property tours, and smart management platforms.",
     url: "https://agile-website-tan.vercel.app/industries/realestate",
-    siteName: "Agile Innovate",
-    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Real Estate & Property Tech Solutions | Agailinnovate",
+    description:
+      "Build modern real estate technology with Agailinnovate—listing systems, automation tools, smart property management, and VR experiences.",
   },
 };
-
-import RealEstate from "@/components/industries-pages/RealEstate";
 
 export default function RealstatePage() {
   return <RealEstate />;

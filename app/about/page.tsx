@@ -1,24 +1,26 @@
+import type { Metadata } from "next";
 import AboutSection from "@/components/AboutSection";
 
-export const metadata = {
-  title: "About Agile Innovate | Software Development Experts",
+export const metadata: Metadata = {
+  title: "About Us | Agailinnovate",
   description:
-    "Agile Innovate is a leading software development company specializing in modern web, mobile, and cloud solutions. Learn more about our mission, values, and team.",
-  keywords: [
-    "Agile Innovate",
-    "About Agile Innovate",
-    "Software Development Company",
-    "Web Development",
-    "App Development",
-    "IT Services"
-  ],
+    "Learn about Agailinnovate — a technology-driven company delivering innovative, secure, and scalable digital solutions.",
+  alternates: {
+    canonical: "https://agile-website-tan.vercel.app/about",
+  },
   openGraph: {
-    title: "About Agile Innovate",
+    title: "About Us | Agailinnovate",
     description:
-      "We build scalable, secure, and innovative software solutions that help businesses grow.",
+      "Discover who we are, what we do, and how Agailinnovate helps businesses grow with cutting-edge technology.",
     url: "https://agile-website-tan.vercel.app/about",
-    siteName: "Agile Innovate",
-    type: "website",
+  
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Us | Agailinnovate",
+    description:
+      "Learn about Agailinnovate — delivering secure and scalable tech solutions.",
+    images: ["/og-about.png"],
   },
 };
 

@@ -1,29 +1,27 @@
-export const metadata = {
-  title: "Software Development Services | Agile Innovate",
+import type { Metadata } from "next";
+import ServiceCard from "@/components/ServiceCard";
+
+export const metadata: Metadata = {
+  title: "Our Services | Agailinnovate",
   description:
-    "Agile Innovate offers modern software development services including web development, mobile applications, UI/UX design, cloud engineering, DevOps, AI/ML, and product strategy.",
-  keywords: [
-    "Software Development Services",
-    "Web Development",
-    "Mobile App Development",
-    "UI/UX Design",
-    "Cloud Services",
-    "DevOps",
-    "AI/ML Development",
-    "IT Services",
-    "Agile Innovate Services"
-  ],
+    "Discover Agailinnovate’s wide range of technology services including web development, app development, cloud solutions, UI/UX design, and digital transformation.",
+  alternates: {
+    canonical: "https://agile-website-tan.vercel.app/services",
+  },
   openGraph: {
-    title: "Software Development Services | Agile Innovate",
+    title: "Our Services | Agailinnovate",
     description:
-      "Explore all the software development and digital solutions provided by Agile Innovate for startups and enterprises worldwide.",
+      "Explore innovative and scalable digital solutions offered by Agailinnovate, including web development, cloud services, and more.",
     url: "https://agile-website-tan.vercel.app/services",
-    siteName: "Agile Innovate",
-    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Our Services | Agailinnovate",
+    description:
+      "Explore Agailinnovate’s digital solutions including development, cloud, UI/UX, AI integrations, and more.",
+    images: ["/og-services.png"],
   },
 };
-
-import ServiceCard from "@/components/ServiceCard";
 
 export default function ServicesPage() {
   return <ServiceCard />;

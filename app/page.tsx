@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import AboutSection from "@/components/AboutSection";
 import ServicesSection from "@/components/ServiceCard";
@@ -5,37 +6,49 @@ import Testimonial from "@/components/Testimonial";
 import ReviewSection from "@/components/ReviewSection";
 import ContactPage from "@/components/ContactPage";
 
-export const metadata = {
-  title: "Agile Innovate | Software Development & Digital Solutions",
+export const metadata: Metadata = {
+  title: "Agailinnovate | Empowering Digital Innovation",
   description:
-    "Agile Innovate builds high-performance software solutions including web apps, mobile apps, UI/UX design, cloud services, AI solutions, and enterprise digital products.",
-  keywords: [
-    "Software Development Company",
-    "Web Development",
-    "Mobile App Development",
-    "Next.js Development",
-    "UI UX Design",
-    "Cloud Services",
-    "AI Development",
-    "Agile Innovate"
-  ],
+    "Agailinnovate builds secure, scalable, and future-ready digital solutions for businesses worldwide. Explore our services in web development, mobile apps, cloud, AI, and more.",
+  metadataBase: new URL("https://agile-website-tan.vercel.app"),
+
+  alternates: {
+    canonical: "https://agile-website-tan.vercel.app/",
+  },
+
   openGraph: {
-    title: "Agile Innovate | Build Digital Solutions That Scale",
+    title: "Agailinnovate | Empowering Digital Innovation",
     description:
-      "We help businesses innovate with modern web, mobile, cloud, and AI technologies.",
-    url: "https://yourdomain.com",
-    siteName: "Agile Innovate",
+      "We deliver scalable, secure, and modern digital solutions — including web, mobile, cloud, AI, and enterprise platforms.",
+    url: "https://agile-website-tan.vercel.app/",
+    siteName: "Agailinnovate",
+    images: [
+      {
+        url: "/og-home.png", // optional — add to /public
+        width: 1200,
+        height: 630,
+        alt: "Agailinnovate Home Banner",
+      },
+    ],
     locale: "en_US",
     type: "website",
   },
+
   twitter: {
     card: "summary_large_image",
-    title: "Agile Innovate | Digital Innovation Company",
+    title: "Agailinnovate | Empowering Digital Innovation",
     description:
-      "Build modern, scalable, and secure digital products with Agile Innovate.",
+      "Innovative digital solutions for business growth — powered by Agailinnovate.",
+    images: ["/og-home.png"],
   },
-  alternates: {
-    canonical: "https://yourdomain.com",
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
   },
 };
 

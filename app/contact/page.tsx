@@ -1,25 +1,27 @@
-export const metadata = {
-  title: "Contact Us | Agile Innovate",
+import type { Metadata } from "next";
+import ContactPage from "@/components/ContactPage";
+
+export const metadata: Metadata = {
+  title: "Contact Us | Agailinnovate",
   description:
-    "Get in touch with Agile Innovate for software development, web applications, mobile apps, and IT consulting services. We're here to help you build your next big idea.",
-  keywords: [
-    "Contact Agile Innovate",
-    "Software Development Contact",
-    "IT Services Support",
-    "Hire Developers",
-    "Agile Innovate Contact",
-  ],
+    "Get in touch with Agailinnovate for project inquiries, support, collaborations, and technology solutions. We're here to help you innovate and grow.",
+  alternates: {
+    canonical: "https://agile-website-tan.vercel.app/contact",
+  },
   openGraph: {
-    title: "Contact Agile Innovate",
+    title: "Contact Us | Agailinnovate",
     description:
-      "Reach out to Agile Innovate for custom software development, web apps, and digital solutions.",
+      "Reach out to Agailinnovate for business inquiries, partnerships, and technology services.",
     url: "https://agile-website-tan.vercel.app/contact",
-    siteName: "Agile Innovate",
-    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Us | Agailinnovate",
+    description:
+      "Connect with Agailinnovate for collaboration, support, or service inquiries.",
+    images: ["/og-contact.png"],
   },
 };
-
-import ContactPage from "@/components/ContactPage";
 
 export default function Contact() {
   return <ContactPage />;

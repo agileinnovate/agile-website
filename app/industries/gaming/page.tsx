@@ -1,27 +1,26 @@
-export const metadata = {
-  title: "Gaming & Game Development Solutions | Agile Innovate",
+import type { Metadata } from "next";
+import Gaming from "@/components/industries-pages/Gaming";
+
+export const metadata: Metadata = {
+  title: "Gaming Solutions | Agailinnovate",
   description:
-    "Agile Innovate creates high-performance gaming applications including mobile games, multiplayer platforms, AR/VR experiences, and cloud gaming solutions.",
-  keywords: [
-    "Game Development",
-    "Gaming Software",
-    "Mobile Game Development",
-    "Unity Game Development",
-    "AR/VR Games",
-    "Multiplayer Game Platform",
-    "Agile Innovate Gaming Solutions",
-  ],
+    "Agailinnovate delivers cutting-edge gaming solutions including game development, AR/VR experiences, multiplayer systems, gamification platforms, and high-performance gaming technology.",
+  alternates: {
+    canonical: "https://agile-website-tan.vercel.app/industries/gaming",
+  },
   openGraph: {
-    title: "Gaming & Game Development Solutions | Agile Innovate",
+    title: "Gaming Solutions | Agailinnovate",
     description:
-      "We develop immersive gaming experiences including multiplayer games, mobile games, AR/VR apps, and cloud-ready gaming platforms.",
+      "From game development to AR/VR, multiplayer experiences, and scalable backend infrastructure, Agailinnovate empowers gaming innovation.",
     url: "https://agile-website-tan.vercel.app/industries/gaming",
-    siteName: "Agile Innovate",
-    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Gaming Solutions | Agailinnovate",
+    description:
+      "Next-gen gaming development & AR/VR solutions crafted for performance, scalability, and immersive engagement.",
   },
 };
-
-import Gaming from "@/components/industries-pages/Gaming";
 
 export default function GamingPage() {
   return <Gaming />;

@@ -1,30 +1,27 @@
-export const metadata = {
-  title: "Technologies We Use | Agile Innovate",
+import type { Metadata } from "next";
+import Technologies from "@/components/Web&Mobile/Technologies";
+
+export const metadata: Metadata = {
+  title: "Technologies We Use | Agailinnovate",
   description:
-    "Discover the modern technologies and frameworks used by Agile Innovate, including React, Next.js, Node.js, Python, Flutter, AI tools, cloud platforms, and more.",
-  keywords: [
-    "Web Technologies",
-    "Mobile App Technologies",
-    "React",
-    "Next.js",
-    "Node.js",
-    "Python",
-    "Flutter",
-    "Cloud Technologies",
-    "Software Development Stack",
-    "Agile Innovate Technologies"
-  ],
+    "Explore the latest web and mobile technologies used by Agailinnovate, including modern frameworks, cloud platforms, databases, DevOps tools, and AI-powered development stacks.",
+  alternates: {
+    canonical: "https://agile-website-tan.vercel.app/service/technologies",
+  },
   openGraph: {
-    title: "Technologies We Use | Agile Innovate",
+    title: "Technologies We Use | Agailinnovate",
     description:
-      "Explore the complete technology stack used by Agile Innovate to build fast, scalable, and modern digital products.",
+      "Discover the cutting-edge technologies behind Agailinnovate’s high-performance web, mobile, and cloud applications.",
     url: "https://agile-website-tan.vercel.app/service/technologies",
-    siteName: "Agile Innovate",
-    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Technologies We Use | Agailinnovate",
+    description:
+      "Explore the powerful technologies powering Agailinnovate’s modern digital solutions.",
+    
   },
 };
-
-import Technologies from "@/components/Web&Mobile/Technologies";
 
 export default function TechnologyPage() {
   return <Technologies />;

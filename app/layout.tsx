@@ -1,51 +1,55 @@
+import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-/* GLOBAL SEO METADATA*/
-export const metadata = {
-  metadataBase: new URL("https://yourdomain.com"),
-  title: {
-    default: "Agile Innovate | Innovating with Technology",
-    template: "%s | Agile Innovate",
-  },
+export const metadata: Metadata = {
+  title: "Agailinnovate | Innovating with Technology",
   description:
-    "Agile Innovate builds secure, scalable, and future-ready digital solutions for businesses worldwide.",
-  keywords: [
-    "Software Development",
-    "Web Development",
-    "Mobile App Development",
-    "Next.js Company",
-    "Agile Innovate",
-  ],
-  robots: {
-    index: true,
-    follow: true,
-  },
-  authors: [{ name: "Agile Innovate" }],
-  creator: "Agile Innovate",
-  publisher: "Agile Innovate",
+    "Agailinnovate builds secure, scalable, and future-ready digital solutions for businesses worldwide.",
+  metadataBase: new URL("https://agile-website-tan.vercel.app/"),
+
+  // Canonical URL
   alternates: {
-    canonical: "https://yourdomain.com",
+    canonical: "/",
   },
 
-  /* Social Share + Rich Cards */
+  // Open Graph (Facebook, LinkedIn)
   openGraph: {
-    title: "Agile Innovate | Innovating with Technology",
+    title: "Agailinnovate | Innovating with Technology",
     description:
-      "We build cutting-edge web, mobile, AI, cloud, and automation solutions tailored for your business needs.",
-    url: "https://yourdomain.com",
-    siteName: "Agile Innovate",
+      "We build secure, scalable, and future-ready digital solutions.",
+    url: "https://agile-website-tan.vercel.app/",
+    siteName: "Agailinnovate",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Agailinnovate OG Banner",
+      },
+    ],
     locale: "en_US",
     type: "website",
   },
+  // Icons
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
 
-  twitter: {
-    card: "summary_large_image",
-    title: "Agile Innovate | Innovating with Technology",
-    description:
-      "Building secure, scalable, high-performance digital solutions.",
-    creator: "@agileinnovate",
+  // Robots
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
 };
 

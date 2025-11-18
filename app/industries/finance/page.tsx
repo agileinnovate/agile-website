@@ -1,27 +1,26 @@
-export const metadata = {
-  title: "Finance & FinTech Solutions | Agile Innovate",
+import type { Metadata } from "next";
+import Finance from "@/components/industries-pages/Finance";
+
+export const metadata: Metadata = {
+  title: "Finance & Banking Solutions | Agailinnovate",
   description:
-    "Agile Innovate develops secure, scalable, and high-performance financial software including banking apps, payment platforms, trading systems, and fintech automation tools.",
-  keywords: [
-    "FinTech Development",
-    "Finance Software",
-    "Banking App Development",
-    "Payment Gateway Solutions",
-    "Financial Software Development",
-    "Trading Platform Development",
-    "Agile Innovate Finance Solutions",
-  ],
+    "Agailinnovate delivers secure, scalable, and compliant financial technology solutions including digital banking, fintech platforms, automation, analytics, and secure payment systems.",
+  alternates: {
+    canonical: "https://agile-website-tan.vercel.app/industries/finance",
+  },
   openGraph: {
-    title: "Finance & FinTech Solutions | Agile Innovate",
+    title: "Finance & Banking Solutions | Agailinnovate",
     description:
-      "We build enterprise-grade financial applications including payment systems, banking dashboards, risk management tools, and fintech solutions.",
+      "Transform your financial services with secure and innovative digital solutions—from fintech apps to automated workflows and enterprise banking platforms.",
     url: "https://agile-website-tan.vercel.app/industries/finance",
-    siteName: "Agile Innovate",
-    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Finance & Banking Solutions | Agailinnovate",
+    description:
+      "Explore advanced digital solutions for finance and banking, tailored for security, compliance, and high performance.",
   },
 };
-
-import Finance from "@/components/industries-pages/Finance";
 
 export default function FinancePage() {
   return <Finance />;

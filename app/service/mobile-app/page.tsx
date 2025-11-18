@@ -1,27 +1,27 @@
-export const metadata = {
-  title: "Mobile App Development Services | Agile Innovate",
+import type { Metadata } from "next";
+import MobileApp from "@/components/Web&Mobile/MobileApp";
+
+export const metadata: Metadata = {
+  title: "Mobile App Development | Agailinnovate",
   description:
-    "Agile Innovate builds high-quality mobile applications for iOS and Android using modern technologies like Flutter, React Native, and native development frameworks.",
-  keywords: [
-    "Mobile App Development",
-    "iOS App Development",
-    "Android App Development",
-    "Flutter Apps",
-    "React Native Development",
-    "Mobile Application Development",
-    "Agile Innovate Mobile Apps"
-  ],
+    "Build high-performance mobile apps with Agailinnovate. We deliver Android, iOS, and cross-platform mobile applications using modern frameworks and scalable architectures.",
+  alternates: {
+    canonical: "https://agile-website-tan.vercel.app/service/mobile-app",
+  },
   openGraph: {
-    title: "Mobile App Development Services | Agile Innovate",
+    title: "Mobile App Development | Agailinnovate",
     description:
-      "We develop fast, scalable, and user-friendly mobile apps for startups and enterprises using next-gen technologies.",
+      "Agailinnovate develops robust, user-friendly, and scalable mobile apps using React Native, Flutter, Kotlin, Swift, and more.",
     url: "https://agile-website-tan.vercel.app/service/mobile-app",
-    siteName: "Agile Innovate",
-    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Mobile App Development | Agailinnovate",
+    description:
+      "Custom mobile applications crafted for performance, usability, and scalability — powered by Agailinnovate.",
+  
   },
 };
-
-import MobileApp from "@/components/Web&Mobile/MobileApp";
 
 export default function WebPage() {
   return <MobileApp />;

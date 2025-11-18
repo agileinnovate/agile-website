@@ -1,25 +1,26 @@
-export const metadata = {
-  title: "Privacy Policy | Agile Innovate",
+import type { Metadata } from "next";
+import PrivacyPolicy from "@/components/PrivacyPolicy";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy | Agailinnovate",
   description:
-    "Read the Privacy Policy of Agile Innovate to understand how we collect, use, and protect your personal information across our services and platforms.",
-  keywords: [
-    "Privacy Policy",
-    "Agile Innovate Privacy",
-    "Data Protection",
-    "User Privacy",
-    "Information Security",
-  ],
+    "Read Agailinnovate’s Privacy Policy to understand how we collect, use, protect, and safeguard your personal information while providing our digital services.",
+  alternates: {
+    canonical: "https://agile-website-tan.vercel.app/privacy-policy",
+  },
   openGraph: {
-    title: "Privacy Policy | Agile Innovate",
+    title: "Privacy Policy | Agailinnovate",
     description:
-      "Learn how Agile Innovate protects your data and ensures privacy across all our software solutions.",
-    url: "https://yourdomain.com/privacy-policy",
-    siteName: "Agile Innovate",
-    type: "article",
+      "Learn how Agailinnovate securely handles personal data and protects user privacy across all our digital services.",
+    url: "https://agile-website-tan.vercel.app/privacy-policy",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Privacy Policy | Agailinnovate",
+    description:
+      "Understand how Agailinnovate manages, protects, and uses personal information.",
   },
 };
-
-import PrivacyPolicy from "@/components/PrivacyPolicy";
 
 export default function PrivacyPage() {
   return <PrivacyPolicy />;
