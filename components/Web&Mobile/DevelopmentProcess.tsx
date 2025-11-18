@@ -52,7 +52,7 @@ export default function DevelopmentProcess() {
         <div className="relative pl-8 sm:pl-14">
 
           {/* Vertical Line */}
-          <div className="absolute left-3 sm:left-6 top-0 h-full w-[2px] bg-blue-200"></div>
+          <div className="absolute left-3 sm:left-6 top-0 h-full w-0.5 bg-blue-200"></div>
 
           {steps.map((step, i) => (
             <div key={i} className="relative mb-12 sm:mb-14">
@@ -61,7 +61,7 @@ export default function DevelopmentProcess() {
               <div className="
                 absolute 
                 top-2 sm:top-3
-                -left-[2px] sm:-left-[3px]
+                -left-0.5 sm:-left-[3px]
                 transform -translate-x-1/2
                 w-10 h-10 sm:w-12 sm:h-12 
                 rounded-full bg-white border-[3px] border-blue-500 

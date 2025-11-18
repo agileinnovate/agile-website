@@ -114,7 +114,7 @@ export default function WebDevTab() {
           ))}
         </div>
 
-        {/* ---------- CONTENT GRID ---------- */}
+        {/* CONTENT GRID */}
         <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
           {/* Image Section */}
           <div className="relative w-full h-60 sm:h-[300px] md:h-[380px] rounded-xl overflow-hidden shadow-lg">
