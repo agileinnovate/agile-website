@@ -99,6 +99,7 @@ export default function Career() {
         </motion.div>
       </section>
 
+ 
       {/* CULTURE SECTION */}
       <section className="max-w-6xl mx-auto px-6 py-12">
   <div className="grid md:grid-cols-2 gap-12 items-center">
