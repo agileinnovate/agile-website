@@ -19,7 +19,7 @@ const services = [
 export default function ServiceCard() {
   return (
     <section className="bg-[#2966e0] text-white py-20 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 text-center">
+      <div className="max-w-7xl mx-auto px-6 py-10 text-center">
         {/* Heading */}
         <h2 className="text-4xl font-bold mb-4">Our Premium Services</h2>
         <p className="text-md text-gray-200 max-w-3xl mx-auto mb-14">

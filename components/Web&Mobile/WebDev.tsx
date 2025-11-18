@@ -10,7 +10,7 @@ export default function WebDev() {
   return (
     <>
       {/*SECTION 1 — INTRO + IMG*/}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-20 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
 
           {/* LEFT — IMAGE */}

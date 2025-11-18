@@ -91,7 +91,7 @@ export default function Technologies() {
   const [selectedTech, setSelectedTech] = useState<Tech | null>(null);
 
   return (
-    <section className="relative w-full overflow-hidden bg-linear-to-b from-[#0a0a0a] via-[#111] to-[#0a0a0a] py-24 text-white">
+    <section className="relative w-full overflow-hidden bg-linear-to-b from-[#0a0a0a] via-[#111] to-[#0a0a0a] py-38 text-white">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(56,189,248,0.15),transparent_70%)]"></div>
 
       <div className="relative max-w-7xl mx-auto text-center px-6">
