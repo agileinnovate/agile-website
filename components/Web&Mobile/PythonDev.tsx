@@ -3,6 +3,7 @@
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 type TabKey = "frameworks" | "databases" | "deployment";
 
@@ -108,8 +109,6 @@ export default function PythonDev() {
     },
   ];
 
-
-  // Active tab mapping
   const tabData = {
     frameworks: frameworkData,
     databases: databaseData,
@@ -215,6 +214,61 @@ export default function PythonDev() {
           </div>
         </div>
       </section>
+
+
+<section className="w-full bg-[#f8f9fc] py-10">
+  <div className="max-w-9xl mx-auto px-6 text-center">
+
+    <h2 className="text-3xl md:text-4xl font-bold text-blue-900">
+      Why Choose Python for Backend Development?
+    </h2>
+
+    <p className="text-gray-600 max-w-2xl mx-auto mt-4 text-md">
+      Python offers unmatched flexibility, rapid development, high security,
+      and powerful frameworks for scalable backend systems.
+    </p>
+
+    <motion.div
+      initial={{ opacity: 0, scale: 0.95 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ delay: 0.4, duration: 0.5 }}
+      className="flex flex-col md:flex-row items-center justify-center gap-6 mt-4"
+    >
+      {[
+        { number: "1M+", text: "APIs Served Daily" },
+        { number: "40%", text: "Faster Development Time" },
+        { number: "12+", text: "Years of Python Expertise" },
+      ].map((tab, i) => (
+        <motion.div
+          key={i}
+          whileHover={{ scale: 1.08 }}
+          className="bg-white shadow-md px-10 py-6 rounded-xl"
+        >
+          <h3 className="text-3xl font-bold text-blue-700">{tab.number}</h3>
+          <p className="text-gray-600 text-sm mt-2">{tab.text}</p>
+        </motion.div>
+      ))}
+    </motion.div>
+  </div>
+
+  <div className="w-full flex justify-center mt-10 px-6">
+    <motion.div
+      whileHover={{ scale: 1.05 }}
+      transition={{ duration: 0.4 }}
+      className="rounded-2xl overflow-hidden shadow-xl w-full max-w-[1000px]"
+    >
+      <Image
+        src="/python1.png"
+        alt="Python Development Banner"
+        width={1000}
+        height={600}
+        className="object-cover w-full h-auto"
+      />
+    </motion.div>
+  </div>
+</section>
+
+
 
       <section className="relative bg-gray-100 text-black py-24 overflow-hidden">
       {/* Container */}

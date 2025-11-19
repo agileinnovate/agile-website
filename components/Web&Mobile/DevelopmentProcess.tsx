@@ -30,17 +30,13 @@ export default function DevelopmentProcess() {
   ];
 
   return (
-    <section className="bg-white py-16 sm:py-20">
+    <section className="bg-white py-10 sm:py-20">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
 
         {/* ---------- Title Section ---------- */}
-        <div className="text-center mb-10">
-          <span className="text-blue-500 font-medium uppercase text-xs sm:text-sm tracking-wide">
-            Our Methodology
-          </span>
-
-          <h2 className="text-2xl sm:text-3xl md:text-4xl text-gray-900 font-bold mt-2 leading-tight">
-            Proven Development Process
+        <div className="text-center mb-8">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl text-blue-700 font-bold mt-2 leading-tight">
+            Our Development Process
           </h2>
 
           <p className="text-gray-600 mt-3 text-sm sm:text-base max-w-2xl mx-auto">
