@@ -79,11 +79,31 @@ export default function ContactPage() {
                 placeholder="Phone"
                 className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
               />
-              <input
-                type="text"
-                placeholder="Budget (e.g. $10,000 - $20,000)"
-                className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
-              />
+           <select
+  className="p-3 w-full border border-gray-300 rounded-lg 
+             text-gray-600 bg-white cursor-pointer
+             focus:outline-none focus:border-blue-500"
+  defaultValue="" 
+>
+  <option value="" disabled className="text-gray-300">
+    Select a Service
+  </option>
+
+  <option value="dapp" className="text-gray-600">Dapp Development</option>
+  <option value="ai-agent" className="text-gray-600">AI Agent</option>
+  <option value="ai-workflows" className="text-gray-600">AI Workflows</option>
+  <option value="devops" className="text-gray-600">DevOps support AWS/GCP/Azure and others</option>
+  <option value="mobile-app" className="text-gray-600">Mobile App Development</option>
+  <option value="cms-web-tools" className="text-gray-600">CMS & Web Tools</option>
+  <option value="informative-website" className="text-gray-600">Informative Website</option>
+  <option value="ecommerce" className="text-gray-600">Ecommerce Website</option>
+  <option value="crm-erp" className="text-gray-600">CRM/ERP</option>
+  <option value="digital-marketing" className="text-gray-600">Digital Marketing</option>
+  <option value="ui-ux" className="text-gray-600">UI/UX</option>
+  <option value="graphic-designing" className="text-gray-600">Graphic Designing</option>
+</select>
+
+
             </div>
 
             <textarea

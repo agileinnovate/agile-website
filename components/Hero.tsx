@@ -4,10 +4,30 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function Hero() {
+   
+const title = "Build Better Software. Faster. Smarter.";
+const words = title.split(" ");
+
+const container = {
+  hidden: { opacity: 1 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.20,
+    },
+  },
+};
+
+const wordAnim = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] as any } },
+};
+
+
   return (
     <>
       {/* HERO SECTION */}
-      <section className="relative h-screen flex flex-col justify-center items-start text-white overflow-hidden">
+      <section className="relative h-screen flex flex-col justify-center items-center text-white overflow-hidden">
         {/* Background Image */}
         <Image
           src="/Bg-hero.jpg"
@@ -18,20 +38,24 @@ export default function Hero() {
         />
 
         {/* Text Content */}
-        <div className="relative z-10 max-w-4xl px-6 md:px-35 text-left">
-          <motion.h1
-            initial={{ y: -60, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.9, ease: "easeOut" }}
-            className="text-5xl md:text-6xl font-bold mb-4 leading-tight"
-          >
-            Build Better Software. Faster. Smarter.
-          </motion.h1>
+        <div className="relative z-10 max-w-5xl px-6 md:px-35 text-center">
+        <motion.h1
+        variants={container}
+        initial="hidden"
+        animate="visible"
+        className="text-5xl md:text-6xl font-bold mb-4 leading-tight text-white"
+        >
+        {words.map((word, index) => (
+        <motion.span key={index} variants={wordAnim} className="inline-block mr-2">
+         {word}
+        </motion.span>
+        ))}
+       </motion.h1>
 
           <motion.p
             initial={{ y: -40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.9, ease: "easeOut" }}
+            transition={{ delay: 0.2, duration: 0.9, ease: [0.22, 1, 0.36, 1] as any }}
             className="text-md md:text-lg mb-6 text-gray-50"
           >
            Empowering businesses with scalable, high-performance digital solutions. At Agile Innovate, we combine technology, creativity, and agile engineering to turn your ideas into powerful applications that grow with your vision.
@@ -41,7 +65,7 @@ export default function Hero() {
             href="/contact"
             initial={{ y: -30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.9, ease: "easeOut" }}
+            transition={{ delay: 0.3, duration: 0.9, ease: [0.22, 1, 0.36, 1] as any }}
             className="inline-block bg-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-600 transition"
           >
             Explore More
@@ -131,10 +155,8 @@ export default function Hero() {
       Delivering excellence and innovation for global businesses.
     </p>
   </div>
-
+ </div>
 </div>
-
-      </div>
-    </>
-  );
+ </>
+ );
 }

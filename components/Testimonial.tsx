@@ -74,7 +74,7 @@ export default function Testimonial() {
           </span>
 
           <h2 className="text-4xl font-bold text-gray-900 mb-6 mt-6">
-            500+ Satisfied Clients Worldwide
+            30+ Satisfied Clients Worldwide
           </h2>
 
           {/* Animated testimonial text */}

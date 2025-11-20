@@ -57,13 +57,28 @@ export default function Navbar() {
   const [mobileIndustries, setMobileIndustries] = useState(false);
   const [mobileTech, setMobileTech] = useState(false);
 
+
+  /* OUR PRODUCTS DROPDOWN */
+const [productsOpen, setProductsOpen] = useState(false);
+const productsTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const openProducts = () => {
+  if (productsTimer.current) clearTimeout(productsTimer.current);
+  setProductsOpen(true);
+};
+const closeProducts = () => {
+  if (productsTimer.current) clearTimeout(productsTimer.current);
+  productsTimer.current = setTimeout(() => setProductsOpen(false), 150);
+};
+
+  const [mobileProducts, setMobileProducts] = useState(false);
   return (
     <>
       <nav className="fixed w-full bg-white text-blue-600 shadow-sm z-50">
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3 h-20">
+        <div className="max-w-8xl mx-auto flex items-center justify-between px-4 py-3 h-20">
 
           {/* LOGO */}
-          <div className="relative w-[160px] h-[70px]">
+          <div className="relative w-40 h-[70px]">
             <Image src="/logo1.png" alt="AgileInnovate Logo" fill className="object-contain" />
           </div>
 
@@ -84,19 +99,19 @@ export default function Navbar() {
 
               {aboutOpen && (
                 <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 
-                  bg-white shadow-xl rounded-xl border p-8 w-[480px] z-999">
+                  bg-white shadow-xl rounded-xl border p-4 w-[450px] z-999">
                   <div className="grid grid-cols-2 gap-6">
 
                     <Link href="/about"
                       className="p-4 rounded-xl border hover:shadow-xl transition">
-                      <h2 className="text-lg font-semibold text-gray-800">About Us</h2>
+                      <h2 className="text-sm font-semibold text-gray-800">About Us</h2>
                       <div className="w-12 h-[3px] bg-blue-600 mt-1 mb-3"></div>
                       <p className="text-sm text-gray-600">Who we are & what we do.</p>
                     </Link>
 
                     <Link href="/career"
                       className="p-4 rounded-xl border hover:shadow-xl transition">
-                      <h2 className="text-lg font-semibold text-gray-800">Career</h2>
+                      <h2 className="text-sm font-semibold text-gray-800">Career</h2>
                       <div className="w-12 h-[3px] bg-blue-600 mt-1 mb-3"></div>
                       <p className="text-sm text-gray-600">Join our team.</p>
                     </Link>
@@ -107,6 +122,87 @@ export default function Navbar() {
             </div>
 
             <Link href="/services" className="hover:text-blue-300">Services</Link>
+
+           {/* OUR PRODUCTS */}
+       <div
+      className="relative"
+      onMouseEnter={openProducts}
+      onMouseLeave={closeProducts}
+      >
+     <span className="cursor-pointer hover:text-blue-300 flex items-center gap-1">
+      Our Products <FaAngleDown />
+     </span>
+
+     {productsOpen && (
+       <div className="absolute left-1/2 -translate-x-1/2 top-full mt-4 
+      bg-white shadow-xl border rounded-xl p-6 w-[750px] z-999">
+
+      <div className="grid grid-cols-3 gap-6">
+
+        {/* CRM */}
+        <Link
+          href="/products/crm"
+          className="p-5 rounded-xl border hover:shadow-xl transition"
+        >
+          <h3 className="text-sm font-semibold text-gray-800">CRM</h3>
+          <div className="w-10 h-[3px] bg-blue-600 mt-1 mb-3"></div>
+          <p className="text-sm text-gray-600">Manage leads & workflow automation.</p>
+        </Link>
+
+        {/* Odoo ERP */}
+        <Link
+          href="/products/odoo-erp"
+          className="p-5 rounded-xl border hover:shadow-xl transition"
+        >
+          <h3 className="text-sm font-semibold text-gray-800">Odoo ERP</h3>
+          <div className="w-10 h-[3px] bg-blue-600 mt-1 mb-3"></div>
+          <p className="text-sm text-gray-600">All-in-one enterprise management suite.</p>
+        </Link>
+
+        {/* School Management */}
+        <Link
+          href="/products/school-management"
+          className="p-5 rounded-xl border hover:shadow-xl transition"
+        >
+          <h3 className="text-sm font-semibold text-gray-800">School Management</h3>
+          <div className="w-10 h-[3px] bg-blue-600 mt-1 mb-3"></div>
+          <p className="text-sm text-gray-600">Smart digital school operations.</p>
+        </Link>
+
+        {/* Hospital Management */}
+        <Link
+          href="/products/hospital-management"
+          className="p-5 rounded-xl border hover:shadow-xl transition"
+        >
+          <h3 className="text-sm font-semibold text-gray-800">Hospital Management</h3>
+          <div className="w-10 h-[3px] bg-blue-600 mt-1 mb-3"></div>
+          <p className="text-sm text-gray-600">End-to-end hospital automation.</p>
+        </Link>
+
+        {/* Billing Software */}
+        <Link
+          href="/products/billing-software"
+          className="p-5 rounded-xl border hover:shadow-xl transition"
+        >
+          <h3 className="text-sm font-semibold text-gray-800">Billing Software</h3>
+          <div className="w-10 h-[3px] bg-blue-600 mt-1 mb-3"></div>
+          <p className="text-sm text-gray-600">Fast & accurate billing & invoices.</p>
+        </Link>
+
+        {/* HR & Payroll */}
+        <Link
+          href="/products/hr-payroll"
+          className="p-5 rounded-xl border hover:shadow-xl transition"
+        >
+          <h3 className="text-sm font-semibold text-gray-800">HR & Payroll</h3>
+          <div className="w-10 h-[3px] bg-blue-600 mt-1 mb-3"></div>
+          <p className="text-sm text-gray-600">Automated HR & payroll operations.</p>
+        </Link>
+
+      </div>
+    </div>
+  )}
+</div>
 
             {/* WEB & MOBILE */}
             <div
@@ -120,7 +216,7 @@ export default function Navbar() {
 
               {webMobileOpen && (
                 <div className="absolute left-1/2 -translate-x-1/2 top-full mt-4 
-                  bg-white shadow-xl rounded-xl border p-6 w-[750px] z-[999]">
+                  bg-white shadow-xl rounded-xl border p-6 w-[750px] z-999">
 
                   <div className="grid grid-cols-3 gap-6 relative">
 
@@ -167,7 +263,7 @@ export default function Navbar() {
 
                       {technologiesOpen && (
                         <div className="absolute top-0 left-full bg-white border 
-                          shadow-xl rounded-xl p-6 w-[180px] z-[999]">
+                          shadow-xl rounded-xl p-6 w-[180px] z-999">
 
                           <h3 className="text-lg font-semibold text-gray-900 mb-4">Technologies</h3>
 
@@ -205,7 +301,7 @@ export default function Navbar() {
               </span>
 
               {industriesOpen && (
-                <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 z-[999]">
+                <div className="absolute left-1/2 -translate-x-1/2 top-full mt-4 z-999">
                   <IndustriesModal />
                 </div>
               )}
@@ -265,6 +361,72 @@ export default function Navbar() {
                   </div>
                 )}
               </div>
+
+               <Link href="/services" onClick={() => setMenuOpen(false)}>Services</Link>
+
+       {/* OUR PRODUCTS MOBILE */}
+       <div>
+        <button
+            onClick={() => setMobileProducts(!mobileProducts)}
+            className="w-full flex justify-between"
+        >
+      Our Products 
+       <FaAngleDown className={`${mobileProducts ? "rotate-180" : ""}`} />
+        </button>
+
+         {mobileProducts && (
+         <div className="ml-4 mt-2 space-y-3 text-gray-600">
+
+        <Link
+        href="/products/crm"
+        onClick={() => setMenuOpen(false)}
+        >
+        CRM
+       </Link>
+       <br />
+
+       <Link
+        href="/products/odoo-erp"
+        onClick={() => setMenuOpen(false)}
+       >
+        Odoo ERP
+      </Link>
+      <br />
+
+      <Link
+        href="/products/school-management"
+        onClick={() => setMenuOpen(false)}
+      >
+        School Management System
+      </Link>
+      <br />
+
+      <Link
+        href="/products/hospital-management"
+        onClick={() => setMenuOpen(false)}
+      >
+        Hospital Management System
+      </Link>
+      <br />
+
+      <Link
+        href="/products/billing-software"
+        onClick={() => setMenuOpen(false)}
+      >
+        Billing Software
+      </Link>
+      <br />
+
+      <Link
+        href="/products/hr-payroll"
+        onClick={() => setMenuOpen(false)}
+      >
+        HR & Payroll Management System
+      </Link>
+
+     </div>
+   )}
+ </div>
 
               {/* WEB & MOBILE */}
               <div>

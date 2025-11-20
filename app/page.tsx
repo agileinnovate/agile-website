@@ -5,6 +5,7 @@ import ServicesSection from "@/components/ServiceCard";
 import Testimonial from "@/components/Testimonial";
 import ReviewSection from "@/components/ReviewSection";
 import ContactPage from "@/components/ContactPage";
+import TechSlider from "@/components/TechSlider";
 
 export const metadata: Metadata = {
   title: "Agailinnovate | Empowering Digital Innovation",
@@ -68,6 +69,7 @@ export default function Home() {
       <ReviewSection />
       <Testimonial />
       <ContactPage />
+      <TechSlider/>
     </main>
   );
 }

@@ -276,15 +276,26 @@ tags: ["Figma", "User Research", "Prototyping"],
             placeholder-gray-500 focus:ring-2 focus:ring-blue-200 focus:border-blue-500 outline-none"
           />
 
-          <input
-            type="text"
-            name="position"
-            placeholder="Position (e.g., React Developer)"
-            value={formData.position}
-            onChange={handleChange}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-900 
-            placeholder-gray-500 focus:ring-2 focus:ring-blue-200 focus:border-blue-500 outline-none"
-          />
+         <select
+  name="position"
+  value={formData.position}
+  onChange={handleChange}
+  className="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-500
+             placeholder-gray-500 focus:ring-2 focus:ring-blue-200 focus:border-blue-500 
+              bg-white cursor-pointer"
+>
+  <option value="" disabled className="text-gray-600">
+    Select Position
+  </option>
+
+  <option value="Frontend Developer">Frontend Developer</option>
+  <option value="iOS Developer">iOS Developer</option>
+  <option value="Blockchain Project Manager">Blockchain Project Manager</option>
+  <option value="Backend Developer">Backend Developer</option>
+  <option value="PHP Developer">PHP Developer</option>
+  <option value="React Native Developer">React Native Developer</option>
+</select>
+
         </div>
 
         {/* FILE UPLOAD */}
