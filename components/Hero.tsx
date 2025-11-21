@@ -2,76 +2,102 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 export default function Hero() {
-   
-const title = "Build Better Software. Faster. Smarter.";
-const words = title.split(" ");
+  const bgImages = [
+    "/Bg-hero.jpg",
+    "/Bg-2.png",
+    "/BG-3.png",
+  ];
 
-const container = {
-  hidden: { opacity: 1 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.20,
-    },
-  },
-};
+  const [index, setIndex] = useState(0);
 
-const wordAnim = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] as any } },
-};
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % bgImages.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
+  const words = "Build Better Software. Faster. Smarter.".split(" ");
+
+  const container = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.15 } },
+  };
+
+  const wordAnim = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
 
   return (
     <>
-      {/* HERO SECTION */}
-      <section className="relative h-screen flex flex-col justify-center items-center text-white overflow-hidden">
-        {/* Background Image */}
-        <Image
-          src="/Bg-hero.jpg"
-          alt="AgileInnovate Background"
-          fill
-          priority
-          className="object-cover opacity-90"
-        />
+    <section className="relative h-screen flex flex-col justify-center items-center text-white overflow-hidden">
 
-        {/* Text Content */}
-        <div className="relative z-10 max-w-5xl px-6 md:px-35 text-center">
-        <motion.h1
-        variants={container}
-        initial="hidden"
-        animate="visible"
-        className="text-5xl md:text-6xl font-bold mb-4 leading-tight text-white"
-        >
-        {words.map((word, index) => (
-        <motion.span key={index} variants={wordAnim} className="inline-block mr-2">
-         {word}
-        </motion.span>
+      
+      <div className="absolute inset-0">
+        {bgImages.map((src, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: index === i ? 1 : 0 }}
+            transition={{ duration: 1.2, ease: "easeInOut" }}
+            className="absolute inset-0"
+          >
+            <Image src={src} alt="Hero BG" fill className="object-cover" />
+          </motion.div>
         ))}
-       </motion.h1>
+      </div>
 
-          <motion.p
-            initial={{ y: -40, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.9, ease: [0.22, 1, 0.36, 1] as any }}
-            className="text-md md:text-lg mb-6 text-gray-50"
-          >
-           Empowering businesses with scalable, high-performance digital solutions. At Agile Innovate, we combine technology, creativity, and agile engineering to turn your ideas into powerful applications that grow with your vision.
-          </motion.p>
+      {/* TEXT CONTENT */}
+      <div className="relative z-10 max-w-5xl px-6 md:px-36 text-center">
 
-          <motion.a
-            href="/contact"
-            initial={{ y: -30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.9, ease: [0.22, 1, 0.36, 1] as any }}
-            className="inline-block bg-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-600 transition"
-          >
-            Explore More
-          </motion.a>
-        </div>
-      </section>
+        {/* TEXT RELOADS ANIMATION EVERY IMAGE CHANGE */}
+        <motion.h1
+          key={index}            
+          variants={container}
+          initial="hidden"
+          animate="visible"
+          className="text-5xl md:text-6xl font-bold mb-4 leading-tight"
+        >
+          {words.map((word, i) => (
+            <motion.span
+              key={i}
+              variants={wordAnim}
+              className="inline-block mr-2"
+            >
+              {word}
+            </motion.span>
+          ))}
+        </motion.h1>
+
+        <motion.p
+          key={"p-" + index}    
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.3 }}
+          className="text-md md:text-lg mb-6 text-gray-100"
+        >
+          Empowering businesses with scalable, high-performance digital
+          solutions. We combine technology, creativity, and innovation to build
+          products that grow with your vision.
+        </motion.p>
+
+        <motion.a
+          key={"btn-" + index} 
+          href="/contact"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.5 }}
+          className="inline-block bg-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-600 transition"
+        >
+          Explore More
+        </motion.a>
+
+      </div>
+    </section>
 
       {/* OVERLAY CARDS SECTION */}
       <div className="relative z-20 -mt-24 px-6 md:px-10">

@@ -8,17 +8,17 @@ export default function ReviewSection() {
   const stats = [
     {
       icon: <FaUsers className="text-blue-500 w-[49px] h-12" />,
-      value: "500+",
+      value: "30+",
       label: "Client Testimonials",
     },
     {
       icon: <FaGlobe className="text-blue-500 w-[49px] h-12" />,
-      value: "20+",
+      value: "10+",
       label: "Global Reach",
     },
     {
       icon: <FaFlagCheckered className="text-blue-500 w-[49px] h-12" />,
-      value: "1000+",
+      value: "100+",
       label: "Completed Projects",
     },
     {
