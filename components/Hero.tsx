@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 export default function Hero() {
   const bgImages = [
     "/Bg-hero.jpg",
-    "/Bg-2.png",
+    "/BG-2.png",
     "/BG-3.png",
   ];
 
