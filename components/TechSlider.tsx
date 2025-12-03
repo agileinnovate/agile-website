@@ -26,7 +26,7 @@ export default function TechSlider() {
   useEffect(() => {
     const timer = setInterval(() => {
       setPos((prev) => prev + 150); // move 150px every 2 sec
-    }, 4000);
+    }, 3000);
 
     return () => clearInterval(timer);
   }, []);
@@ -49,8 +49,8 @@ export default function TechSlider() {
               <Image
                 src={src}
                 alt="Tech Logo"
-                width={80}
-                height={50}
+                width={90}
+                height={70}
                 className="object-contain"
               />
             </div>

@@ -98,7 +98,7 @@ export default function NineServiceCards() {
 >
   {/* Hover Background Image */}
   <div
-  className="absolute inset-0 z-0 bg-red-500 opacity-0 group-hover:opacity-100 transition duration-500"
+  className="absolute inset-0 z-0 bg-blue-100 opacity-0 group-hover:opacity-100 transition duration-500"
 ></div>
 
 

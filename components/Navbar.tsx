@@ -337,19 +337,19 @@ const closeProducts = () => {
               <div className="relative w-[140px] h-[60px]">
                 <Image src="/logo1.png" alt="Logo" fill className="object-contain" />
               </div>
-              <button className="text-4xl" onClick={() => setMenuOpen(false)}>×</button>
-            </div>
+              <button
+                onClick={() => setMenuOpen(false)}
+                className="text-4xl text-red-600 hover:text-red-800 transition duration-300"
+                > ×</button>
+             </div>
 
-            {/* MOBILE LINKS */}
             <div className="space-y-6 text-gray-700 text-md font-semibold">
-
               <Link href="/" onClick={() => setMenuOpen(false)}>Home</Link>
 
-              {/* ABOUT MOBILE */}
               <div>
                 <button
                   onClick={() => setMobileAbout(!mobileAbout)}
-                  className="w-full flex justify-between"
+                  className="w-full flex justify-between pt-4"
                 >
                   About <FaAngleDown className={`${mobileAbout ? "rotate-180" : ""}`} />
                 </button>
@@ -361,72 +361,66 @@ const closeProducts = () => {
                   </div>
                 )}
               </div>
-
                <Link href="/services" onClick={() => setMenuOpen(false)}>Services</Link>
-
-       {/* OUR PRODUCTS MOBILE */}
-       <div>
-        <button
+             <div>
+            <button
             onClick={() => setMobileProducts(!mobileProducts)}
-            className="w-full flex justify-between"
-        >
-      Our Products 
-       <FaAngleDown className={`${mobileProducts ? "rotate-180" : ""}`} />
-        </button>
+            className="w-full flex justify-between pt-4">Our Products 
+              <FaAngleDown className={`${mobileProducts ? "rotate-180" : ""}`} />
+                  </button>
 
-         {mobileProducts && (
-         <div className="ml-4 mt-2 space-y-3 text-gray-600">
+                   {mobileProducts && (
+                    <div className="ml-4 mt-2 space-y-3 text-gray-600">
+                  <Link
+                   href="/products/crm"
+                   onClick={() => setMenuOpen(false)}
+                   >
+                   CRM
+                               </Link>
+                  <br />
 
-        <Link
-        href="/products/crm"
-        onClick={() => setMenuOpen(false)}
-        >
-        CRM
-       </Link>
-       <br />
+                   <Link
+                   href="/products/odoo-erp"
+                   onClick={() => setMenuOpen(false)}
+                   >
+                    Odoo ERP
+                  </Link>
+                 <br />
 
-       <Link
-        href="/products/odoo-erp"
-        onClick={() => setMenuOpen(false)}
-       >
-        Odoo ERP
-      </Link>
-      <br />
+                 <Link
+                   href="/products/school-management"
+                   onClick={() => setMenuOpen(false)}
+                 >
+                   School Management System
+                 </Link>
+                 <br />
 
-      <Link
-        href="/products/school-management"
-        onClick={() => setMenuOpen(false)}
-      >
-        School Management System
-      </Link>
-      <br />
+                 <Link
+                   href="/products/hospital-management"
+                   onClick={() => setMenuOpen(false)}
+                 >
+                   Hospital Management System
+                 </Link>
+                 <br />
 
-      <Link
-        href="/products/hospital-management"
-        onClick={() => setMenuOpen(false)}
-      >
-        Hospital Management System
-      </Link>
-      <br />
+                  <Link
+                    href="/products/billing-software"
+                   onClick={() => setMenuOpen(false)}
+                  >
+                    Billing Software
+                 </Link>
+                  <br />
 
-      <Link
-        href="/products/billing-software"
-        onClick={() => setMenuOpen(false)}
-      >
-        Billing Software
-      </Link>
-      <br />
+                  <Link
+                    href="/products/hr-payroll"
+                    onClick={() => setMenuOpen(false)}
+                 >
+                    HR & Payroll Management System
+                  </Link>
 
-      <Link
-        href="/products/hr-payroll"
-        onClick={() => setMenuOpen(false)}
-      >
-        HR & Payroll Management System
-      </Link>
-
-     </div>
-   )}
- </div>
+                </div>
+              )}
+            </div>
 
               {/* WEB & MOBILE */}
               <div>

@@ -2,132 +2,135 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { FaLinkedin, FaGithub, FaTwitter, FaEnvelope } from "react-icons/fa";
+import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-100 text-black pt-12 pb-10">
-      <div className="max-w-7xl mx-auto px-12 pl-1 grid grid-cols-1 md:grid-cols-4 gap-10">
+    <footer className="bg-[#051B43] text-white pt-16">
 
-        {/* 1️⃣ Company Info */}
-        
-          <div className=" ">
-            <Image
-              src="/logo1.png"
-              alt="AgileInnovate Logo"
-              width={160}
-              height={70}
-              className="object-contain"
-            />
-          </div>
-         
-       
+      {/* ================== TOP GRID ================== */}
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
 
-        {/* 2️⃣ Quick Links */}
+        {/* ========= Company Info ========= */}
+      {/* ========= Company Info ========= */}
+<div className="w-full">
+  
+  {/* Logo */}
+  <div className="mb-6 bg-white ">
+    <Image
+      src="/logo1.png"
+      alt="AgileInnovate Logo"
+      width={180}
+      height={80}
+      className="object-contain mx-auto md:mx-0 pl-8"
+    />
+  </div>
+
+  {/* Description */}
+  <p className="text-sm leading-relaxed text-gray-200 mb-6 text-center md:text-left">
+    At AgileInnovate, we're dedicated to crafting exceptional IT solutions 
+    that empower businesses worldwide. We blend deep industry knowledge 
+    with agile methodologies to deliver innovation that matters.
+  </p>
+
+  {/* Email Subscription */}
+  <div className="flex flex-col sm:flex-row w-full gap-3 sm:gap-0">
+
+    {/* Input */}
+    <input
+      type="email"
+      placeholder="Your Email"
+      className="w-full px-3 py-2 text-white border border-gray-400 
+                 bg-[#0A2A5E] rounded-md sm:rounded-none sm:rounded-l-md 
+                 focus:outline-none"
+    />
+
+    {/* Button */}
+    <button
+      className="bg-white px-3 py-2 font-semibold text-blue-900 
+                 hover:bg-gray-200 transition rounded-md 
+                 sm:rounded-none sm:rounded-r-md w-full sm:w-auto"
+    >
+      Sign Up
+    </button>
+  </div>
+  </div>
+
+        {/* ========= Get In Touch ========= */}
         <div>
-          <h3 className="text-black font-semibold text-lg mb-4">Quick Links</h3>
-          <ul className="space-y-3 text-sm">
-            <li>
-              <Link href="/" className="hover:text-blue-400 transition">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link href="/about" className="hover:text-blue-400 transition">
-                About Us
-              </Link>
-            </li>
-            <li>
-              <Link href="/services" className="hover:text-blue-400 transition">
-                Services
-              </Link>
-            </li>
-            <li>
-              <Link href="/contact" className="hover:text-blue-400 transition">
-                Contact
-              </Link>
-            </li>
+          <h3 className="text-xl font-semibold mb-3">Get In Touch</h3>
+          <div className="w-12 h-[2px] bg-[#1EA6FF] mb-5"></div>
+
+          <p className="text-gray-300 text-sm mb-2">📍 Noida Extension India 201009</p>
+          <p className="text-gray-300 text-sm mb-2">📧 info@agileinnovate.tech</p>
+          <p className="text-gray-300 text-sm mb-4">📞 +91 9958204253</p>
+
+          {/* Social Icons */}
+          <div className="flex space-x-3 mt-3">
+            {[FaTwitter, FaFacebookF, FaLinkedinIn, FaInstagram].map((Icon, i) => (
+              <div
+                key={i}
+                className="w-10 h-10 flex items-center justify-center bg-[#1EA6FF] text-white rounded hover:bg-white hover:text-[#1EA6FF] transition"
+              >
+                <Icon size={18} />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* ========= Quick Links ========= */}
+        <div>
+          <h3 className="text-xl font-semibold mb-3">Quick Links</h3>
+          <div className="w-12 h-[2px] bg-[#1EA6FF] mb-5"></div>
+
+          <ul className="space-y-3 text-gray-300 text-sm">
+            {[
+              ["Home", "/"],
+              ["About Us", "/about"],
+              ["Our Services", "/services"],
+              ["Meet The Team", "/team"],
+              ["Latest Blog", "/blog"],
+              ["Contact Us", "/contact"],
+            ].map(([title, link]) => (
+              <li key={title}>
+                <Link href={link} className="hover:text-white transition flex items-center gap-2">
+                  ➤ <span>{title}</span>
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 
-        {/* 3️⃣ Our Services */}
+        {/* ========= Popular Links ========= */}
         <div>
-          <h3 className="text-black font-semibold text-lg mb-4">Our Services</h3>
-          <ul className="space-y-3 text-sm">
-            <li>Blockchain Development</li>
-            <li>Web & App Development</li>
-            <li>AI & Cloud Integration</li>
-            <li>Full Stack Solutions</li>
+          <h3 className="text-xl font-semibold mb-3">Popular Links</h3>
+          <div className="w-12 h-[2px] bg-[#1EA6FF] mb-5"></div>
+
+          <ul className="space-y-3 text-gray-300 text-sm">
+            {[
+              ["Home", "/"],
+              ["About Us", "/about"],
+              ["Our Services", "/services"],
+              ["Meet The Team", "/team"],
+              ["Latest Blog", "/blog"],
+              ["Contact Us", "/contact"],
+            ].map(([title, link]) => (
+              <li key={title}>
+                <Link href={link} className="hover:text-white transition flex items-center gap-2">
+                  ➤ <span>{title}</span>
+                </Link>
+              </li>
+            ))}
           </ul>
-        </div>
-
-        {/* 4️⃣ Contact Info */}
-        <div>
-          <h3 className="text-black font-semibold text-lg mb-4">Contact Us</h3>
-          <p className="text-black text-sm mb-2">
-            📍 Noida, Uttar Pradesh, India
-          </p>
-          <p className="text-black text-sm mb-2">
-            📧 info@agileinnovate.com
-          </p>
-          <p className="text-black text-sm mb-6">📞 +91 98765 43210</p>
-
-          <div className="flex space-x-4 text-xl">
-            <Link
-              href="https://linkedin.com"
-              target="_blank"
-              className="hover:text-blue-400 transition"
-            >
-              <FaLinkedin />
-            </Link>
-            <Link
-              href="https://github.com"
-              target="_blank"
-              className="hover:text-blue-400 transition"
-            >
-              <FaGithub />
-            </Link>
-            <Link
-              href="https://twitter.com"
-              target="_blank"
-              className="hover:text-blue-400 transition"
-            >
-              <FaTwitter />
-            </Link>
-            <Link
-              href="mailto:info@agileinnovate.com"
-              className="hover:text-blue-400 transition"
-            >
-              <FaEnvelope />
-            </Link>
-          </div>
         </div>
       </div>
 
-      {/* Bottom Footer Row */}
-<div className="bg-[#313cd5] py-4 mt-15">
-  <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-white">
-
-    {/* Left Text */}
-    <p className="text-sm">
-      © AgileInnovate. All Rights Reserved.
-    </p>
-
-    {/* Right Links */}
-    <div className="flex items-center space-x-4 mt-3 md:mt-0 text-sm">
-      <Link href="/privacy-policy" className="hover:text-blue-400 transition">
-        Privacy Policy
-      </Link>
-
-      <span>/</span>
-
-      <Link href="/terms-conditions" className="hover:text-blue-400 transition">
-        Terms & Condition
-      </Link>
-    </div>
-  </div>
-</div>
-
+      {/* ================== BOTTOM BAR ================== */}
+      <div className="mt-12 bg-[#03112D] py-4 text-center">
+        <p className="text-sm text-gray-300">
+          © AgileInnovate. All Rights Reserved.
+        </p>
+      </div>
     </footer>
   );
 }
