@@ -8,11 +8,8 @@ export default function Footer() {
   return (
     <footer className="bg-[#051B43] text-white pt-16">
 
-      {/* ================== TOP GRID ================== */}
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
 
-        {/* ========= Company Info ========= */}
-      {/* ========= Company Info ========= */}
 <div className="w-full">
   
   {/* Logo */}
@@ -26,17 +23,15 @@ export default function Footer() {
     />
   </div>
 
-  {/* Description */}
   <p className="text-sm leading-relaxed text-gray-200 mb-6 text-center md:text-left">
     At AgileInnovate, we're dedicated to crafting exceptional IT solutions 
     that empower businesses worldwide. We blend deep industry knowledge 
     with agile methodologies to deliver innovation that matters.
   </p>
 
-  {/* Email Subscription */}
+ 
   <div className="flex flex-col sm:flex-row w-full gap-3 sm:gap-0">
 
-    {/* Input */}
     <input
       type="email"
       placeholder="Your Email"
@@ -44,8 +39,6 @@ export default function Footer() {
                  bg-[#0A2A5E] rounded-md sm:rounded-none sm:rounded-l-md 
                  focus:outline-none"
     />
-
-    {/* Button */}
     <button
       className="bg-white px-3 py-2 font-semibold text-blue-900 
                  hover:bg-gray-200 transition rounded-md 
