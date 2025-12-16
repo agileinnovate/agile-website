@@ -1,9 +1,10 @@
-import ODO from "@/components/Our-Products/ODO";
+import Odoo from "@/components/Our-Products/Odoo";
+
 
 export default function ERPPage(){
     return (
         <>
-       <ODO/>
+       <Odoo/>
         </>
     )
 }

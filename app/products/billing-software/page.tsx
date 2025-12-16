@@ -1,9 +1,10 @@
-import BillingSoftware from "@/components/Our-Products/BillingSoftware";
+import Billing from "@/components/Our-Products/Billing";
+
 
 export default function BillingPage(){
     return (
         <>
-       <BillingSoftware/>
+       <Billing/>
         </>
     )
 }

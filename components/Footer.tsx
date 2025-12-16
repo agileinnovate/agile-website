@@ -12,7 +12,6 @@ export default function Footer() {
 
 <div className="w-full">
   
-  {/* Logo */}
   <div className="mb-6 bg-white ">
     <Image
       src="/logo1.png"
@@ -49,10 +48,9 @@ export default function Footer() {
   </div>
   </div>
 
-        {/* ========= Get In Touch ========= */}
         <div>
           <h3 className="text-xl font-semibold mb-3">Get In Touch</h3>
-          <div className="w-12 h-[2px] bg-[#1EA6FF] mb-5"></div>
+          <div className="w-12 h-0.5 bg-[#1EA6FF] mb-5"></div>
 
           <p className="text-gray-300 text-sm mb-2">📍 Noida Extension India 201009</p>
           <p className="text-gray-300 text-sm mb-2">📧 info@agileinnovate.tech</p>
@@ -71,10 +69,9 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* ========= Quick Links ========= */}
         <div>
           <h3 className="text-xl font-semibold mb-3">Quick Links</h3>
-          <div className="w-12 h-[2px] bg-[#1EA6FF] mb-5"></div>
+          <div className="w-12 h-0.5 bg-[#1EA6FF] mb-5"></div>
 
           <ul className="space-y-3 text-gray-300 text-sm">
             {[
@@ -94,10 +91,10 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* ========= Popular Links ========= */}
+       
         <div>
           <h3 className="text-xl font-semibold mb-3">Popular Links</h3>
-          <div className="w-12 h-[2px] bg-[#1EA6FF] mb-5"></div>
+          <div className="w-12 h-0.5 bg-[#1EA6FF] mb-5"></div>
 
           <ul className="space-y-3 text-gray-300 text-sm">
             {[
@@ -117,8 +114,7 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-
-      {/* ================== BOTTOM BAR ================== */}
+      
       <div className="mt-12 bg-[#03112D] py-4 text-center">
         <p className="text-sm text-gray-300">
           © AgileInnovate. All Rights Reserved.
