@@ -6,8 +6,8 @@ import IndustryCard from "./IndustryCard";
 
 export default function IndustriesModel() {
   return (
-    <div className="bg-white rounded-xl p-6 w-[720px] shadow-xl border ">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    <div className="bg-white rounded-xl p-6 w-[700px] shadow-xl border ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         <IndustryCard icon={<BsBank2 />} title="Finance & Banking" url="/industries/finance" />
         <IndustryCard icon={<FaTruck />} title="Supply Chain & Logistics" url="/industries/supply" />
         <IndustryCard icon={<FaClinicMedical />} title="Healthcare" url="/industries/healthcare" />

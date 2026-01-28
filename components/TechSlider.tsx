@@ -20,12 +20,12 @@ export default function TechSlider() {
     "/aws.png",
   ];
 
-  const infinite = [...logos, ...logos]; // Duplicate for seamless loop
+  const infinite = [...logos, ...logos];
   const [pos, setPos] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setPos((prev) => prev + 150); // move 150px every 2 sec
+      setPos((prev) => prev + 150); 
     }, 3000);
 
     return () => clearInterval(timer);

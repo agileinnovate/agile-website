@@ -11,11 +11,7 @@ export default function Footer() {
       {/* ================== TOP GRID ================== */}
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
 
-        {/* ========= Company Info ========= */}
-      {/* ========= Company Info ========= */}
 <div className="w-full">
-  
-  {/* Logo */}
   <div className="mb-6 bg-white ">
     <Image
       src="/logo1.png"
@@ -26,28 +22,22 @@ export default function Footer() {
     />
   </div>
 
-  {/* Description */}
   <p className="text-sm leading-relaxed text-gray-200 mb-6 text-center md:text-left">
     At AgileInnovate, we're dedicated to crafting exceptional IT solutions 
     that empower businesses worldwide. We blend deep industry knowledge 
     with agile methodologies to deliver innovation that matters.
   </p>
 
-  {/* Email Subscription */}
   <div className="flex flex-col sm:flex-row w-full gap-3 sm:gap-0">
+      <input
+        type="email"
+         placeholder="Your Email"
+          className="w-full px-2 py-0.5 text-white border border-gray-400 
+                    bg-[#0A2A5E] rounded-md sm:rounded-none sm:rounded-l-md 
+                     focus:outline-none"/>
 
-    {/* Input */}
-    <input
-      type="email"
-      placeholder="Your Email"
-      className="w-full px-3 py-2 text-white border border-gray-400 
-                 bg-[#0A2A5E] rounded-md sm:rounded-none sm:rounded-l-md 
-                 focus:outline-none"
-    />
-
-    {/* Button */}
     <button
-      className="bg-white px-3 py-2 font-semibold text-blue-900 
+      className="bg-white px-2 py-0.5 font-semibold text-blue-900 
                  hover:bg-gray-200 transition rounded-md 
                  sm:rounded-none sm:rounded-r-md w-full sm:w-auto"
     >
@@ -56,7 +46,6 @@ export default function Footer() {
   </div>
   </div>
 
-        {/* ========= Get In Touch ========= */}
         <div>
           <h3 className="text-xl font-semibold mb-3">Get In Touch</h3>
           <div className="w-12 h-[2px] bg-[#1EA6FF] mb-5"></div>

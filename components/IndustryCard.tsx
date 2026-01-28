@@ -20,11 +20,10 @@ export default function IndustryCard({ icon, title, url }: IndustryCardProps) {
           p-4
           flex
           items-center
-          gap-4
+          gap-3
           border
-          border-gray-200
-          hover:shadow-xl
-          
+          border-blue-500
+          hover:shadow-xl 
           cursor-pointer
         "
       >
