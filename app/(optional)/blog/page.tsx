@@ -1,9 +1,5 @@
-export default function BlogPage() {
-  return (
-    <main>
-      <h1>Blog</h1>
-      <p>Blog content coming soon...</p>
-    </main>
-  );
-}
+import Blog from "@/components/Blog";
 
+export default function BlogPage() {
+  return <Blog />;
+}

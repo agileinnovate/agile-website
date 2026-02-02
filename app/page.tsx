@@ -64,12 +64,14 @@ export default function Home() {
       <div className="relative z-10 bg-white pt-24 md:pt-28">
         <AboutSection />
       </div>
+      <div className="pt-2">
+        <ServicesSection />
+      </div>
 
-      <ServicesSection />
       <ReviewSection />
       <Testimonial />
       <ContactPage />
-      <TechSlider/>
+      <TechSlider />
     </main>
   );
 }
