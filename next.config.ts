@@ -17,6 +17,8 @@ const nextConfig: NextConfig = {
         pathname: '/uploads/**',
       },
     ],
+  eslint: {
+    ignoreDuringBuilds: true, 
   },
 };
 

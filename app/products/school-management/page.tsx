@@ -1,9 +1,10 @@
-import Management from "@/components/Our-Products/Management";
+import SchoolManagement from "@/components/Our-Products/SchoolManagement";
+
 
 export default function SchoolPage(){
     return (
         <>
-        <Management/>
+        <SchoolManagement/>
         </>
     )
 }

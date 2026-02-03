@@ -20,29 +20,25 @@ export default function TechSlider() {
     "/aws.png",
   ];
 
-  const infinite = [...logos, ...logos];
+  const infinite = [...logos, ...logos]; // Duplicate for seamless loop
   const [pos, setPos] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setPos((prev) => prev + 150); 
+      setPos((prev) => prev + 150); // move 150px every 2 sec
     }, 3000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [totalWidth]);
 
   return (
     <section className="w-full bg-white py-24 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4">
-
         <motion.div
           animate={{ x: -pos }}
-          transition={{
-            duration: 1,
-            ease: "easeInOut",
-          }}
+          transition={{ duration: 1, ease: "easeInOut" }}
           className="flex gap-16"
-          style={{ width: `${infinite.length * 150}px` }}
+          style={{ width: totalWidth }}
         >
           {infinite.map((src, index) => (
             <div key={index} className="min-w-[150px] flex justify-center">
@@ -56,7 +52,6 @@ export default function TechSlider() {
             </div>
           ))}
         </motion.div>
-
       </div>
     </section>
   );

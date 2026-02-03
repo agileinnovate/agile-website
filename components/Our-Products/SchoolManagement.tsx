@@ -4,7 +4,7 @@ import Image from "next/image";
 import { CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
 
-export default function HospitalManagement() {
+export default function SchoolManagement() {
   return (
     <main>
 
@@ -13,8 +13,8 @@ export default function HospitalManagement() {
       {/* ------------------------------------------------ */}
       <section className="relative h-[420px] bg-gradient-to-br from-blue-600 to-blue-800 text-white flex items-center justify-center">
         <Image
-          src="/hospital-hero.jpg"
-          alt="Hospital Management Hero"
+          src="/school-hero.jpg"
+          alt="School Management Hero"
           fill
           className="object-cover opacity-30"
         />
@@ -25,12 +25,12 @@ export default function HospitalManagement() {
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-5xl font-bold"
           >
-            Smart Hospital Management System
+            Smart School Management System
           </motion.h1>
 
           <p className="text-lg md:text-xl max-w-3xl mx-auto mt-4">
-            Manage patients, doctors, appointments, billing, pharmacy, labs &
-            operations with a unified healthcare management platform.
+            Manage students, teachers, attendance, exams, fees, and online learning — 
+            all from a single intelligent dashboard.
           </p>
 
           <button className="mt-6 bg-white text-blue-700 px-8 py-3 rounded-lg shadow font-semibold hover:bg-blue-100 transition">
@@ -40,24 +40,24 @@ export default function HospitalManagement() {
       </section>
 
       {/* ------------------------------------------------ */}
-      {/* CORE MODULES */}
+      {/* SCHOOL MODULES */}
       {/* ------------------------------------------------ */}
       <section className="py-16 bg-white px-6">
         <h2 className="text-3xl font-bold text-center text-blue-700 mb-12">
-          Core Hospital Modules
+          Core Modules Included
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {[
-            "Patient Registration & OPD",
-            "Doctor & Appointment Scheduling",
-            "Electronic Medical Records (EMR)",
-            "IPD Admission & Bed Management",
-            "Pharmacy Management",
-            "Billing & Invoicing",
-            "Laboratory Management",
-            "Radiology & Diagnostics",
-            "Nursing & Ward Management",
+            "Student Information System (SIS)",
+            "Attendance Management",
+            "Online Classes & LMS",
+            "Time Table & Scheduling",
+            "Fees Management & Billing",
+            "Exam & Result Management",
+            "Teacher & Staff Management",
+            "Parent Portal & Mobile App",
+            "Transport Management",
           ].map((module, i) => (
             <motion.div
               key={i}
@@ -67,7 +67,7 @@ export default function HospitalManagement() {
             >
               <h3 className="text-xl font-semibold text-blue-700">{module}</h3>
               <p className="text-gray-600 mt-2">
-                Essential tools to digitize hospital operations.
+                Complete module to simplify school operations.
               </p>
             </motion.div>
           ))}
@@ -75,24 +75,24 @@ export default function HospitalManagement() {
       </section>
 
       {/* ------------------------------------------------ */}
-      {/* KEY FEATURES */}
+      {/* FEATURES */}
       {/* ------------------------------------------------ */}
       <section className="py-16 bg-blue-50 px-6">
         <h2 className="text-3xl font-bold text-center text-blue-700 mb-12">
-          Key Features of HMS
+          Key Features
         </h2>
 
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
           {[
-            "Centralized patient record management",
-            "Doctor-wise appointment calendar",
-            "Integrated pharmacy & inventory",
-            "Automated billing & insurance support",
-            "Lab test ordering & report generation",
-            "Paperless digital medical records",
-            "Doctor & nurse allocation to wards",
-            "Real-time bed occupancy tracking",
-            "Mobile app for doctors & patients",
+            "Centralized student database",
+            "Automated attendance tracking",
+            "Digital assignments & homework",
+            "Timetable automation",
+            "Online exam & report card generation",
+            "Role-based access control",
+            "Teacher performance analytics",
+            "Parent communication app",
+            "Secure cloud backups",
           ].map((feature, i) => (
             <div className="flex gap-3" key={i}>
               <CheckCircle className="text-blue-700" size={26} />
@@ -103,16 +103,16 @@ export default function HospitalManagement() {
       </section>
 
       {/* ------------------------------------------------ */}
-      {/* PATIENT MANAGEMENT UI */}
+      {/* SIS (STUDENT PROFILE) UI */}
       {/* ------------------------------------------------ */}
       <section className="py-20 bg-white px-6">
         <h2 className="text-3xl font-bold text-center text-blue-700 mb-6">
-          Patient Management Dashboard
+          Student Information System (SIS)
         </h2>
 
         <p className="text-center text-gray-600 max-w-3xl mx-auto mb-12">
-          Track patient visits, medical history, prescriptions, lab results,
-          allergies, and previous treatments in one centralized EMR system.
+          Manage complete student records including personal details, academics,
+          attendance, fees, ID cards, health records and more.
         </p>
 
         <motion.div
@@ -121,8 +121,8 @@ export default function HospitalManagement() {
           className="max-w-5xl mx-auto shadow-xl rounded-xl overflow-hidden border border-blue-200"
         >
           <Image
-            src="/hospital-patient.jpg"
-            alt="Patient Management UI"
+            src="/school-sis.jpg"
+            alt="School SIS UI"
             width={1600}
             height={900}
           />
@@ -130,16 +130,16 @@ export default function HospitalManagement() {
       </section>
 
       {/* ------------------------------------------------ */}
-      {/* DOCTOR & APPOINTMENT UI */}
+      {/* TIMETABLE & ATTENDANCE UI */}
       {/* ------------------------------------------------ */}
       <section className="py-20 bg-blue-50 px-6">
         <h2 className="text-3xl font-bold text-center text-blue-700 mb-6">
-          Doctor & Appointment Scheduling
+          Timetable & Attendance Tracking
         </h2>
 
         <p className="text-center text-gray-600 max-w-2xl mx-auto mb-10">
-          Allow patients to book appointments online while doctors manage their
-          daily schedules through a dynamic calendar interface.
+          Auto-generate timetables and instantly track attendance with biometric,
+          QR code or mobile-based systems.
         </p>
 
         <motion.div
@@ -148,8 +148,8 @@ export default function HospitalManagement() {
           className="max-w-4xl mx-auto rounded-xl overflow-hidden shadow-lg border border-blue-200"
         >
           <Image
-            src="/hospital-appointment.jpg"
-            alt="Appointment Dashboard"
+            src="/school-attendance.jpg"
+            alt="Attendance Dashboard"
             width={1600}
             height={900}
           />
@@ -157,16 +157,16 @@ export default function HospitalManagement() {
       </section>
 
       {/* ------------------------------------------------ */}
-      {/* BILLING & PHARMACY UI */}
+      {/* FEES MANAGEMENT UI */}
       {/* ------------------------------------------------ */}
       <section className="py-20 bg-white px-6">
         <h2 className="text-3xl font-bold text-center text-blue-700 mb-6">
-          Billing, Pharmacy & Inventory
+          Fees & Billing Management
         </h2>
 
         <p className="text-center text-gray-600 max-w-3xl mx-auto mb-10">
-          Manage pharmacy stock, invoices, taxes, insurance claims, and payments
-          with automated billing workflows.
+          Track payments, send reminders, manage fee structures, late fines and
+          generate invoices with one click.
         </p>
 
         <motion.div
@@ -175,8 +175,8 @@ export default function HospitalManagement() {
           className="max-w-4xl mx-auto rounded-xl shadow-lg border border-blue-200 overflow-hidden"
         >
           <Image
-            src="/hospital-billing.jpg"
-            alt="Billing UI"
+            src="/school-fees.jpg"
+            alt="Fees Dashboard"
             width={1600}
             height={900}
           />
@@ -188,19 +188,19 @@ export default function HospitalManagement() {
       {/* ------------------------------------------------ */}
       <section className="py-20 bg-blue-50 px-6">
         <h2 className="text-3xl font-bold text-center text-blue-700 mb-12">
-          Suitable For All Healthcare Institutions
+          Industry Use Cases
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
           {[
-            "Hospitals",
-            "Clinics",
-            "Diagnostic Centers",
-            "Nursing Homes",
-            "Blood Banks",
-            "Rehabilitation Centers",
-            "Multi-speciality Hospitals",
-            "Telemedicine Providers",
+            "Schools",
+            "Colleges",
+            "Coaching Institutes",
+            "Universities",
+            "Training Centers",
+            "Online Academies",
+            "NGO Educational Programs",
+            "Skill Development Centers",
           ].map((industry, i) => (
             <motion.div
               key={i}
@@ -219,11 +219,11 @@ export default function HospitalManagement() {
       {/* ------------------------------------------------ */}
       <section className="py-20 bg-gradient-to-br from-blue-600 to-blue-800 text-white text-center px-6">
         <h2 className="text-4xl font-bold mb-4">
-          Ready to Digitize Your Hospital?
+          Ready to Digitize Your School?
         </h2>
 
         <p className="max-w-2xl mx-auto text-lg mb-8">
-          Experience a complete hospital automation system. Book a personalized demo today.
+          Get a personalized demo and see how our School Management System can simplify operations.
         </p>
 
         <button className="bg-white text-blue-700 px-10 py-4 rounded-lg text-lg font-semibold shadow hover:bg-blue-100 transition">

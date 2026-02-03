@@ -12,8 +12,7 @@ import {
 export default function Footer() {
   return (
     <footer className="bg-[#051B43] text-white pt-16">
-      {/* ================== TOP GRID ================== */}
-      <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-22">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
         <div className="w-full">
           <div className="mb-6 bg-white ">
             <Image
@@ -36,13 +35,12 @@ export default function Footer() {
             <input
               type="email"
               placeholder="Your Email"
-              className="w-full px-2 py-0.5 text-white border border-gray-400 
-                    bg-[#0A2A5E] rounded-md sm:rounded-none sm:rounded-l-md 
-                     focus:outline-none"
+              className="w-full px-3 py-2 text-white border border-gray-400 
+                 bg-[#0A2A5E] rounded-md sm:rounded-none sm:rounded-l-md 
+                 focus:outline-none"
             />
-
             <button
-              className="bg-white px-2 py-0.5 font-semibold text-blue-900 
+              className="bg-white px-3 py-2 font-semibold text-blue-900 
                  hover:bg-gray-200 transition rounded-md 
                  sm:rounded-none sm:rounded-r-md w-full sm:w-auto"
             >
@@ -53,7 +51,7 @@ export default function Footer() {
 
         <div>
           <h3 className="text-xl font-semibold mb-3">Get In Touch</h3>
-          <div className="w-12 h-[2px] bg-[#1EA6FF] mb-5"></div>
+          <div className="w-12 h-0.5 bg-[#1EA6FF] mb-5"></div>
 
           <p className="text-gray-300 text-sm mb-2">
             📍 Noida Extension India 201009
@@ -78,10 +76,9 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* ========= Quick Links ========= */}
         <div>
           <h3 className="text-xl font-semibold mb-3">Quick Links</h3>
-          <div className="w-12 h-[2px] bg-[#1EA6FF] mb-5"></div>
+          <div className="w-12 h-0.5 bg-[#1EA6FF] mb-5"></div>
 
           <ul className="space-y-3 text-gray-300 text-sm">
             {[
@@ -105,10 +102,9 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* ========= Popular Links ========= */}
         <div>
           <h3 className="text-xl font-semibold mb-3">Popular Links</h3>
-          <div className="w-12 h-[2px] bg-[#1EA6FF] mb-5"></div>
+          <div className="w-12 h-0.5 bg-[#1EA6FF] mb-5"></div>
 
           <ul className="space-y-3 text-gray-300 text-sm">
             {[
@@ -132,7 +128,6 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* ================== BOTTOM BAR ================== */}
       <div className="mt-12 bg-[#03112D] py-4 text-center">
         <p className="text-sm text-gray-300">
           © AgileInnovate. All Rights Reserved.
