@@ -20,16 +20,18 @@ export default function TechSlider() {
     "/aws.png",
   ];
 
-  const infinite = [...logos, ...logos]; // Duplicate for seamless loop
+  const infinite = [...logos, ...logos];
+  const totalWidth = `${infinite.length * 150}px`;
+
   const [pos, setPos] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setPos((prev) => prev + 150); // move 150px every 2 sec
+      setPos((prev) => prev + 150);
     }, 3000);
 
     return () => clearInterval(timer);
-  }, [totalWidth]);
+  }, []); // ✅ no dependency needed
 
   return (
     <section className="w-full bg-white py-24 overflow-hidden">
@@ -41,7 +43,7 @@ export default function TechSlider() {
           style={{ width: totalWidth }}
         >
           {infinite.map((src, index) => (
-            <div key={index} className="min-w-[150px] flex justify-center">
+            <div key={index} className="min-w-37.5 flex justify-center">
               <Image
                 src={src}
                 alt="Tech Logo"

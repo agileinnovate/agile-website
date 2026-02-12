@@ -7,11 +7,10 @@ import { motion } from "framer-motion";
 export default function HospitalManagement() {
   return (
     <main>
-
       {/* ------------------------------------------------ */}
       {/* HERO SECTION */}
       {/* ------------------------------------------------ */}
-      <section className="relative h-[420px] bg-gradient-to-br from-blue-600 to-blue-800 text-white flex items-center justify-center">
+      <section className="relative h-105 bg-linear-to-br from-blue-600 to-blue-800 text-white flex items-center justify-center">
         <Image
           src="/hospital-hero.jpg"
           alt="Hospital Management Hero"
@@ -208,7 +207,9 @@ export default function HospitalManagement() {
               whileInView={{ opacity: 1, y: 0 }}
               className="bg-white p-6 rounded-xl text-center border border-blue-200 shadow hover:shadow-md transition"
             >
-              <h3 className="text-xl font-semibold text-blue-700">{industry}</h3>
+              <h3 className="text-xl font-semibold text-blue-700">
+                {industry}
+              </h3>
             </motion.div>
           ))}
         </div>
@@ -217,20 +218,20 @@ export default function HospitalManagement() {
       {/* ------------------------------------------------ */}
       {/* CTA SECTION */}
       {/* ------------------------------------------------ */}
-      <section className="py-20 bg-gradient-to-br from-blue-600 to-blue-800 text-white text-center px-6">
+      <section className="py-20 bg-linear-to-br from-blue-600 to-blue-800 text-white text-center px-6">
         <h2 className="text-4xl font-bold mb-4">
           Ready to Digitize Your Hospital?
         </h2>
 
         <p className="max-w-2xl mx-auto text-lg mb-8">
-          Experience a complete hospital automation system. Book a personalized demo today.
+          Experience a complete hospital automation system. Book a personalized
+          demo today.
         </p>
 
         <button className="bg-white text-blue-700 px-10 py-4 rounded-lg text-lg font-semibold shadow hover:bg-blue-100 transition">
           Book Free Demo
         </button>
       </section>
-
     </main>
   );
 }

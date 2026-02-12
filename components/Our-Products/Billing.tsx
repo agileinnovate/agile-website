@@ -7,9 +7,8 @@ import { motion } from "framer-motion";
 export default function Billing() {
   return (
     <main>
-
       {/* ---------------- HERO SECTION ---------------- */}
-      <section className="relative h-[420px] bg-gradient-to-br from-blue-600 to-blue-800 text-white flex items-center justify-center">
+      <section className="relative h-105 bg-linear-to-br from-blue-600 to-blue-800 text-white flex items-center justify-center">
         <Image
           src="/billing-hero.jpg"
           alt="Billing Software Hero"
@@ -44,7 +43,6 @@ export default function Billing() {
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
-
           {[
             "GST Billing & Invoicing",
             "Point of Sale (POS)",
@@ -129,8 +127,8 @@ export default function Billing() {
           GST & Professional Invoicing
         </h2>
         <p className="text-center text-gray-600 max-w-2xl mx-auto mt-4 mb-12">
-          Auto-calculate CGST, SGST, IGST. Generate branded invoices, e-way bills,
-          PDF downloads, and share directly via WhatsApp or Email.
+          Auto-calculate CGST, SGST, IGST. Generate branded invoices, e-way
+          bills, PDF downloads, and share directly via WhatsApp or Email.
         </p>
 
         <motion.div
@@ -194,27 +192,29 @@ export default function Billing() {
               whileInView={{ opacity: 1, y: 0 }}
               className="bg-white p-6 rounded-xl text-center border border-blue-200 shadow hover:shadow-md transition"
             >
-              <h3 className="text-xl font-semibold text-blue-700">{industry}</h3>
+              <h3 className="text-xl font-semibold text-blue-700">
+                {industry}
+              </h3>
             </motion.div>
           ))}
         </div>
       </section>
 
       {/* ---------------- CTA SECTION ---------------- */}
-      <section className="py-20 bg-gradient-to-br from-blue-600 to-blue-800 text-white text-center px-6">
+      <section className="py-20 bg-linear-to-br from-blue-600 to-blue-800 text-white text-center px-6">
         <h2 className="text-4xl font-bold mb-4">
           Ready to Automate Your Billing?
         </h2>
 
         <p className="max-w-2xl mx-auto text-lg mb-8">
-          Experience the fastest billing and complete business automation. Book a demo today.
+          Experience the fastest billing and complete business automation. Book
+          a demo today.
         </p>
 
         <button className="bg-white text-blue-700 px-10 py-4 rounded-lg text-lg font-semibold shadow hover:bg-blue-100 transition">
           Book Free Demo
         </button>
       </section>
-
     </main>
   );
 }

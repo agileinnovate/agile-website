@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 export default function CRMPage() {
   return (
     <main>
-      <section className="relative w-full h-[420px] flex items-center justify-center bg-linear-to-br from-blue-600 to-blue-800 text-white">
+      <section className="relative w-full h-105 flex items-center justify-center bg-linear-to-br from-blue-600 to-blue-800 text-white">
         <Image
           src="/crm-hero.jpg"
           alt="CRM Hero"
@@ -24,8 +24,8 @@ export default function CRMPage() {
             Smart CRM to Grow Your Sales Faster
           </h1>
           <p className="text-lg md:text-xl max-w-2xl mx-auto mt-4">
-            Manage leads, automate follow-ups, track pipelines, and convert faster
-            with a powerful CRM built for modern businesses.
+            Manage leads, automate follow-ups, track pipelines, and convert
+            faster with a powerful CRM built for modern businesses.
           </p>
 
           <button className="mt-6 bg-white text-blue-700 px-8 py-3 rounded-lg shadow font-semibold hover:bg-blue-100 transition">
@@ -87,7 +87,6 @@ export default function CRMPage() {
         </div>
       </section>
 
-   
       <section className="py-20 bg-white px-6">
         <h2 className="text-3xl font-bold text-center text-blue-700 mb-8">
           Visual Sales Pipeline
@@ -95,8 +94,8 @@ export default function CRMPage() {
 
         <p className="text-center text-gray-600 max-w-3xl mx-auto mb-10">
           Manage your entire sales cycle with a simple, intuitive pipeline view.
-          Track deal stages, assign team members, forecast revenue and never miss
-          a follow-up again.
+          Track deal stages, assign team members, forecast revenue and never
+          miss a follow-up again.
         </p>
 
         <motion.div
@@ -114,7 +113,6 @@ export default function CRMPage() {
         </motion.div>
       </section>
 
-    
       <section className="py-20 bg-blue-50 px-6">
         <h2 className="text-3xl font-bold text-center text-blue-700 mb-8">
           CRM Automation
@@ -141,14 +139,12 @@ export default function CRMPage() {
         </motion.div>
       </section>
 
- 
       <section className="py-20 bg-white px-6">
         <h2 className="text-3xl font-bold text-center text-blue-700 mb-12">
           Industry Use Cases
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
-
           {[
             "Real Estate",
             "Education",
@@ -174,9 +170,7 @@ export default function CRMPage() {
       </section>
 
       <section className="py-20 bg-linear-to-br from-blue-600 to-blue-800 text-white text-center px-6">
-        <h2 className="text-4xl font-bold mb-4">
-          Ready to Boost Your Sales?
-        </h2>
+        <h2 className="text-4xl font-bold mb-4">Ready to Boost Your Sales?</h2>
 
         <p className="max-w-2xl mx-auto text-lg mb-8">
           Get a personalized demo of our CRM system and see how it can transform
@@ -190,4 +184,3 @@ export default function CRMPage() {
     </main>
   );
 }
-

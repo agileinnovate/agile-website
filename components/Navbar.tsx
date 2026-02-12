@@ -73,26 +73,24 @@ export default function Navbar() {
   const [mobileProducts, setMobileProducts] = useState(false);
   return (
     <>
-      <nav className="fixed w-full bg-white text-blue-600 shadow-sm z-50">
-        <div className="max-w-8xl mx-auto flex items-center justify-between px-24 py-3 h-20">
+      <nav className="fixed w-full bg-white text-gray-800 hover:text-gray-600 shadow-xs z-50">
+        <div className="max-w-8xl mx-auto flex items-center justify-between px-24 py-3 h-18">
           {/* LOGO */}
-          <div className="relative w-40 h-[70px]">
-            <Image
-              src="/logo1.png"
-              alt="AgileInnovate Logo"
-              fill
-              className="object-contain"
-            />
-          </div>
+          <Link href="/">
+            <div className="relative w-40 h-17.5">
+              <Image
+                src="/logo1.png"
+                alt="AgileInnovate Logo"
+                fill
+                className="object-contain"
+              />
+            </div>
+          </Link>
 
           {/* DESKTOP NAV */}
           <div className="hidden md:flex items-center space-x-8 text-md font-bold">
-            <Link href="/" className="hover:text-blue-300">
-              Home
-            </Link>
-            <Link href="/blog" className="hover:text-blue-300">
-              Blog
-            </Link>
+            <Link href="/">Home</Link>
+            <Link href="/blog">Blog</Link>
 
             {/* ABOUT */}
             <div
@@ -100,14 +98,14 @@ export default function Navbar() {
               onMouseEnter={openAbout}
               onMouseLeave={closeAbout}
             >
-              <span className="cursor-pointer hover:text-blue-300 flex items-center gap-1">
+              <span className="cursor-pointer flex items-center gap-1">
                 About <FaAngleDown />
               </span>
 
               {aboutOpen && (
                 <div
                   className="absolute left-1/2 -translate-x-1/2 top-full mt-3 
-                  bg-white shadow-xl rounded-xl border p-4 w-[450px] z-999"
+                  bg-white shadow-xl rounded-xl border p-4 w-112.5 z-999"
                 >
                   <div className="grid grid-cols-2 gap-6">
                     <Link
@@ -117,7 +115,7 @@ export default function Navbar() {
                       <h2 className="text-sm font-semibold text-gray-800">
                         About Us
                       </h2>
-                      <div className="w-12 h-[3px] bg-blue-600 mt-1 mb-3"></div>
+                      <div className="w-12 h-0.75 bg-blue-600 mt-1 mb-3"></div>
                       <p className="text-sm text-gray-600">
                         Who we are & what we do.
                       </p>
@@ -130,7 +128,7 @@ export default function Navbar() {
                       <h2 className="text-sm font-semibold text-gray-800">
                         Career
                       </h2>
-                      <div className="w-12 h-[3px] bg-blue-600 mt-1 mb-3"></div>
+                      <div className="w-12 h-0.75 bg-blue-600 mt-1 mb-3"></div>
                       <p className="text-sm text-gray-600">Join our team.</p>
                     </Link>
                   </div>
@@ -138,7 +136,7 @@ export default function Navbar() {
               )}
             </div>
 
-            <Link href="/services" className="hover:text-blue-300">
+            <Link href="/services" className="">
               Services
             </Link>
 
@@ -148,14 +146,14 @@ export default function Navbar() {
               onMouseEnter={openProducts}
               onMouseLeave={closeProducts}
             >
-              <span className="cursor-pointer hover:text-blue-300 flex items-center gap-1">
+              <span className="cursor-pointer  flex items-center gap-1">
                 Our Products <FaAngleDown />
               </span>
 
               {productsOpen && (
                 <div
                   className="absolute left-1/2 -translate-x-1/2 top-full mt-4 
-      bg-white shadow-xl border rounded-xl p-6 w-[750px] z-999"
+      bg-white shadow-xl border rounded-xl p-6 w-187.5 z-999"
                 >
                   <div className="grid grid-cols-3 gap-6">
                     {/* CRM */}
@@ -166,7 +164,7 @@ export default function Navbar() {
                       <h3 className="text-sm font-semibold text-gray-800">
                         CRM
                       </h3>
-                      <div className="w-10 h-[3px] bg-blue-600 mt-1 mb-3"></div>
+                      <div className="w-10 h-0.75 bg-blue-600 mt-1 mb-3"></div>
                       <p className="text-sm text-gray-600">
                         Manage leads & workflow automation.
                       </p>
@@ -180,7 +178,7 @@ export default function Navbar() {
                       <h3 className="text-sm font-semibold text-gray-800">
                         Odoo ERP
                       </h3>
-                      <div className="w-10 h-[3px] bg-blue-600 mt-1 mb-3"></div>
+                      <div className="w-10 h-0.75 bg-blue-600 mt-1 mb-3"></div>
                       <p className="text-sm text-gray-600">
                         All-in-one enterprise management suite.
                       </p>
@@ -194,7 +192,7 @@ export default function Navbar() {
                       <h3 className="text-sm font-semibold text-gray-800">
                         School Management
                       </h3>
-                      <div className="w-10 h-[3px] bg-blue-600 mt-1 mb-3"></div>
+                      <div className="w-10 h-0.75 bg-blue-600 mt-1 mb-3"></div>
                       <p className="text-sm text-gray-600">
                         Smart digital school operations.
                       </p>
@@ -208,7 +206,7 @@ export default function Navbar() {
                       <h3 className="text-sm font-semibold text-gray-800">
                         Hospital Management
                       </h3>
-                      <div className="w-10 h-[3px] bg-blue-600 mt-1 mb-3"></div>
+                      <div className="w-10 h-0.75 bg-blue-600 mt-1 mb-3"></div>
                       <p className="text-sm text-gray-600">
                         End-to-end hospital automation.
                       </p>
@@ -222,7 +220,7 @@ export default function Navbar() {
                       <h3 className="text-sm font-semibold text-gray-800">
                         Billing Software
                       </h3>
-                      <div className="w-10 h-[3px] bg-blue-600 mt-1 mb-3"></div>
+                      <div className="w-10 h-0.75 bg-blue-600 mt-1 mb-3"></div>
                       <p className="text-sm text-gray-600">
                         Fast & accurate billing & invoices.
                       </p>
@@ -236,7 +234,7 @@ export default function Navbar() {
                       <h3 className="text-sm font-semibold text-gray-800">
                         HR & Payroll
                       </h3>
-                      <div className="w-10 h-[3px] bg-blue-600 mt-1 mb-3"></div>
+                      <div className="w-10 h-0.75 bg-blue-600 mt-1 mb-3"></div>
                       <p className="text-sm text-gray-600">
                         Automated HR & payroll operations.
                       </p>
@@ -252,14 +250,14 @@ export default function Navbar() {
               onMouseEnter={openWebMobile}
               onMouseLeave={closeWebMobile}
             >
-              <span className="cursor-pointer hover:text-blue-300 flex items-center gap-1">
+              <span className="cursor-pointer flex items-center gap-1">
                 Web & Mobile <FaAngleDown />
               </span>
 
               {webMobileOpen && (
                 <div
                   className="absolute left-1/2 -translate-x-1/2 top-full mt-4 
-                  bg-white shadow-xl rounded-xl border p-6 w-[750px] z-999"
+                  bg-white shadow-xl rounded-xl border p-6 w-187.5 z-999"
                 >
                   <div className="grid grid-cols-3 gap-6 relative">
                     <Link
@@ -269,7 +267,7 @@ export default function Navbar() {
                       <h2 className="text-sm font-semibold text-gray-800">
                         Web Development
                       </h2>
-                      <div className="w-12 h-[3px] bg-blue-600 mt-1 mb-3"></div>
+                      <div className="w-12 h-0.75 bg-blue-600 mt-1 mb-3"></div>
                       <p className="text-sm text-gray-500">
                         Corporate & modern UI websites.
                       </p>
@@ -282,7 +280,7 @@ export default function Navbar() {
                       <h2 className="text-sm font-semibold text-gray-800">
                         Mobile App Development
                       </h2>
-                      <div className="w-12 h-[3px] bg-blue-600 mt-1 mb-3"></div>
+                      <div className="w-12 h-0.75 bg-blue-600 mt-1 mb-3"></div>
                       <p className="text-sm text-gray-500">
                         iOS & Android apps.
                       </p>
@@ -295,7 +293,7 @@ export default function Navbar() {
                       <h2 className="text-sm font-semibold text-gray-800">
                         Python Development
                       </h2>
-                      <div className="w-12 h-[3px] bg-blue-600 mt-1 mb-3"></div>
+                      <div className="w-12 h-0.75 bg-blue-600 mt-1 mb-3"></div>
                       <p className="text-sm text-gray-500">
                         Backend & automation.
                       </p>
@@ -308,7 +306,7 @@ export default function Navbar() {
                       <h2 className="text-sm font-semibold text-gray-800">
                         LightSpeed Dev
                       </h2>
-                      <div className="w-12 h-[3px] bg-blue-600 mt-1 mb-3"></div>
+                      <div className="w-12 h-0.75 bg-blue-600 mt-1 mb-3"></div>
                       <p className="text-sm text-gray-500">
                         Ultra-fast development.
                       </p>
@@ -324,7 +322,7 @@ export default function Navbar() {
                         Technologies <FaAngleDown />
                       </h2>
 
-                      <div className="w-12 h-[3px] bg-blue-600 mt-1 mb-3"></div>
+                      <div className="w-12 h-0.75 bg-blue-600 mt-1 mb-3"></div>
                       <p className="text-sm text-gray-500">
                         React, Next.js, Node...
                       </p>
@@ -332,7 +330,7 @@ export default function Navbar() {
                       {technologiesOpen && (
                         <div
                           className="absolute top-0 left-full bg-white border 
-                          shadow-xl rounded-xl p-6 w-[180px] z-999"
+                          shadow-xl rounded-xl p-6 w-45 z-999"
                         >
                           <h3 className="text-lg font-semibold text-gray-900 mb-4">
                             Technologies
@@ -381,7 +379,7 @@ export default function Navbar() {
                       <h2 className="text-sm font-semibold text-gray-800">
                         Frameworks
                       </h2>
-                      <div className="w-12 h-[3px] bg-blue-600 mt-1 mb-3"></div>
+                      <div className="w-12 h-0.75 bg-blue-600 mt-1 mb-3"></div>
                       <p className="text-sm text-gray-500">
                         Modern frameworks.
                       </p>
@@ -397,7 +395,7 @@ export default function Navbar() {
               onMouseEnter={openIndustries}
               onMouseLeave={closeIndustries}
             >
-              <span className="cursor-pointer hover:text-blue-300 flex items-center gap-1">
+              <span className="cursor-pointer flex items-center gap-1">
                 Industries <FaAngleDown />
               </span>
 
@@ -411,7 +409,7 @@ export default function Navbar() {
             <Link href="/contact">
               <button
                 className="bg-blue-500 text-white hover:bg-white hover:text-blue-500 
-                border border-blue-500 rounded-full px-12 py-3"
+                border border-blue-500 rounded-full px-10 py-1.5"
               >
                 Contact Us
               </button>
@@ -442,7 +440,7 @@ export default function Navbar() {
           >
             {/* HEADER */}
             <div className="flex justify-between items-center mb-6">
-              <div className="relative w-[140px] h-[60px]">
+              <div className="relative w-35 h-15">
                 <Image
                   src="/logo1.png"
                   alt="Logo"
