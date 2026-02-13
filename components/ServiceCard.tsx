@@ -62,24 +62,27 @@ export default function NineServiceCards() {
   ];
 
   return (
-    <section className="w-full bg-[#f5f9ff] py-18">
+    <section className="w-full bg-[#f5f9ff] py-10">
       <div className="max-w-7xl mx-auto px-6">
-        {/* Heading */}
         <div className="text-center max-w-3xl mx-auto mb-10">
           <motion.h1
             initial={{ opacity: 0, y: -30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-3xl md:text-4xl font-extrabold text-blue-900"
+            className="text-3xl md:text-4xl font-bold text-black"
           >
             Our Services
           </motion.h1>
+
+          <div className="relative w-46 h-1 bg-blue-700 mx-auto mt-1 rounded-full overflow-hidden">
+            <div className="absolute top-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full animate-moveDot"></div>
+          </div>
 
           <motion.p
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
-            className="text-gray-600 mt-3 text-md"
+            className="text-gray-800 mt-3 text-md"
           >
             Explore the powerful digital solutions we provide to help your
             business grow.
@@ -94,12 +97,9 @@ export default function NineServiceCards() {
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
               className="group relative overflow-hidden bg-[#eaf5ff] shadow-md rounded-2xl p-8 text-center
-             min-h-[260px] flex flex-col"
+             min-h-65 flex flex-col"
             >
-              {/* Hover Background Image */}
               <div className="absolute inset-0 z-0 bg-blue-100 opacity-0 group-hover:opacity-100 transition duration-500"></div>
-
-              {/* Content */}
               <div className="relative z-10">
                 <motion.div
                   initial={{ scale: 0.8, opacity: 0 }}

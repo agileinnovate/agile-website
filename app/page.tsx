@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     siteName: "Agailinnovate",
     images: [
       {
-        url: "/og-home.png", // optional — add to /public
+        url: "/og-home.png",
         width: 1200,
         height: 630,
         alt: "Agailinnovate Home Banner",

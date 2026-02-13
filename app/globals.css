@@ -32,4 +32,21 @@ body {
   font-family: "Segoe UI", sans-serif;
 }
 
+@keyframes moveDot {
+  0% {
+    left: 0%;
+  }
+  50% {
+    left: 100%;
+    transform: translate(-100%, -20%);
+  }
+  100% {
+    left: 0%;
+  }
+}
+
+.animate-moveDot {
+  position: absolute;
+  animation: moveDot 4s ease-in-out infinite;
+}
 

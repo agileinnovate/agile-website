@@ -10,14 +10,13 @@ gsap.registerPlugin(ScrollTrigger);
 export default function AboutSection() {
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const contentRef = useRef<HTMLDivElement | null>(null);
-  
+
   useEffect(() => {
     const sectionEl = sectionRef.current;
     const contentEl = contentRef.current;
 
-    if (sectionEl && contentEl ) {
+    if (sectionEl && contentEl) {
       const ctx = gsap.context(() => {
-        // Animate text content
         gsap.from(contentEl, {
           y: 100,
           opacity: 0,
@@ -25,7 +24,7 @@ export default function AboutSection() {
           ease: "power3.out",
           scrollTrigger: {
             trigger: sectionEl,
-            start: "top 60%", // when 80% of viewport hits section
+            start: "top 60%",
           },
         });
       }, sectionEl);
@@ -35,37 +34,49 @@ export default function AboutSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-white py-38 overflow-hidden">
+    <section ref={sectionRef} className="bg-white py-18 overflow-hidden">
+      <div className="max-w-3xl mx-auto text-center px-6 mb-16">
+        <h1 className="text-3xl md:text-3xl font-bold text-gray-900">
+          About Us
+        </h1>
+        <div className="relative w-36 h-1 bg-blue-700 mx-auto mt-1 rounded-full overflow-hidden">
+          <div className="absolute top-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full animate-moveDot"></div>
+        </div>
+
+        <p className="text-gray-700 text-md leading-relaxed mt-2">
+          We are a forward-thinking technology company dedicated to delivering
+          scalable, secure, and high-performance digital solutions.
+        </p>
+      </div>
       <div className="max-w-7xl mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-        
-        <div className="relative w-full h-[350px] md:h-[450px] rounded-2xl overflow-hidden shadow-lg">
+        <div className="relative w-full h-87.5 md:h-112.5 rounded-2xl overflow-hidden shadow-lg">
           <Image
             src="/about.jpeg"
             alt="Team collaboration at AgileInnovate"
             fill
             className="object-cover rounded-2xl"
           />
-         
         </div>
 
-        {/* Right Side - Text */}
         <div ref={contentRef} className="text-left">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">
             About <span className="text-blue-600">AgileInnovate</span>
           </h2>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
-            At <span className="font-semibold text-blue-600">AgileInnovate</span>, 
-            we’re passionate about driving digital transformation through innovation, 
-            agility, and cutting-edge technology. We partner with businesses worldwide 
-            to design, develop, and deploy powerful digital solutions that accelerate 
-            growth and efficiency.
+          <p className="text-gray-600 text-md leading-relaxed mb-6">
+            At{" "}
+            <span className="font-semibold text-blue-600">AgileInnovate</span>,
+            we’re passionate about driving digital transformation through
+            innovation, agility, and cutting-edge technology. We partner with
+            businesses worldwide to design, develop, and deploy powerful digital
+            solutions that accelerate growth and efficiency.
           </p>
 
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
-            Our team of dedicated developers, designers, and strategists brings years of 
-            experience in web, mobile, cloud, and AI-driven technologies. Whether you’re 
-            a startup or an enterprise, we deliver scalable, secure, and future-ready 
-            software that fits your unique business needs.
+          <p className="text-gray-600 text-md leading-relaxed mb-6">
+            Our team of dedicated developers, designers, and strategists brings
+            years of experience in web, mobile, cloud, and AI-driven
+            technologies. Whether you’re a startup or an enterprise, we deliver
+            scalable, secure, and future-ready software that fits your unique
+            business needs.
           </p>
 
           <a

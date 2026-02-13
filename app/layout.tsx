@@ -9,12 +9,10 @@ export const metadata: Metadata = {
     "Agailinnovate builds secure, scalable, and future-ready digital solutions for businesses worldwide.",
   metadataBase: new URL("https://agile-website-tan.vercel.app/"),
 
-  // Canonical URL
   alternates: {
     canonical: "/",
   },
 
-  // Open Graph (Facebook, LinkedIn)
   openGraph: {
     title: "Agailinnovate | Innovating with Technology",
     description:
@@ -32,24 +30,16 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
-  // Icons
+
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
     apple: "/apple-touch-icon.png",
   },
 
-  // Robots
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-      "max-video-preview": -1,
-    },
   },
 };
 
@@ -60,41 +50,23 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="bg-white text-gray-900 overflow-x-hidden">
+      <body className="bg-black text-gray-900 overflow-x-hidden">
         <Navbar />
-
         <main className="min-h-screen">{children}</main>
-
         <Footer />
 
-        {/*ORGANIZATION SCHEMA (JSON-LD) */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              name: "Agile Innovate",
-              url: "https://yourdomain.com",
-              logo: "https://yourdomain.com/logo.png",
-              sameAs: [
-                "https://facebook.com",
-                "https://linkedin.com",
-                "https://instagram.com",
-              ],
+              name: "Agailinnovate",
+              url: "https://agile-website-tan.vercel.app/",
             }),
           }}
         />
-
       </body>
     </html>
   );
 }
-<script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify({
-  "@context":"https://schema.org",
-  "@type":"Organization",
-  "name":"Agile Innovate",
-  "url":"https://agile-website-tan.vercel.app/",
-  
-})}}/>
-

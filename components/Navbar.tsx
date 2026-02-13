@@ -110,7 +110,7 @@ export default function Navbar() {
                   <div className="grid grid-cols-2 gap-6">
                     <Link
                       href="/about"
-                      className="p-4 rounded-xl border hover:shadow-xl transition"
+                      className="p-4 rounded-xl border hover:shadow-xl hover:border-2 hover:border-blue-600 transition"
                     >
                       <h2 className="text-sm font-semibold text-gray-800">
                         About Us
@@ -123,7 +123,7 @@ export default function Navbar() {
 
                     <Link
                       href="/career"
-                      className="p-4 rounded-xl border hover:shadow-xl transition"
+                      className="p-4 rounded-xl border hover:shadow-xl hover:border-2 hover:border-blue-600 transition"
                     >
                       <h2 className="text-sm font-semibold text-gray-800">
                         Career
@@ -159,7 +159,7 @@ export default function Navbar() {
                     {/* CRM */}
                     <Link
                       href="/products/crm"
-                      className="p-5 rounded-xl border hover:shadow-xl transition"
+                      className="p-5 rounded-xl border hover:shadow-xl hover:border-2 hover:border-blue-600 transition"
                     >
                       <h3 className="text-sm font-semibold text-gray-800">
                         CRM
@@ -173,7 +173,7 @@ export default function Navbar() {
                     {/* Odoo ERP */}
                     <Link
                       href="/products/odoo-erp"
-                      className="p-5 rounded-xl border hover:shadow-xl transition"
+                      className="p-5 rounded-xl border hover:shadow-xl hover:border-2 hover:border-blue-600 transition"
                     >
                       <h3 className="text-sm font-semibold text-gray-800">
                         Odoo ERP
@@ -187,7 +187,7 @@ export default function Navbar() {
                     {/* School Management */}
                     <Link
                       href="/products/school-management"
-                      className="p-5 rounded-xl border hover:shadow-xl transition"
+                      className="p-5 rounded-xl border hover:shadow-xl hover:border-2 hover:border-blue-600 transition"
                     >
                       <h3 className="text-sm font-semibold text-gray-800">
                         School Management
@@ -201,7 +201,7 @@ export default function Navbar() {
                     {/* Hospital Management */}
                     <Link
                       href="/products/hospital-management"
-                      className="p-5 rounded-xl border hover:shadow-xl transition"
+                      className="p-5 rounded-xl border hover:shadow-xl hover:border-2 hover:border-blue-600 transition"
                     >
                       <h3 className="text-sm font-semibold text-gray-800">
                         Hospital Management
@@ -215,7 +215,7 @@ export default function Navbar() {
                     {/* Billing Software */}
                     <Link
                       href="/products/billing-software"
-                      className="p-5 rounded-xl border hover:shadow-xl transition"
+                      className="p-5 rounded-xl border hover:shadow-xl hover:border-2 hover:border-blue-600 transition"
                     >
                       <h3 className="text-sm font-semibold text-gray-800">
                         Billing Software
@@ -229,7 +229,7 @@ export default function Navbar() {
                     {/* HR & Payroll */}
                     <Link
                       href="/products/hr-payroll"
-                      className="p-5 rounded-xl border hover:shadow-xl transition"
+                      className="p-5 rounded-xl border hover:shadow-xl hover:border-2 hover:border-blue-600 transition"
                     >
                       <h3 className="text-sm font-semibold text-gray-800">
                         HR & Payroll
@@ -262,7 +262,7 @@ export default function Navbar() {
                   <div className="grid grid-cols-3 gap-6 relative">
                     <Link
                       href="/service/web-development"
-                      className="p-4 rounded-xl border hover:shadow-xl transition"
+                      className="p-4 rounded-xl border hover:shadow-xl hover:border-2 hover:border-blue-600 transition"
                     >
                       <h2 className="text-sm font-semibold text-gray-800">
                         Web Development
@@ -275,7 +275,7 @@ export default function Navbar() {
 
                     <Link
                       href="/service/mobile-app"
-                      className="p-4 rounded-xl border hover:shadow-xl transition"
+                      className="p-4 rounded-xl border hover:shadow-xl hover:border-2 hover:border-blue-600 transition"
                     >
                       <h2 className="text-sm font-semibold text-gray-800">
                         Mobile App Development
@@ -288,7 +288,7 @@ export default function Navbar() {
 
                     <Link
                       href="/service/python"
-                      className="p-4 rounded-xl border hover:shadow-xl transition"
+                      className="p-4 rounded-xl border hover:shadow-xl hover:border-2 hover:border-blue-600 transition"
                     >
                       <h2 className="text-sm font-semibold text-gray-800">
                         Python Development
@@ -301,7 +301,7 @@ export default function Navbar() {
 
                     <Link
                       href="/service/lightspeed"
-                      className="p-4 rounded-xl border hover:shadow-xl transition"
+                      className="p-4 rounded-xl border hover:shadow-xl hover:border-2 hover:border-blue-600 transition"
                     >
                       <h2 className="text-sm font-semibold text-gray-800">
                         LightSpeed Dev
@@ -314,7 +314,7 @@ export default function Navbar() {
 
                     {/* TECHNOLOGIES SUBMENU */}
                     <div
-                      className="relative p-4 rounded-xl border hover:shadow-xl transition bg-white cursor-pointer"
+                      className="relative p-4 rounded-xl border hover:shadow-xl hover:border-2 hover:border-blue-600 transition bg-white cursor-pointer"
                       onMouseEnter={() => setTechnologiesOpen(true)}
                       onMouseLeave={() => setTechnologiesOpen(false)}
                     >
@@ -374,7 +374,7 @@ export default function Navbar() {
 
                     <Link
                       href="/service/frameworks"
-                      className="p-4 rounded-xl border hover:shadow-xl transition"
+                      className="p-4 rounded-xl border hover:shadow-xl hover:border-2 hover:border-blue-600 transition"
                     >
                       <h2 className="text-sm font-semibold text-gray-800">
                         Frameworks

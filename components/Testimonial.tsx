@@ -66,7 +66,6 @@ export default function Testimonial() {
   return (
     <section className="bg-white py-20 relative">
       <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 items-center gap-12">
-        
         {/* LEFT SIDE — TEXT CONTENT */}
         <div className="text-left">
           <span className="text-blue-400 bg-blue-100 px-6 py-1 text-md font-medium">
@@ -127,7 +126,7 @@ export default function Testimonial() {
         <div className="flex justify-center md:justify-end">
           <div className="relative w-[380px] h-[380px] md:w-[480px] md:h-[480px] rounded-2xl overflow-hidden ">
             <Image
-              src="/Testinomial.png"
+              src="/Testimonial.png"
               alt="Happy Clients"
               fill
               className="object-cover"

@@ -15,7 +15,7 @@ export default function Footer() {
     <footer className="bg-[#051B43] text-white pt-16">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-16">
         <div className="w-full">
-          <div className="mb-5 bg-white p-2">
+          <div className="mb-5 bg-white p-2 ">
             <Image
               src="/logo1.png"
               alt="AgileInnovate Logo"
@@ -136,11 +136,30 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom Bar */}
-      <div className="mt-12 bg-[#03112D] py-4 text-center">
-        <p className="text-sm text-gray-300">
-          © AgileInnovate. All Rights Reserved.
-        </p>
+      <div className="mt-12 bg-[#03112D] py-4">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-3">
+          <p className="text-sm text-gray-300 text-center md:text-left">
+            © 2025 AgileInnovate. All Rights Reserved.
+          </p>
+
+          <div className="flex gap-4 text-sm text-gray-300">
+            <Link
+              href="/privacy-policy"
+              className="hover:text-white transition"
+            >
+              Privacy Policy
+            </Link>
+
+            <span>/</span>
+
+            <Link
+              href="/terms-conditions"
+              className="hover:text-white transition"
+            >
+              Terms & Condition
+            </Link>
+          </div>
+        </div>
       </div>
     </footer>
   );
