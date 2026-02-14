@@ -62,7 +62,7 @@ export default function NineServiceCards() {
   ];
 
   return (
-    <section className="w-full bg-[#f5f9ff] py-10">
+    <section className="w-full bg-[#f5f9ff] py-18">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto mb-10">
           <motion.h1

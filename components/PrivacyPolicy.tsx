@@ -28,7 +28,6 @@ export default function PrivacyPolicy() {
       {/* ===================== CONTENT SECTION ===================== */}
       <section className="py-10 px-1 flex justify-center bg-white terms-text">
         <div className="bg-white max-w-3xl w-full rounded-2xl shadow-2xl p-6 md:p-12">
-          {/* Heading */}
           <h2 className="text-3xl font-bold text-center text-blue-900">
             Privacy Policy
           </h2>
@@ -36,15 +35,12 @@ export default function PrivacyPolicy() {
           <p className="text-center text-gray-500 text-sm mt-1">
             Last updated: June 2, 2025
           </p>
-
-          {/* Intro */}
           <p className="text-gray-600 text-center text-sm mt-3">
             At AgileInnovate ("we," "us," or "our"), we prioritize your privacy.
             This policy explains how we collect, use, and protect your data when
             you use our services or visit our website.
           </p>
 
-          {/* Section 1 */}
           <div className="mt-8">
             <h3 className="text-xl md:text-xl font-bold text-blue-600 mb-3">
               1. Information We Collect
@@ -73,7 +69,6 @@ export default function PrivacyPolicy() {
             </p>
           </div>
 
-          {/* Section 2 */}
           <div className="mt-8">
             <h3 className="text-xl md:text-xl font-bold text-blue-600 mb-3">
               2. Use of Data
@@ -96,7 +91,6 @@ export default function PrivacyPolicy() {
             </p>
           </div>
 
-          {/* Section 3 */}
           <div className="mt-8">
             <h3 className="text-xl md:text-xl font-bold text-blue-600 mb-3">
               3. Data Sharing & Disclosure
@@ -117,7 +111,6 @@ export default function PrivacyPolicy() {
             </p>
           </div>
 
-          {/* Section 4 */}
           <div className="mt-8">
             <h3 className="text-xl md:text-xl font-bold text-blue-600 mb-3">
               4. Security Measures
@@ -135,7 +128,6 @@ export default function PrivacyPolicy() {
             </p>
           </div>
 
-          {/* Section 5 */}
           <div className="mt-8">
             <h3 className="text-xl md:text-xl font-bold text-blue-600 mb-3">
               5. Cookies & Tracking
@@ -151,7 +143,7 @@ export default function PrivacyPolicy() {
             </p>
           </div>
 
-          {/* Section 6 */}
+
           <div className="mt-8">
             <h3 className="text-xl md:text-xl font-bold text-blue-600 mb-3">
               6. Your Rights
@@ -171,7 +163,6 @@ export default function PrivacyPolicy() {
             </p>
           </div>
 
-          {/* Section 7 */}
           <div className="mt-8">
             <h3 className="text-xl md:text-xl font-bold text-blue-600 mb-3">
               7. Policy Updates

@@ -28,7 +28,6 @@ export default function TermsCondition() {
       {/* ===================== CONTENT SECTION ===================== */}
       <section className="py-10 px-1 flex justify-center bg-white terms-text">
         <div className="bg-white max-w-3xl w-full rounded-2xl shadow-2xl p-4 md:p-12">
-          {/* Heading */}
           <h2 className="text-3xl font-bold text-center text-blue-900">
             Terms and Conditions
           </h2>
@@ -37,14 +36,13 @@ export default function TermsCondition() {
             Last updated: June 2, 2025
           </p>
 
-          {/* Intro */}
+
           <p className="text-gray-600 text-center text-sm mt-3">
             Welcome to SeQuere Technologies ("we," "us," or "our"). These Terms
             and Conditions govern your use of our blockchain development
             services. By engaging with us, you agree to comply with these terms.
           </p>
 
-          {/* Section 1 */}
           <div className="mt-8">
             <h3 className="text-xl md:text-xl font-bold text-blue-600 mb-3">
               1. Services Provided
@@ -78,7 +76,7 @@ export default function TermsCondition() {
             </p>
           </div>
 
-          {/* Section 2 */}
+  
           <div className="mt-8">
             <h3 className="text-xl md:text-xl font-bold text-blue-600 mb-3">
               2. Intellectual Property Rights
@@ -110,7 +108,6 @@ export default function TermsCondition() {
             </p>
           </div>
 
-          {/* Section 3 */}
           <div className="mt-8">
             <h3 className="text-xl md:text-xl font-bold text-blue-600 mb-2">
               3. Payment & Fees
@@ -129,7 +126,6 @@ export default function TermsCondition() {
             </p>
           </div>
 
-          {/* Section 4 */}
           <div className="mt-8">
             <h3 className="text-xl md:text-xl font-bold text-blue-600 mb-3">
               4. Confidentiality & Data Protection
@@ -142,7 +138,6 @@ export default function TermsCondition() {
             </p>
           </div>
 
-          {/* Section 5 */}
           <div className="mt-8">
             <h3 className="text-xl md:text-xl font-bold text-blue-600 mb-2">
               5. Limitations of Liability
@@ -171,7 +166,6 @@ export default function TermsCondition() {
             </p>
           </div>
 
-          {/* Section 6 */}
           <div className="mt-8">
             <h3 className="text-xl md:text-xl font-bold text-blue-600 mb-3">
               6. Termination
@@ -185,7 +179,6 @@ export default function TermsCondition() {
             </p>
           </div>
 
-          {/* Section 7 */}
           <div className="mt-8">
             <h3 className="text-xl md:text-xl font-bold text-blue-600 mb-3">
               7. Governing Law & Dispute Resolution
@@ -197,7 +190,6 @@ export default function TermsCondition() {
             </p>
           </div>
 
-          {/* Section 8*/}
           <div className="mt-8">
             <h3 className="text-xl md:text-xl font-bold text-blue-600 mb-3">
               8. Amendments

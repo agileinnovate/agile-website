@@ -7,10 +7,7 @@ import { motion } from "framer-motion";
 export default function Payroll() {
   return (
     <main>
-
-      {/* ------------------------------------------------ */}
       {/* HERO SECTION */}
-      {/* ------------------------------------------------ */}
       <section className="relative h-[420px] bg-gradient-to-br from-blue-600 to-blue-800 text-white flex items-center justify-center">
         <Image
           src="/hr-hero.jpg"
@@ -39,16 +36,13 @@ export default function Payroll() {
         </div>
       </section>
 
-      {/* ------------------------------------------------ */}
       {/* CORE HR MODULES */}
-      {/* ------------------------------------------------ */}
       <section className="py-16 bg-white px-6">
         <h2 className="text-3xl font-bold text-center text-blue-700 mb-12">
           HR & Payroll Modules
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
-
           {[
             "Employee Management (HRMS)",
             "Attendance & Shift Management",
@@ -66,7 +60,9 @@ export default function Payroll() {
               whileInView={{ opacity: 1, y: 0 }}
               className="bg-blue-50 border border-blue-200 p-6 rounded-xl shadow hover:shadow-md transition"
             >
-              <h3 className="text-xl font-semibold text-blue-700 mb-2">{module}</h3>
+              <h3 className="text-xl font-semibold text-blue-700 mb-2">
+                {module}
+              </h3>
               <p className="text-gray-600">
                 Complete module for modern HR automation.
               </p>
@@ -75,9 +71,7 @@ export default function Payroll() {
         </div>
       </section>
 
-      {/* ------------------------------------------------ */}
       {/* HR FEATURES */}
-      {/* ------------------------------------------------ */}
       <section className="py-16 bg-blue-50 px-6">
         <h2 className="text-3xl font-bold text-center text-blue-700 mb-12">
           HR & Payroll Key Features
@@ -103,36 +97,8 @@ export default function Payroll() {
         </div>
       </section>
 
-      {/* ------------------------------------------------ */}
-      {/* EMPLOYEE PROFILE UI */}
-      {/* ------------------------------------------------ */}
-      <section className="py-20 bg-white px-6">
-        <h2 className="text-3xl font-bold text-center text-blue-700 mb-6">
-          Employee Profile & HRMS Dashboard
-        </h2>
-
-        <p className="text-center text-gray-600 max-w-3xl mx-auto mb-12">
-          A centralized HRMS dashboard for managing employee details, attendance,
-          documents, appraisals, leaves, payroll history and more.
-        </p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          className="max-w-5xl mx-auto rounded-xl overflow-hidden shadow-xl border border-blue-200"
-        >
-          <Image
-            src="/hr-dashboard.jpg"
-            alt="HR Dashboard"
-            width={1600}
-            height={900}
-          />
-        </motion.div>
-      </section>
-
-      {/* ------------------------------------------------ */}
       {/* PAYROLL UI */}
-      {/* ------------------------------------------------ */}
+
       <section className="py-20 bg-blue-50 px-6">
         <h2 className="text-3xl font-bold text-center text-blue-700 mb-6">
           Payroll Processing & Salary Slip
@@ -149,7 +115,7 @@ export default function Payroll() {
           className="max-w-4xl mx-auto overflow-hidden rounded-xl shadow-lg border border-blue-200"
         >
           <Image
-            src="/hr-payroll.jpg"
+            src="/payroll.avif"
             alt="Payroll UI"
             width={1600}
             height={900}
@@ -157,9 +123,7 @@ export default function Payroll() {
         </motion.div>
       </section>
 
-      {/* ------------------------------------------------ */}
       {/* ATTENDANCE & SHIFT UI */}
-      {/* ------------------------------------------------ */}
       <section className="py-20 bg-white px-6">
         <h2 className="text-3xl font-bold text-center text-blue-700 mb-6">
           Attendance, Shifts & Leave Management
@@ -176,7 +140,7 @@ export default function Payroll() {
           className="max-w-4xl mx-auto rounded-xl overflow-hidden shadow-lg border border-blue-200"
         >
           <Image
-            src="/hr-attendance.jpg"
+            src="/Timetable.jpg"
             alt="Attendance UI"
             width={1600}
             height={900}
@@ -184,9 +148,7 @@ export default function Payroll() {
         </motion.div>
       </section>
 
-      {/* ------------------------------------------------ */}
       {/* INDUSTRY USE CASES */}
-      {/* ------------------------------------------------ */}
       <section className="py-20 bg-blue-50 px-6">
         <h2 className="text-3xl font-bold text-center text-blue-700 mb-12">
           Suitable For All Industries
@@ -209,29 +171,30 @@ export default function Payroll() {
               whileInView={{ opacity: 1, y: 0 }}
               className="bg-white p-6 rounded-xl text-center border border-blue-200 shadow hover:shadow-md transition"
             >
-              <h3 className="text-xl font-semibold text-blue-700">{industry}</h3>
+              <h3 className="text-xl font-semibold text-blue-700">
+                {industry}
+              </h3>
             </motion.div>
           ))}
         </div>
       </section>
 
-      {/* ------------------------------------------------ */}
       {/* CTA SECTION */}
-      {/* ------------------------------------------------ */}
+
       <section className="py-20 bg-gradient-to-br from-blue-600 to-blue-800 text-white text-center px-6">
         <h2 className="text-4xl font-bold mb-4">
           Ready to Automate Your HR & Payroll?
         </h2>
 
         <p className="max-w-2xl mx-auto text-lg mb-8">
-          Get a personalized demo and experience how automation improves workforce productivity.
+          Get a personalized demo and experience how automation improves
+          workforce productivity.
         </p>
 
         <button className="bg-white text-blue-700 px-10 py-4 rounded-lg text-lg font-semibold shadow hover:bg-blue-100 transition">
           Book Free Demo
         </button>
       </section>
-
     </main>
   );
 }

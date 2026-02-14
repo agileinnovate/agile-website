@@ -58,7 +58,7 @@ export default function Home() {
     <main className="overflow-x-hidden">
       <div className="relative">
         <Hero />
-        <div className="absolute bottom-0 left-0 w-full h-[150px] bg-linear-to-b from-transparent to-white pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 w-full h-37.5 bg-linear-to-b from-transparent to-white pointer-events-none"></div>
       </div>
 
       <div className="relative z-10 bg-white pt-24 md:pt-28">

@@ -5,6 +5,21 @@ import { CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function CRMPage() {
+  const heading = "Be more than what you see".split(" ");
+
+  const container = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.08,
+      },
+    },
+  };
+
+  const wordAnim = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0 },
+  };
   return (
     <main>
       <section className="relative w-full h-105 flex items-center justify-center bg-linear-to-br from-blue-600 to-blue-800 text-white">
@@ -104,7 +119,7 @@ export default function CRMPage() {
           className="max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-xl border border-blue-200"
         >
           <Image
-            src="/crm-pipeline.jpg"
+            src="/crm-pipeline.avif"
             alt="CRM Pipeline"
             width={1600}
             height={900}
@@ -169,17 +184,35 @@ export default function CRMPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-linear-to-br from-blue-600 to-blue-800 text-white text-center px-6">
-        <h2 className="text-4xl font-bold mb-4">Ready to Boost Your Sales?</h2>
+      <section className="relative py-16 px-6 bg-blue-100 overflow-hidden">
+        <div className="absolute right-0 top-0 w-100 h-100  rounded-full opacity-60 blur-3xl"></div>
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center relative z-10">
+          <div>
+            <motion.h2 className="text-4xl md:text-5xl font-semibold mb-6 leading-tight text-gray-900">
+              Be <span className="text-blue-600">more</span> than what you see
+            </motion.h2>
 
-        <p className="max-w-2xl mx-auto text-lg mb-8">
-          Get a personalized demo of our CRM system and see how it can transform
-          your sales process.
-        </p>
+            <motion.p className="text-gray-700 text-lg mb-8 max-w-md">
+              Delivering innovative CRM automation that empowers your team,
+              streamlines workflows, and drives measurable growth.
+            </motion.p>
 
-        <button className="bg-white text-blue-700 px-10 py-4 rounded-lg text-lg font-semibold shadow hover:bg-blue-100 transition">
-          Book Free Demo
-        </button>
+            <motion.button className="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition">
+              Learn More
+            </motion.button>
+          </div>
+
+          <motion.div className="relative flex justify-center md:justify-end">
+            <div className="rounded-[40px] overflow-hidden shadow-2xl w-120 h-80">
+              <Image
+                src="/cms.png"
+                alt="CTA Image"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </motion.div>
+        </div>
       </section>
     </main>
   );

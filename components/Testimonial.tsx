@@ -124,7 +124,7 @@ export default function Testimonial() {
 
         {/* RIGHT SIDE — IMAGE */}
         <div className="flex justify-center md:justify-end">
-          <div className="relative w-[380px] h-[380px] md:w-[480px] md:h-[480px] rounded-2xl overflow-hidden ">
+          <div className="relative w-95 h-95 md:w-120 md:h-120 rounded-2xl overflow-hidden ">
             <Image
               src="/Testimonial.png"
               alt="Happy Clients"
