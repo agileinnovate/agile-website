@@ -33,6 +33,8 @@ export default function TechSlider() {
     return () => clearInterval(timer);
   }, []); // ✅ no dependency needed
 
+  const totalWidth = `${infinite.length * 150}px`;
+
   return (
     <section className="w-full bg-white py-24 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4">
