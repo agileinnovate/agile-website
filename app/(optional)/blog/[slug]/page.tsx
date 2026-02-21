@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { blogs as staticBlogs } from "@/lib/blogs";
@@ -9,21 +10,54 @@ type Props = {
   }>;
 };
 
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  let blog;
+  try {
+    blog = await fetchBlogBySlug(slug);
+    if (!blog) {
+      blog = staticBlogs.find((b) => b.slug === slug);
+    }
+  } catch (error) {
+    blog = staticBlogs.find((b) => b.slug === slug);
+  }
+
+  if (!blog) return { title: "Blog Not Found" };
+
+  return {
+    title: `${blog.title} | Agailinnovate Blog`,
+    description: blog.desc || blog.content?.slice(0, 160).replace(/<[^>]*>/g, ""),
+    openGraph: {
+      title: blog.title,
+      description: blog.desc || blog.content?.slice(0, 160).replace(/<[^>]*>/g, ""),
+      type: "article",
+      images: [
+        blog.image?.startsWith("http") || blog.image?.startsWith("data:")
+          ? blog.image
+          : blog.image?.startsWith("/") && !blog.image?.startsWith("/uploads")
+            ? blog.image
+            : blog.image
+              ? `http://localhost:4000/uploads/${blog.image.replace(/^\/?uploads\//, "")}`
+              : "/Bg-hero.jpg"
+      ],
+    },
+  };
+}
+
 export default async function BlogDetail({ params }: Props) {
   const { slug } = await params;
 
   let blog;
   try {
-    blog = await fetchBlogBySlug(slug);
-    if (blog) {
-      // Map fields if necessary
+    const fetchedBlog = await fetchBlogBySlug(slug);
+    if (fetchedBlog) {
       blog = {
-        ...blog,
+        ...fetchedBlog,
         desc:
-          blog.desc ||
-          blog.content?.slice(0, 150).replace(/<[^>]*>/g, "") + "..." ||
+          fetchedBlog.desc ||
+          fetchedBlog.content?.slice(0, 150).replace(/<[^>]*>/g, "") + "..." ||
           "",
-        category: blog.category || "Technology",
+        category: fetchedBlog.category || "Technology",
       };
     } else {
       blog = staticBlogs.find((b) => b.slug === slug);
@@ -46,9 +80,11 @@ export default async function BlogDetail({ params }: Props) {
                 blog.image?.startsWith("http") ||
                 blog.image?.startsWith("data:")
                   ? blog.image
-                  : blog.image
-                    ? `http://localhost:4000/uploads/${blog.image.replace(/^\/?uploads\//, "")}`
-                    : "/Bg-hero.jpg"
+                  : blog.image?.startsWith("/") && !blog.image?.startsWith("/uploads")
+                    ? blog.image
+                    : blog.image
+                      ? `http://localhost:4000/uploads/${blog.image.replace(/^\/?uploads\//, "")}`
+                      : "/Bg-hero.jpg"
               }
               alt={blog.title}
               fill

@@ -1,18 +1,38 @@
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000";
 
 export async function fetchBlogs() {
-    const res = await fetch(`${BASE_URL}/blogs`, { cache: 'no-store' });
-    if (!res.ok) throw new Error('Failed to fetch blogs');
-    return res.json();
+    try {
+        const res = await fetch(`${BASE_URL}/blogs`, {
+            cache: 'no-store',
+            headers: { 'Accept': 'application/json' }
+        });
+        if (!res.ok) {
+            console.error(`Status ${res.status}: Failed to fetch blogs from ${BASE_URL}/blogs`);
+            return null;
+        }
+        return res.json();
+    } catch (error) {
+        console.error('Error in fetchBlogs:', error);
+        return null;
+    }
 }
 
 export async function fetchBlogBySlug(slug: string) {
-    const res = await fetch(`${BASE_URL}/blogs/${slug}`, { cache: 'no-store' });
-    if (!res.ok) {
-        if (res.status === 404) return null;
-        throw new Error('Failed to fetch blog');
+    try {
+        const res = await fetch(`${BASE_URL}/blogs/${slug}`, {
+            cache: 'no-store',
+            headers: { 'Accept': 'application/json' }
+        });
+        if (!res.ok) {
+            if (res.status === 404) return null;
+            console.error(`Status ${res.status}: Failed to fetch blog ${slug} from ${BASE_URL}/blogs/${slug}`);
+            return null;
+        }
+        return res.json();
+    } catch (error) {
+        console.error(`Error in fetchBlogBySlug for ${slug}:`, error);
+        return null;
     }
-    return res.json();
 }
 
 export async function createBlog(data: any, token?: string) {

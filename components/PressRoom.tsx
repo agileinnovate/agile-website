@@ -34,9 +34,11 @@ export default function PressRoom() {
             image:
               p.image?.startsWith("http") || p.image?.startsWith("data:")
                 ? p.image
-                : p.image
-                  ? `http://localhost:4000/uploads/${p.image.replace(/^\/?uploads\//, "")}`
-                  : "/Bg-hero.jpg",
+                : p.image?.startsWith("/") && !p.image?.startsWith("/uploads")
+                  ? p.image
+                  : p.image
+                    ? `http://localhost:4000/uploads/${p.image.replace(/^\/?uploads\//, "")}`
+                    : "/Bg-hero.jpg",
             date:
               p.date ||
               (p.createdAt ? new Date(p.createdAt).toLocaleDateString() : ""),

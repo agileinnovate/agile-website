@@ -14,17 +14,10 @@
     "framer-motion": "^12.23.24",
     "gsap": "^3.13.0",
     "lucide-react": "^0.553.0",
-<<<<<<< Updated upstream
-    "next": "^16.0.10",
-    "react": "^19.2.3",
-    "react-countup": "^6.5.3",
-    "react-dom": "^19.2.3",
-=======
     "next": "14.2.35",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-countup": "^6.5.3",
->>>>>>> Stashed changes
     "react-icons": "^5.5.0"
   },
   "devDependencies": {
@@ -33,13 +26,8 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "autoprefixer": "^10.4.22",
-<<<<<<< Updated upstream
-    "eslint": "^9",
-    "eslint-config-next": "^16.0.10",
-=======
     "eslint": "^8.57.0",
     "eslint-config-next": "14.2.35",
->>>>>>> Stashed changes
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.17",
     "typescript": "^5"

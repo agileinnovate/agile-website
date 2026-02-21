@@ -24,25 +24,33 @@ export default function Blog() {
     async function loadBlogs() {
       try {
         const response = await fetchBlogs();
-        const data = response.data || response;
+        // Handle cases where response might be null, { data: [...] }, or [...]
+        const data = response?.data || (Array.isArray(response) ? response : null);
 
         if (Array.isArray(data) && data.length > 0) {
           const mappedBlogs = data.map((b: any) => ({
             ...b,
+            date: b.date || new Date(b.createdAt || Date.now()).toLocaleDateString('en-US', {
+              month: 'short',
+              day: 'numeric',
+              year: 'numeric'
+            }),
             desc:
               b.desc ||
-              b.content?.slice(0, 150).replace(/<[^>]*>/g, "") + "..." ||
-              "",
+              (b.content ? b.content.slice(0, 150).replace(/<[^>]*>/g, "") + "..." : ""),
 
             image:
               b.image?.startsWith("http") || b.image?.startsWith("data:")
                 ? b.image
-                : b.image
-                  ? `http://localhost:4000/uploads/${b.image.replace(/^\/?uploads\//, "")}`
-                  : "/Bg-hero.jpg",
+                : b.image?.startsWith("/") && !b.image?.startsWith("/uploads")
+                  ? b.image
+                  : b.image
+                    ? `http://localhost:4000/uploads/${b.image.replace(/^\/?uploads\//, "")}`
+                    : "/Bg-hero.jpg",
           }));
           setBlogs(mappedBlogs);
         } else {
+          console.log("No dynamic blogs found, using static fallback.");
           setBlogs(staticBlogs);
         }
       } catch (error) {
