@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { fetchPressBySlug } from "@/lib/api";
+import { press as staticPressRoom } from "@/lib/press";
 
 type Props = {
   params: Promise<{
@@ -11,25 +11,12 @@ type Props = {
 export default async function PressDetail({ params }: Props) {
   const { slug } = await params;
 
-  let press;
-  try {
-    press = await fetchPressBySlug(slug);
-  } catch (error) {
-    console.error("Error fetching press item from API:", error);
-    return notFound();
-  }
+  const press = staticPressRoom.find((p) => p.slug === slug);
 
   if (!press) return notFound();
-  const displayImage =
-    press.image?.startsWith("http") || press.image?.startsWith("data:")
-      ? press.image
-      : press.image
-        ? `http://localhost:4000/uploads/${press.image.replace(/^\/?uploads\//, "")}`
-        : "/Bg-hero.jpg";
 
-  const displayDate =
-    press.date ||
-    (press.createdAt ? new Date(press.createdAt).toLocaleDateString() : "");
+  const displayImage = press.image;
+  const displayDate = press.date;
 
   return (
     <article className="bg-white text-black pt-32 pb-12 min-h-screen">

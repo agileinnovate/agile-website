@@ -25,19 +25,24 @@ export default function Blog() {
       try {
         const response = await fetchBlogs();
         // Handle cases where response might be null, { data: [...] }, or [...]
-        const data = response?.data || (Array.isArray(response) ? response : null);
+        const data =
+          response?.data || (Array.isArray(response) ? response : null);
 
         if (Array.isArray(data) && data.length > 0) {
           const mappedBlogs = data.map((b: any) => ({
             ...b,
-            date: b.date || new Date(b.createdAt || Date.now()).toLocaleDateString('en-US', {
-              month: 'short',
-              day: 'numeric',
-              year: 'numeric'
-            }),
+            date:
+              b.date ||
+              new Date(b.createdAt || Date.now()).toLocaleDateString("en-US", {
+                month: "short",
+                day: "numeric",
+                year: "numeric",
+              }),
             desc:
               b.desc ||
-              (b.content ? b.content.slice(0, 150).replace(/<[^>]*>/g, "") + "..." : ""),
+              (b.content
+                ? b.content.slice(0, 150).replace(/<[^>]*>/g, "") + "..."
+                : ""),
 
             image:
               b.image?.startsWith("http") || b.image?.startsWith("data:")
@@ -65,8 +70,8 @@ export default function Blog() {
 
   return (
     <section className="bg-gray-50 min-h-screen">
-      {/* ================= HERO WITH BG IMAGE ================= */}
-      <div className="relative h-80 md:h-[420px] flex items-center justify-center text-center px-6">
+      {/* HERO WITH BG IMAGE */}
+      <div className="relative h-80 md:h-105 flex items-center justify-center text-center px-6">
         <Image
           src="/Bg-hero.jpg"
           alt="AgileInnovate Blog"

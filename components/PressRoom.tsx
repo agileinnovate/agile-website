@@ -1,9 +1,7 @@
 "use client";
-
-import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { fetchPressItems } from "@/lib/api";
+import { press as staticPressRoom } from "@/lib/press";
 
 interface PressEntry {
   slug: string;
@@ -15,48 +13,11 @@ interface PressEntry {
 }
 
 export default function PressRoom() {
-  const [pressItems, setPressItems] = useState<PressEntry[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    async function loadPress() {
-      try {
-        const response = await fetchPressItems();
-        const data = response.data || response;
-
-        if (Array.isArray(data)) {
-          const mappedItems = data.map((p: any) => ({
-            ...p,
-            desc:
-              p.desc ||
-              p.content?.slice(0, 150).replace(/<[^>]*>/g, "") + "..." ||
-              "",
-            image:
-              p.image?.startsWith("http") || p.image?.startsWith("data:")
-                ? p.image
-                : p.image?.startsWith("/") && !p.image?.startsWith("/uploads")
-                  ? p.image
-                  : p.image
-                    ? `http://localhost:4000/uploads/${p.image.replace(/^\/?uploads\//, "")}`
-                    : "/Bg-hero.jpg",
-            date:
-              p.date ||
-              (p.createdAt ? new Date(p.createdAt).toLocaleDateString() : ""),
-          }));
-          setPressItems(mappedItems);
-        }
-      } catch (error) {
-        console.error("Failed to fetch press items:", error);
-      } finally {
-        setLoading(false);
-      }
-    }
-    loadPress();
-  }, []);
+  const pressItems = staticPressRoom;
 
   return (
     <section className="bg-gray-50 min-h-screen">
-      <div className="relative h-80 md:h-[420px] flex items-center justify-center text-center px-6">
+      <div className="relative h-80 md:h-105 flex items-center justify-center text-center px-6">
         <Image
           src="/Bg-hero.jpg"
           alt="AgileInnovate Press Room"
@@ -78,14 +39,7 @@ export default function PressRoom() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 py-20">
-        {loading ? (
-          <div className="text-center py-20">
-            <div className="w-12 h-12 border-4 border-blue-600/20 border-t-blue-600 rounded-full animate-spin mx-auto mb-4"></div>
-            <p className="text-slate-500 font-medium ">
-              Fetching latest announcements...
-            </p>
-          </div>
-        ) : pressItems.length > 0 ? (
+        {pressItems.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
             {pressItems.map((item) => (
               <Link

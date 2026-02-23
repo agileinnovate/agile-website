@@ -26,10 +26,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: `${blog.title} | Agailinnovate Blog`,
-    description: blog.desc || blog.content?.slice(0, 160).replace(/<[^>]*>/g, ""),
+    description:
+      blog.desc || blog.content?.slice(0, 160).replace(/<[^>]*>/g, ""),
     openGraph: {
       title: blog.title,
-      description: blog.desc || blog.content?.slice(0, 160).replace(/<[^>]*>/g, ""),
+      description:
+        blog.desc || blog.content?.slice(0, 160).replace(/<[^>]*>/g, ""),
       type: "article",
       images: [
         blog.image?.startsWith("http") || blog.image?.startsWith("data:")
@@ -38,7 +40,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             ? blog.image
             : blog.image
               ? `http://localhost:4000/uploads/${blog.image.replace(/^\/?uploads\//, "")}`
-              : "/Bg-hero.jpg"
+              : "/Bg-hero.jpg",
       ],
     },
   };
@@ -80,7 +82,8 @@ export default async function BlogDetail({ params }: Props) {
                 blog.image?.startsWith("http") ||
                 blog.image?.startsWith("data:")
                   ? blog.image
-                  : blog.image?.startsWith("/") && !blog.image?.startsWith("/uploads")
+                  : blog.image?.startsWith("/") &&
+                      !blog.image?.startsWith("/uploads")
                     ? blog.image
                     : blog.image
                       ? `http://localhost:4000/uploads/${blog.image.replace(/^\/?uploads\//, "")}`
