@@ -21,8 +21,6 @@ export default function TechSlider() {
   ];
 
   const infinite = [...logos, ...logos];
-  const totalWidth = `${infinite.length * 150}px`;
-
   const [pos, setPos] = useState(0);
 
   useEffect(() => {
@@ -31,7 +29,9 @@ export default function TechSlider() {
     }, 3000);
 
     return () => clearInterval(timer);
-  }, []); // ✅ no dependency needed
+  }, []);
+
+  const totalWidth = `${infinite.length * 150}px`;
 
   return (
     <section className="w-full bg-white py-24 overflow-hidden">

@@ -8,7 +8,7 @@ export default function Billing() {
   return (
     <main>
       {/* ---------------- HERO SECTION ---------------- */}
-      <section className="relative h-[420px] bg-linear-to-br from-blue-600 to-blue-800 text-white flex items-center justify-center">
+      <section className="relative h-105 bg-linear-to-br from-blue-600 to-blue-800 text-white flex items-center justify-center">
         <Image
           src="/billing-hero.jpg"
           alt="Billing Software Hero"
@@ -200,8 +200,8 @@ export default function Billing() {
         </div>
       </section>
 
-      {/* ---------------- CTA SECTION ---------------- */}
-      <section className="py-20 bg-gradient-to-br from-blue-600 to-blue-800 text-white text-center px-6">
+      {/* CTA SECTION  */}
+      <section className="py-20 bg-linear-to-br from-blue-600 to-blue-800 text-white text-center px-6">
         <h2 className="text-4xl font-bold mb-4">
           Ready to Automate Your Billing?
         </h2>
