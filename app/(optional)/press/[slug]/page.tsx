@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { press as staticPressRoom } from "@/lib/press";
+import { fetchPressBySlug, fetchPressItems } from "@/lib/api";
 
 type Props = {
   params: Promise<{
@@ -8,15 +8,23 @@ type Props = {
   }>;
 };
 
+export async function generateStaticParams() {
+  const pressItems = await fetchPressItems();
+  if (!pressItems || !Array.isArray(pressItems)) return [];
+  return pressItems.map((item: any) => ({
+    slug: item.slug,
+  }));
+}
+
 export default async function PressDetail({ params }: Props) {
   const { slug } = await params;
 
-  const press = staticPressRoom.find((p) => p.slug === slug);
+  const press = await fetchPressBySlug(slug);
 
   if (!press) return notFound();
 
-  const displayImage = press.image;
-  const displayDate = press.date;
+  const displayImage = press.image || "/Bg-hero.jpg";
+  const displayDate = press.date || new Date(press.createdAt).toLocaleDateString();
 
   return (
     <article className="bg-white text-black pt-32 pb-12 min-h-screen">

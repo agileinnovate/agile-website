@@ -4,7 +4,15 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { blogs as staticBlogs } from "@/lib/blogs";
-import { fetchBlogs } from "@/lib/api";
+import {
+  Search,
+  Sparkles,
+  Bot,
+  Loader2,
+  ArrowRight,
+  AlertTriangle,
+} from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface BlogEntry {
   slug: string;
@@ -18,59 +26,37 @@ interface BlogEntry {
 
 export default function Blog() {
   const [blogs, setBlogs] = useState<BlogEntry[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    async function loadBlogs() {
-      try {
-        const response = await fetchBlogs();
-        // Handle cases where response might be null, { data: [...] }, or [...]
-        const data =
-          response?.data || (Array.isArray(response) ? response : null);
+    setIsLoading(true);
+    setError(null);
 
-        if (Array.isArray(data) && data.length > 0) {
-          const mappedBlogs = data.map((b: any) => ({
-            ...b,
-            date:
-              b.date ||
-              new Date(b.createdAt || Date.now()).toLocaleDateString("en-US", {
-                month: "short",
-                day: "numeric",
-                year: "numeric",
-              }),
-            desc:
-              b.desc ||
-              (b.content
-                ? b.content.slice(0, 150).replace(/<[^>]*>/g, "") + "..."
-                : ""),
+    try {
+      const mapped = staticBlogs.map((b: any) => ({
+        ...b,
+        date: b.date || "Jan 1, 2025",
+        desc:
+          b.desc ||
+          (b.content
+            ? b.content.slice(0, 150).replace(/<[^>]*>/g, "") + "..."
+            : ""),
+        image: b.image || "/Bg-hero.jpg",
+      }));
 
-            image:
-              b.image?.startsWith("http") || b.image?.startsWith("data:")
-                ? b.image
-                : b.image?.startsWith("/") && !b.image?.startsWith("/uploads")
-                  ? b.image
-                  : b.image
-                    ? `http://localhost:4000/uploads/${b.image.replace(/^\/?uploads\//, "")}`
-                    : "/Bg-hero.jpg",
-          }));
-          setBlogs(mappedBlogs);
-        } else {
-          console.log("No dynamic blogs found, using static fallback.");
-          setBlogs(staticBlogs);
-        }
-      } catch (error) {
-        console.error("Failed to fetch blogs, using static fallback:", error);
-        setBlogs(staticBlogs);
-      } finally {
-        setLoading(false);
-      }
+      setBlogs(mapped);
+    } catch (err) {
+      console.error(err);
+      setError("Failed to load blogs.");
+    } finally {
+      setIsLoading(false);
     }
-    loadBlogs();
   }, []);
 
   return (
     <section className="bg-gray-50 min-h-screen">
-      {/* HERO WITH BG IMAGE */}
+      {/* HERO */}
       <div className="relative h-80 md:h-105 flex items-center justify-center text-center px-6">
         <Image
           src="/Bg-hero.jpg"
@@ -79,11 +65,8 @@ export default function Blog() {
           priority
           className="object-cover"
         />
-
-        {/* Overlay */}
         <div className="absolute inset-0 bg-black/60"></div>
 
-        {/* Content */}
         <div className="relative z-10 max-w-3xl">
           <h1 className="text-4xl md:text-5xl font-extrabold text-white">
             AgileInnovate Blog
@@ -95,16 +78,30 @@ export default function Blog() {
         </div>
       </div>
 
-      {/* ================= BLOG GRID ================= */}
+      {/* BLOG GRID */}
       <div className="max-w-7xl mx-auto px-6 py-20">
-        {loading ? (
-          <div className="text-center py-20">
-            <div className="w-12 h-12 border-4 border-blue-600/20 border-t-blue-600 rounded-full animate-spin mx-auto mb-4"></div>
-            <p className="text-slate-500 font-medium">
-              Fetching latest insights...
+        {isLoading ? (
+          <div className="flex flex-col items-center justify-center py-20">
+            <Loader2 className="w-12 h-12 animate-spin text-blue-600 mb-4" />
+            <p className="text-gray-500 font-medium">
+              Loading latest insights...
             </p>
           </div>
-        ) : (
+        ) : error ? (
+          <div className="bg-red-50 border border-red-100 rounded-3xl p-10 text-center max-w-2xl mx-auto">
+            <AlertTriangle className="w-12 h-12 text-red-500 mx-auto mb-4" />
+            <h3 className="text-xl font-bold text-gray-900 mb-2">
+              Oops! Something went wrong
+            </h3>
+            <p className="text-gray-600 mb-6">{error}</p>
+            <button
+              onClick={() => window.location.reload()}
+              className="bg-gray-900 text-white px-6 py-2 rounded-xl font-semibold hover:bg-gray-800 transition-colors"
+            >
+              Try Again
+            </button>
+          </div>
+        ) : blogs.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
             {blogs.map((blog) => (
               <Link
@@ -117,7 +114,7 @@ export default function Blog() {
                     src={blog.image}
                     alt={blog.title}
                     fill
-                    className="object-cover "
+                    className="object-cover"
                   />
                 </div>
 
@@ -134,23 +131,16 @@ export default function Blog() {
 
                   <div className="mt-6 flex items-center text-blue-600 font-semibold text-sm">
                     Read More
-                    <svg
-                      className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17 8l4 4m0 0l-4 4m4-4H3"
-                      />
-                    </svg>
                   </div>
                 </div>
               </Link>
             ))}
+          </div>
+        ) : (
+          <div className="text-center py-20">
+            <p className="text-gray-500 text-lg">
+              No blogs found at the moment.
+            </p>
           </div>
         )}
       </div>

@@ -22,7 +22,7 @@ export default function CRMPage() {
   };
   return (
     <main>
-      <section className="relative w-full h-[420px] flex items-center justify-center bg-linear-to-br from-blue-600 to-blue-800 text-white">
+      <section className="relative w-full h-105 flex items-center justify-center bg-linear-to-br from-blue-600 to-blue-800 text-white">
         <Image
           src="/crm-hero.jpg"
           alt="CRM Hero"

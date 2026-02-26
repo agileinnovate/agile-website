@@ -10,7 +10,8 @@ export async function fetchBlogs() {
             console.error(`Status ${res.status}: Failed to fetch blogs from ${BASE_URL}/blogs`);
             return null;
         }
-        return res.json();
+        const json = await res.json();
+        return json.data || json;
     } catch (error) {
         console.error('Error in fetchBlogs:', error);
         return null;
@@ -76,7 +77,8 @@ export async function deleteBlog(id: string, token?: string) {
 export async function fetchPressItems() {
     const res = await fetch(`${BASE_URL}/press`, { cache: 'no-store' });
     if (!res.ok) throw new Error('Failed to fetch press items');
-    return res.json();
+    const json = await res.json();
+    return json.data || json;
 }
 
 export async function fetchPressBySlug(slug: string) {

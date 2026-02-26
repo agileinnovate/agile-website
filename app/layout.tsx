@@ -1,7 +1,14 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Roboto } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["100", "300", "400", "500", "700", "900"],
+  variable: "--font-roboto",
+});
 
 export const metadata: Metadata = {
   title: "Agailinnovate | Innovating with Technology",
@@ -50,7 +57,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="bg-black text-gray-900 overflow-x-hidden">
+      <body className={`${roboto.className} bg-black text-gray-900 overflow-x-hidden`}>
         <Navbar />
         <main className="min-h-screen">{children}</main>
         <Footer />

@@ -1,7 +1,9 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { press as staticPressRoom } from "@/lib/press";
+import { fetchPressItems } from "@/lib/api";
+import { Loader2, AlertTriangle } from "lucide-react";
+import { useState, useEffect } from "react";
 
 interface PressEntry {
   slug: string;
@@ -13,7 +15,31 @@ interface PressEntry {
 }
 
 export default function PressRoom() {
-  const pressItems = staticPressRoom;
+  const [pressItems, setPressItems] = useState<PressEntry[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const loadPress = async () => {
+      setIsLoading(true);
+      setError(null);
+      try {
+        const data = await fetchPressItems();
+        if (data && Array.isArray(data)) {
+          setPressItems(data);
+        } else {
+          setError("Failed to load press releases.");
+        }
+      } catch (err) {
+        console.error("Error loading press items:", err);
+        setError("An error occurred while loading press releases.");
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    loadPress();
+  }, []);
 
   return (
     <section className="bg-gray-50 min-h-screen">
@@ -39,7 +65,24 @@ export default function PressRoom() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 py-20">
-        {pressItems.length > 0 ? (
+        {isLoading ? (
+          <div className="flex flex-col items-center justify-center py-20">
+            <Loader2 className="w-12 h-12 animate-spin text-blue-600 mb-4" />
+            <p className="text-gray-500 font-medium italic">Fetching latest news...</p>
+          </div>
+        ) : error ? (
+          <div className="bg-red-50 border border-red-100 rounded-3xl p-10 text-center max-w-2xl mx-auto">
+            <AlertTriangle className="w-12 h-12 text-red-500 mx-auto mb-4" />
+            <h3 className="text-xl font-bold text-gray-900 mb-2">Notice</h3>
+            <p className="text-gray-600 mb-6">{error}</p>
+            <button 
+              onClick={() => window.location.reload()}
+              className="bg-[#051B43] text-white px-8 py-3 rounded-xl font-bold hover:shadow-lg transition-all"
+            >
+              Try Again
+            </button>
+          </div>
+        ) : pressItems.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
             {pressItems.map((item) => (
               <Link

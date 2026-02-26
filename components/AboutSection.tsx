@@ -34,8 +34,8 @@ export default function AboutSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-white py-18 overflow-hidden">
-      <div className="max-w-3xl mx-auto text-center px-6 mb-16">
+    <section ref={sectionRef} className="bg-white py-8 overflow-hidden">
+      <div className="max-w-3xl mx-auto text-center px-6 mb-6">
         <h1 className="text-3xl md:text-3xl font-bold text-gray-900">
           About Us
         </h1>
@@ -80,7 +80,7 @@ export default function AboutSection() {
           </p>
 
           <a
-            href="/contact"
+            href="/about"
             className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition"
           >
             Learn More

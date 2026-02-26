@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
+import TechSlider from "../TechSlider";
 
 export default function Payroll() {
   return (
@@ -179,22 +180,7 @@ export default function Payroll() {
         </div>
       </section>
 
-      {/* CTA SECTION */}
-
-      <section className="py-20 bg-gradient-to-br from-blue-600 to-blue-800 text-white text-center px-6">
-        <h2 className="text-4xl font-bold mb-4">
-          Ready to Automate Your HR & Payroll?
-        </h2>
-
-        <p className="max-w-2xl mx-auto text-lg mb-8">
-          Get a personalized demo and experience how automation improves
-          workforce productivity.
-        </p>
-
-        <button className="bg-white text-blue-700 px-10 py-4 rounded-lg text-lg font-semibold shadow hover:bg-blue-100 transition">
-          Book Free Demo
-        </button>
-      </section>
+      <TechSlider />
     </main>
   );
 }

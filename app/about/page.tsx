@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import AboutSection from "@/components/AboutSection";
+import AboutUs from "@/components/AboutUs";
 
 export const metadata: Metadata = {
   title: "About Us | Agailinnovate",
@@ -13,7 +13,6 @@ export const metadata: Metadata = {
     description:
       "Discover who we are, what we do, and how Agailinnovate helps businesses grow with cutting-edge technology.",
     url: "https://agile-website-tan.vercel.app/about",
-  
   },
   twitter: {
     card: "summary_large_image",
@@ -25,5 +24,5 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
-  return <AboutSection />;
+  return <AboutUs />;
 }
